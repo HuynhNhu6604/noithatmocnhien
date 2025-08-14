@@ -577,7 +577,6 @@
                             <th>Email</th>
                             <th>Tên hiển thị</th>
                             <th>Ngày tạo</th>
-                            <th>Trạng thái</th>
                             <th>Thao tác</th>
                         </tr>
                     </thead>
@@ -600,9 +599,13 @@
                 <table id="promotionsTable">
                     <thead>
                         <tr>
+                            <th>ID</th>
+                            <th>Icon</th>
                             <th>Mã khuyến mãi</th>
                             <th>Tên chương trình</th>
+                            <th>Mô tả</th>
                             <th>Giá trị</th>
+                            <th>Đơn hàng tối thiểu</th>
                             <th>Ngày bắt đầu</th>
                             <th>Ngày kết thúc</th>
                             <th>Trạng thái</th>
@@ -1278,10 +1281,15 @@
                         <td>${user.email}</td>
                         <td>${user.displayName || 'N/A'}</td>
                         <td>${formatDate(user.createdAt)}</td>
-                        <td>${user.status || 'active'}</td>
                         <td>
-                            <button class="btn btn-secondary" onclick="editUser('${key}')">
+                            <button class="btn btn-secondary" onclick="viewUser('${key}')" style="margin-right: 5px;">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="btn btn-secondary" onclick="editUser('${key}')" style="margin-right: 5px;">
                                 <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-primary" onclick="deleteUser('${key}')">
+                                <i class="fas fa-trash"></i>
                             </button>
                         </td>
                     `;
@@ -1306,14 +1314,22 @@
                 Object.entries(promotions).forEach(([key, promo]) => {
                     const tr = document.createElement('tr');
                     tr.innerHTML = `
+                        <td>${promo.id || key}</td>
+                        <td style="font-size: 20px;">${promo.icon || '🎁'}</td>
                         <td>${promo.promoCode}</td>
                         <td>${promo.title}</td>
+                        <td style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${promo.description || ''}">${promo.description || 'N/A'}</td>
                         <td>${formatCurrency(promo.voucherAmount)}</td>
+                        <td>${formatCurrency(promo.minOrderValue)}</td>
                         <td>${formatDate(promo.startDate)}</td>
                         <td>${formatDate(promo.endDate)}</td>
-                        <td>${promo.status}</td>
                         <td>
-                            <button class="btn btn-secondary" onclick="editPromotion('${key}')">
+                            <span style="color: ${promo.status === 'active' ? '#28a745' : promo.status === 'inactive' ? '#ffc107' : '#dc3545'}; font-weight: 500;">
+                                ${promo.status === 'active' ? 'Hoạt động' : promo.status === 'inactive' ? 'Không hoạt động' : 'Hết hạn'}
+                            </span>
+                        </td>
+                        <td>
+                            <button class="btn btn-secondary" onclick="editPromotion('${key}')" style="margin-right: 5px;">
                                 <i class="fas fa-edit"></i>
                             </button>
                             <button class="btn btn-primary" onclick="deletePromotion('${key}')">
@@ -1585,47 +1601,60 @@
                     showLoading();
                     const newProduct = result.value;
 
-                        // Get the current products to determine the next ID
+                    // Get the current products to determine the next ID
                     database.ref('/products').once('value').then((snapshot) => {
                         const products = snapshot.val() || [];
-                            const nextId = Array.isArray(products) ? products.length + 1 : 1;
-                            newProduct.id = nextId;
+                        
+                        // Tìm ID lớn nhất hiện có để tạo ID mới
+                        let maxId = 0;
+                        if (Array.isArray(products)) {
+                            products.forEach(product => {
+                                if (product.id && product.id > maxId) {
+                                    maxId = product.id;
+                                }
+                            });
+                        }
+                        const nextId = maxId + 1;
+                        newProduct.id = nextId;
 
-                            // Add the new product
-                            database.ref('/products').push(newProduct).then(() => {
+                        // Thêm sản phẩm mới vào cuối array
+                        const updatedProducts = Array.isArray(products) ? [...products, newProduct] : [newProduct];
+                        
+                        // Lưu toàn bộ array products
+                        database.ref('/products').set(updatedProducts).then(() => {
                             hideLoading();
-                                Swal.fire({
-                                    title: 'Thành công!',
-                                    text: 'Sản phẩm đã được thêm mới',
-                                    icon: 'success',
-                                    confirmButtonColor: '#5a3d2b',
-                                    confirmButtonText: '<i class="fas fa-check"></i> OK'
-                                });
+                            Swal.fire({
+                                title: 'Thành công!',
+                                text: 'Sản phẩm đã được thêm mới',
+                                icon: 'success',
+                                confirmButtonColor: '#5a3d2b',
+                                confirmButtonText: '<i class="fas fa-check"></i> OK'
+                            });
                             loadProducts();
                         }).catch((error) => {
                             hideLoading();
-                                console.error('Error adding product:', error);
-                                Swal.fire({
-                                    title: 'Lỗi!',
-                                    text: 'Không thể thêm sản phẩm mới: ' + error.message,
-                                    icon: 'error',
-                                    confirmButtonColor: '#5a3d2b',
-                                    confirmButtonText: '<i class="fas fa-times"></i> Đóng'
-                                });
-                            });
-                        }).catch((error) => {
-                            hideLoading();
-                            console.error('Error getting products:', error);
+                            console.error('Error adding product:', error);
                             Swal.fire({
                                 title: 'Lỗi!',
-                                text: 'Không thể lấy danh sách sản phẩm: ' + error.message,
+                                text: 'Không thể thêm sản phẩm mới: ' + error.message,
                                 icon: 'error',
                                 confirmButtonColor: '#5a3d2b',
                                 confirmButtonText: '<i class="fas fa-times"></i> Đóng'
+                            });
+                        });
+                    }).catch((error) => {
+                        hideLoading();
+                        console.error('Error getting products:', error);
+                        Swal.fire({
+                            title: 'Lỗi!',
+                            text: 'Không thể lấy danh sách sản phẩm: ' + error.message,
+                            icon: 'error',
+                            confirmButtonColor: '#5a3d2b',
+                            confirmButtonText: '<i class="fas fa-times"></i> Đóng'
                         });
                     });
                 }
-                });
+            });
             }).catch((error) => {
                 console.error('Error fetching categories:', error);
                 Swal.fire('Lỗi!', 'Không thể tải danh sách danh mục', 'error');
@@ -1851,11 +1880,6 @@
                 html: `
                     <div style="text-align: left; padding: 20px;">
                         <div style="margin-bottom: 25px;">
-                            <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">ID bộ sưu tập</label>
-                            <input id="collectionId" class="swal2-input" placeholder="Nhập ID bộ sưu tập (ví dụ: bohemian, modern)" style="font-size: 16px; padding: 12px; height: auto;">
-                            <small style="color: #666; display: block; margin-top: 5px;">ID phải là chữ thường, không dấu, không khoảng trắng</small>
-                        </div>
-                        <div style="margin-bottom: 25px;">
                             <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Tên bộ sưu tập</label>
                             <input id="title" class="swal2-input" placeholder="Nhập tên bộ sưu tập" style="font-size: 16px; padding: 12px; height: auto;">
                         </div>
@@ -1876,24 +1900,26 @@
                 cancelButtonColor: '#6c757d',
                 width: '600px',
                 preConfirm: () => {
-                    const collectionId = document.getElementById('collectionId').value.toLowerCase().trim();
                     const title = document.getElementById('title').value;
                     const description = document.getElementById('description').value;
                     const image = document.getElementById('image').value;
 
-                    if (!collectionId || !title || !description || !image) {
+                    if (!title || !description || !image) {
                         Swal.showValidationMessage('Vui lòng điền đầy đủ thông tin');
                         return false;
                     }
 
-                    // Kiểm tra ID hợp lệ
-                    if (!/^[a-z0-9]+$/.test(collectionId)) {
-                        Swal.showValidationMessage('ID chỉ được chứa chữ thường và số');
-                        return false;
-                    }
+                    // Tự động tạo ID từ tên bộ sưu tập
+                    const collectionId = title.toLowerCase()
+                        .normalize('NFD')
+                        .replace(/[\u0300-\u036f]/g, '') // Bỏ dấu
+                        .replace(/[^a-z0-9\s]/g, '') // Chỉ giữ chữ và số
+                        .replace(/\s+/g, '-') // Thay khoảng trắng bằng dấu gạch ngang
+                        .replace(/-+/g, '-') // Loại bỏ dấu gạch ngang liên tiếp
+                        .replace(/^-|-$/g, ''); // Loại bỏ dấu gạch ngang đầu/cuối
 
                     return {
-                        id: collectionId,
+                        collectionId: collectionId,
                         title: title,
                         description: description,
                         image: image,
@@ -1906,12 +1932,12 @@
                     const newCollection = result.value;
                     
                     // Kiểm tra xem ID đã tồn tại chưa
-                    database.ref('/collections/' + newCollection.id).once('value').then((snapshot) => {
+                    database.ref('/collections/' + newCollection.collectionId).once('value').then((snapshot) => {
                         if (snapshot.exists()) {
                             hideLoading();
                             Swal.fire({
                                 title: 'Lỗi!',
-                                text: 'ID bộ sưu tập đã tồn tại',
+                                text: 'Bộ sưu tập với tên này đã tồn tại',
                                 icon: 'error',
                                 confirmButtonColor: '#5a3d2b',
                                 confirmButtonText: '<i class="fas fa-times"></i> Đóng'
@@ -1920,7 +1946,13 @@
                         }
 
                         // Thêm bộ sưu tập mới
-                        database.ref('/collections/' + newCollection.id).set(newCollection).then(() => {
+                        database.ref('/collections/' + newCollection.collectionId).set({
+                            id: newCollection.collectionId,
+                            title: newCollection.title,
+                            description: newCollection.description,
+                            image: newCollection.image,
+                            products: newCollection.products
+                        }).then(() => {
                             hideLoading();
                             Swal.fire({
                                 title: 'Thành công!',
@@ -2001,7 +2033,7 @@
                         <div style="text-align: left; padding: 20px;">
                             <div style="margin-bottom: 25px;">
                                 <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">ID bộ sưu tập</label>
-                                <input id="collectionId" class="swal2-input" value="${collectionData.id}" readonly style="background-color: #f8f9fa; font-size: 16px; padding: 12px; height: auto;">
+                                <input id="collectionId" class="swal2-input" value="${collectionId}" readonly style="background-color: #f8f9fa; font-size: 16px; padding: 12px; height: auto;">
                             </div>
                             <div style="margin-bottom: 25px;">
                                 <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Tên bộ sưu tập</label>
@@ -2060,7 +2092,7 @@
                         }
 
                         return {
-                            id: collectionData.id,
+                            id: collectionId,
                             title: title,
                             description: description,
                             image: image,
@@ -2507,12 +2539,24 @@
                                 <input id="displayName" class="swal2-input" value="${userData.displayName || ''}" placeholder="Nhập tên hiển thị" style="font-size: 16px; padding: 12px; height: auto;">
                             </div>
                             <div style="margin-bottom: 25px;">
-                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Trạng thái</label>
-                                <select id="status" class="swal2-input" style="width: 100%; margin: 0; font-size: 16px; padding: 12px; height: auto;">
-                                    <option value="active" ${userData.status === 'active' ? 'selected' : ''}>Hoạt động</option>
-                                    <option value="inactive" ${userData.status === 'inactive' ? 'selected' : ''}>Không hoạt động</option>
-                                    <option value="banned" ${userData.status === 'banned' ? 'selected' : ''}>Bị cấm</option>
-                                </select>
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Họ tên đầy đủ</label>
+                                <input id="fullName" class="swal2-input" value="${userData.fullName || ''}" placeholder="Nhập họ tên đầy đủ" style="font-size: 16px; padding: 12px; height: auto;">
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Số điện thoại</label>
+                                <input id="phone" class="swal2-input" value="${userData.phone || ''}" placeholder="Nhập số điện thoại" style="font-size: 16px; padding: 12px; height: auto;">
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Địa chỉ</label>
+                                <input id="address" class="swal2-input" value="${userData.address || ''}" placeholder="Nhập địa chỉ" style="font-size: 16px; padding: 12px; height: auto;">
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Quận/Huyện</label>
+                                <input id="district" class="swal2-input" value="${userData.district || ''}" placeholder="Nhập quận/huyện" style="font-size: 16px; padding: 12px; height: auto;">
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Tỉnh/Thành phố</label>
+                                <input id="city" class="swal2-input" value="${userData.city || ''}" placeholder="Nhập tỉnh/thành phố" style="font-size: 16px; padding: 12px; height: auto;">
                             </div>
                         </div>
                     `,
@@ -2539,7 +2583,11 @@
                     },
                     preConfirm: () => {
                         const displayName = document.getElementById('displayName').value;
-                        const status = document.getElementById('status').value;
+                        const fullName = document.getElementById('fullName').value;
+                        const phone = document.getElementById('phone').value;
+                        const address = document.getElementById('address').value;
+                        const district = document.getElementById('district').value;
+                        const city = document.getElementById('city').value;
 
                         if (!displayName) {
                             Swal.showValidationMessage('Vui lòng nhập tên hiển thị');
@@ -2549,7 +2597,12 @@
                         return {
                             email: userData.email,
                             displayName: displayName,
-                            status: status,
+                            fullName: fullName,
+                            phone: phone,
+                            address: address,
+                            district: district,
+                            city: city,
+                            status: userData.status, // Giữ nguyên trạng thái hiện tại
                             createdAt: userData.createdAt,
                             updatedAt: new Date().toISOString()
                         }
@@ -2595,6 +2648,185 @@
             });
         }
 
+        // Hàm xem chi tiết người dùng
+        function viewUser(userId) {
+            // Check authentication first
+            const user = auth.currentUser;
+            if (!user || user.email !== 'quantrivienmocnhien@gmail.com') {
+                Swal.fire('Lỗi!', 'Bạn không có quyền thực hiện thao tác này', 'error');
+                return;
+            }
+
+            showLoading();
+            database.ref('/users/' + userId).once('value').then((snapshot) => {
+                hideLoading();
+                const userData = snapshot.val();
+                if (!userData) {
+                    Swal.fire('Lỗi!', 'Không tìm thấy thông tin người dùng', 'error');
+                    return;
+                }
+
+                Swal.fire({
+                    title: '<h2 style="color: #5a3d2b; margin-bottom: 30px; font-size: 24px;">Chi tiết người dùng</h2>',
+                    html: `
+                        <div style="text-align: left; padding: 20px;">
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Email</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.email || 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Tên hiển thị</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.displayName || 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Họ tên đầy đủ</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.fullName || 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Số điện thoại</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.phone || 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Địa chỉ</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.address || 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Quận/Huyện</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.district || 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Thành phố</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.city || 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Loại tài khoản</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.accountType || 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Vai trò</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.role || 'N/A'}</div>
+                            </div>
+
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Email đã xác thực</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">
+                                    <span style="color: ${userData.emailVerified ? '#28a745' : '#dc3545'}">
+                                        ${userData.emailVerified ? 'Đã xác thực' : 'Chưa xác thực'}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Lần đăng nhập cuối</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.lastLogin ? formatDate(userData.lastLogin) : 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Ngày tạo tài khoản</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.createdAt ? formatDate(userData.createdAt) : 'N/A'}</div>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Ngày cập nhật cuối</label>
+                                <div style="font-size: 16px; padding: 12px; background-color: #f8f9fa; border-radius: 4px;">${userData.updatedAt ? formatDate(userData.updatedAt) : 'N/A'}</div>
+                            </div>
+                        </div>
+                    `,
+                    width: '600px',
+                    confirmButtonText: 'Đóng',
+                    confirmButtonColor: '#5a3d2b',
+                    showCancelButton: false
+                });
+            }).catch((error) => {
+                hideLoading();
+                console.error('Error fetching user:', error);
+                Swal.fire({
+                    title: 'Lỗi!',
+                    text: 'Không thể tải thông tin người dùng: ' + error.message,
+                    icon: 'error',
+                    confirmButtonColor: '#5a3d2b',
+                    confirmButtonText: '<i class="fas fa-times"></i> Đóng'
+                });
+            });
+        }
+
+        // Hàm xóa người dùng
+        function deleteUser(userId) {
+            // Check authentication first
+            const user = auth.currentUser;
+            if (!user || user.email !== 'quantrivienmocnhien@gmail.com') {
+                Swal.fire('Lỗi!', 'Bạn không có quyền thực hiện thao tác này', 'error');
+                return;
+            }
+
+            // Lấy thông tin người dùng trước khi xóa
+            database.ref('/users/' + userId).once('value').then((snapshot) => {
+                const userData = snapshot.val();
+                if (!userData) {
+                    Swal.fire('Lỗi!', 'Không tìm thấy thông tin người dùng', 'error');
+                    return;
+                }
+
+                Swal.fire({
+                    title: 'Xác nhận xóa',
+                    html: `
+                        <div style="text-align: left; padding: 20px;">
+                            <p style="margin-bottom: 15px; color: #dc3545; font-weight: 500;">Bạn có chắc chắn muốn xóa người dùng này?</p>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-bottom: 15px;">
+                                <p><strong>Email:</strong> ${userData.email}</p>
+                                <p><strong>Tên hiển thị:</strong> ${userData.displayName || 'N/A'}</p>
+                                <p><strong>Họ tên:</strong> ${userData.fullName || 'N/A'}</p>
+                                <p><strong>Ngày tạo:</strong> ${userData.createdAt ? formatDate(userData.createdAt) : 'N/A'}</p>
+                            </div>
+                            <p style="color: #dc3545; font-size: 14px;">
+                                <i class="fas fa-exclamation-triangle"></i> 
+                                <strong>Lưu ý:</strong> Hành động này không thể hoàn tác. Tất cả dữ liệu của người dùng sẽ bị xóa vĩnh viễn.
+                            </p>
+                        </div>
+                    `,
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Xóa',
+                    cancelButtonText: 'Hủy',
+                    confirmButtonColor: '#dc3545',
+                    cancelButtonColor: '#6c757d',
+                    width: '500px'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        showLoading();
+                        database.ref('/users/' + userId).remove().then(() => {
+                            hideLoading();
+                            Swal.fire({
+                                title: 'Thành công!',
+                                text: 'Người dùng đã được xóa',
+                                icon: 'success',
+                                confirmButtonColor: '#5a3d2b',
+                                confirmButtonText: '<i class="fas fa-check"></i> OK'
+                            });
+                            loadUsers(); // Tải lại danh sách người dùng
+                        }).catch((error) => {
+                            hideLoading();
+                            console.error('Error deleting user:', error);
+                            Swal.fire({
+                                title: 'Lỗi!',
+                                text: 'Không thể xóa người dùng: ' + error.message,
+                                icon: 'error',
+                                confirmButtonColor: '#5a3d2b',
+                                confirmButtonText: '<i class="fas fa-times"></i> Đóng'
+                            });
+                        });
+                    }
+                });
+            }).catch((error) => {
+                console.error('Error fetching user:', error);
+                Swal.fire({
+                    title: 'Lỗi!',
+                    text: 'Không thể tải thông tin người dùng: ' + error.message,
+                    icon: 'error',
+                    confirmButtonColor: '#5a3d2b',
+                    confirmButtonText: '<i class="fas fa-times"></i> Đóng'
+                });
+            });
+        }
+
         // Hàm thêm khuyến mãi mới
         function addPromotion() {
             // Check authentication first
@@ -2609,6 +2841,10 @@
                 html: `
                     <div style="text-align: left; padding: 20px;">
                         <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">ID khuyến mãi</label>
+                            <input id="promoId" class="swal2-input" placeholder="Nhập ID khuyến mãi (VD: tet_2025)" style="font-size: 16px; padding: 12px; height: auto;">
+                        </div>
+                        <div style="margin-bottom: 25px;">
                             <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Mã khuyến mãi</label>
                             <input id="promoCode" class="swal2-input" placeholder="Nhập mã khuyến mãi" style="font-size: 16px; padding: 12px; height: auto;">
                         </div>
@@ -2617,8 +2853,20 @@
                             <input id="title" class="swal2-input" placeholder="Nhập tên chương trình" style="font-size: 16px; padding: 12px; height: auto;">
                         </div>
                         <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Mô tả</label>
+                            <textarea id="description" class="swal2-textarea" placeholder="Nhập mô tả khuyến mãi" style="font-size: 16px; padding: 12px; height: auto;"></textarea>
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Icon (Emoji)</label>
+                            <input id="icon" class="swal2-input" placeholder="Nhập icon emoji (VD: 🎉, ❤️, 🌕)" style="font-size: 16px; padding: 12px; height: auto;">
+                        </div>
+                        <div style="margin-bottom: 25px;">
                             <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Giá trị khuyến mãi (VNĐ)</label>
                             <input id="voucherAmount" type="number" class="swal2-input" placeholder="Nhập giá trị khuyến mãi" style="font-size: 16px; padding: 12px; height: auto;">
+                        </div>
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Giá trị đơn hàng tối thiểu (VNĐ)</label>
+                            <input id="minOrderValue" type="number" class="swal2-input" placeholder="Nhập giá trị đơn hàng tối thiểu" style="font-size: 16px; padding: 12px; height: auto;">
                         </div>
                         <div style="margin-bottom: 25px;">
                             <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Ngày bắt đầu</label>
@@ -2643,16 +2891,20 @@
                 cancelButtonText: '<i class="fas fa-times"></i> Hủy',
                 confirmButtonColor: '#5a3d2b',
                 cancelButtonColor: '#6c757d',
-                width: '600px',
+                width: '700px',
                 preConfirm: () => {
+                    const promoId = document.getElementById('promoId').value;
                     const promoCode = document.getElementById('promoCode').value;
                     const title = document.getElementById('title').value;
+                    const description = document.getElementById('description').value;
+                    const icon = document.getElementById('icon').value;
                     const voucherAmount = parseInt(document.getElementById('voucherAmount').value);
+                    const minOrderValue = parseInt(document.getElementById('minOrderValue').value);
                     const startDate = document.getElementById('startDate').value;
                     const endDate = document.getElementById('endDate').value;
                     const status = document.getElementById('status').value;
 
-                    if (!promoCode || !title || !voucherAmount || !startDate || !endDate) {
+                    if (!promoId || !promoCode || !title || !description || !icon || !voucherAmount || !minOrderValue || !startDate || !endDate) {
                         Swal.showValidationMessage('Vui lòng điền đầy đủ thông tin');
                         return false;
                     }
@@ -2662,19 +2914,29 @@
                         return false;
                     }
 
+                    if (minOrderValue <= 0) {
+                        Swal.showValidationMessage('Giá trị đơn hàng tối thiểu phải lớn hơn 0');
+                        return false;
+                    }
+
                     if (new Date(startDate) >= new Date(endDate)) {
                         Swal.showValidationMessage('Ngày kết thúc phải sau ngày bắt đầu');
                         return false;
                     }
 
                     return {
+                        id: promoId,
                         promoCode,
                         title,
+                        description,
+                        icon,
                         voucherAmount,
+                        minOrderValue,
                         startDate,
                         endDate,
                         status,
-                        createdAt: new Date().toISOString()
+                        createdAt: new Date().toISOString(),
+                        updatedAt: new Date().toISOString()
                     }
                 }
             }).then((result) => {
@@ -2682,25 +2944,41 @@
                     showLoading();
                     const newPromotion = result.value;
                     
-                    database.ref('/promotions').push(newPromotion).then(() => {
-                        hideLoading();
-                        Swal.fire({
-                            title: 'Thành công!',
-                            text: 'Khuyến mãi đã được thêm mới',
-                            icon: 'success',
-                            confirmButtonColor: '#5a3d2b',
-                            confirmButtonText: '<i class="fas fa-check"></i> OK'
-                        });
-                        loadPromotions();
-                    }).catch((error) => {
-                        hideLoading();
-                        console.error('Error adding promotion:', error);
-                        Swal.fire({
-                            title: 'Lỗi!',
-                            text: 'Không thể thêm khuyến mãi: ' + error.message,
-                            icon: 'error',
-                            confirmButtonColor: '#5a3d2b',
-                            confirmButtonText: '<i class="fas fa-times"></i> Đóng'
+                    // Kiểm tra xem ID đã tồn tại chưa
+                    database.ref('/promotions/' + newPromotion.id).once('value').then((snapshot) => {
+                        if (snapshot.exists()) {
+                            hideLoading();
+                            Swal.fire({
+                                title: 'Lỗi!',
+                                text: 'ID khuyến mãi đã tồn tại',
+                                icon: 'error',
+                                confirmButtonColor: '#5a3d2b',
+                                confirmButtonText: '<i class="fas fa-times"></i> Đóng'
+                            });
+                            return;
+                        }
+
+                        // Thêm khuyến mãi mới
+                        database.ref('/promotions/' + newPromotion.id).set(newPromotion).then(() => {
+                            hideLoading();
+                            Swal.fire({
+                                title: 'Thành công!',
+                                text: 'Khuyến mãi đã được thêm mới',
+                                icon: 'success',
+                                confirmButtonColor: '#5a3d2b',
+                                confirmButtonText: '<i class="fas fa-check"></i> OK'
+                            });
+                            loadPromotions();
+                        }).catch((error) => {
+                            hideLoading();
+                            console.error('Error adding promotion:', error);
+                            Swal.fire({
+                                title: 'Lỗi!',
+                                text: 'Không thể thêm khuyến mãi: ' + error.message,
+                                icon: 'error',
+                                confirmButtonColor: '#5a3d2b',
+                                confirmButtonText: '<i class="fas fa-times"></i> Đóng'
+                            });
                         });
                     });
                 }
@@ -2730,6 +3008,10 @@
                     html: `
                         <div style="text-align: left; padding: 20px;">
                             <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">ID khuyến mãi</label>
+                                <input id="promoId" class="swal2-input" value="${promoData.id || promoId}" readonly style="background-color: #f8f9fa; font-size: 16px; padding: 12px; height: auto;">
+                            </div>
+                            <div style="margin-bottom: 25px;">
                                 <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Mã khuyến mãi</label>
                                 <input id="promoCode" class="swal2-input" value="${promoData.promoCode || ''}" style="font-size: 16px; padding: 12px; height: auto;">
                             </div>
@@ -2738,8 +3020,20 @@
                                 <input id="title" class="swal2-input" value="${promoData.title || ''}" style="font-size: 16px; padding: 12px; height: auto;">
                             </div>
                             <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Mô tả</label>
+                                <textarea id="description" class="swal2-textarea" style="font-size: 16px; padding: 12px; height: auto;">${promoData.description || ''}</textarea>
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Icon (Emoji)</label>
+                                <input id="icon" class="swal2-input" value="${promoData.icon || ''}" style="font-size: 16px; padding: 12px; height: auto;">
+                            </div>
+                            <div style="margin-bottom: 25px;">
                                 <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Giá trị khuyến mãi (VNĐ)</label>
                                 <input id="voucherAmount" type="number" class="swal2-input" value="${promoData.voucherAmount || ''}" style="font-size: 16px; padding: 12px; height: auto;">
+                            </div>
+                            <div style="margin-bottom: 25px;">
+                                <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Giá trị đơn hàng tối thiểu (VNĐ)</label>
+                                <input id="minOrderValue" type="number" class="swal2-input" value="${promoData.minOrderValue || ''}" style="font-size: 16px; padding: 12px; height: auto;">
                             </div>
                             <div style="margin-bottom: 25px;">
                                 <label style="display: block; margin-bottom: 10px; color: #666; font-weight: 500; font-size: 16px;">Ngày bắt đầu</label>
@@ -2764,16 +3058,19 @@
                     cancelButtonText: '<i class="fas fa-times"></i> Hủy',
                     confirmButtonColor: '#5a3d2b',
                     cancelButtonColor: '#6c757d',
-                    width: '600px',
+                    width: '700px',
                     preConfirm: () => {
                         const promoCode = document.getElementById('promoCode').value;
                         const title = document.getElementById('title').value;
+                        const description = document.getElementById('description').value;
+                        const icon = document.getElementById('icon').value;
                         const voucherAmount = parseInt(document.getElementById('voucherAmount').value);
+                        const minOrderValue = parseInt(document.getElementById('minOrderValue').value);
                         const startDate = document.getElementById('startDate').value;
                         const endDate = document.getElementById('endDate').value;
                         const status = document.getElementById('status').value;
 
-                        if (!promoCode || !title || !voucherAmount || !startDate || !endDate) {
+                        if (!promoCode || !title || !description || !icon || !voucherAmount || !minOrderValue || !startDate || !endDate) {
                             Swal.showValidationMessage('Vui lòng điền đầy đủ thông tin');
                             return false;
                         }
@@ -2783,15 +3080,24 @@
                             return false;
                         }
 
+                        if (minOrderValue <= 0) {
+                            Swal.showValidationMessage('Giá trị đơn hàng tối thiểu phải lớn hơn 0');
+                            return false;
+                        }
+
                         if (new Date(startDate) >= new Date(endDate)) {
                             Swal.showValidationMessage('Ngày kết thúc phải sau ngày bắt đầu');
                             return false;
                         }
 
                         return {
+                            id: promoData.id || promoId,
                             promoCode,
                             title,
+                            description,
+                            icon,
                             voucherAmount,
+                            minOrderValue,
                             startDate,
                             endDate,
                             status,

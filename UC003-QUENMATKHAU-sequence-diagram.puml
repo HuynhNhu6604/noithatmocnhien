@@ -1,0 +1,20 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Quên mật khẩu" as ForgotPage
+participant "Hệ thống" as System
+
+User -> ForgotPage: Chọn "Quên mật khẩu"
+User -> ForgotPage: Nhập email đã đăng ký
+ForgotPage -> System: Gửi yêu cầu đặt lại mật khẩu
+alt Email không tồn tại
+    System --> ForgotPage: Thông báo lỗi
+    ForgotPage --> User: Hiển thị lỗi
+else Email hợp lệ
+    System --> ForgotPage: Gửi link đặt lại mật khẩu
+    ForgotPage --> User: Thông báo đã gửi email
+    User -> System: Click link đặt lại mật khẩu
+    User -> System: Nhập mật khẩu mới, xác nhận mật khẩu
+    System -> System: Cập nhật mật khẩu
+    System --> User: Thông báo thành công
+end
+@enduml

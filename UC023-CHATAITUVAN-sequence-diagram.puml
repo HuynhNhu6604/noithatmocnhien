@@ -1,0 +1,12 @@
+@startuml
+actor "Người dùng" as User
+participant "Website" as Website
+participant "tudongchat.com" as AIService
+
+User -> Website: Mở chat box AI
+Website -> AIService: Kết nối với tudongchat.com
+User -> Website: Gửi câu hỏi
+Website -> AIService: Gửi câu hỏi
+AIService --> Website: Phản hồi từ AI
+Website --> User: Hiển thị phản hồi
+@enduml

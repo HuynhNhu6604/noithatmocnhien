@@ -1,0 +1,25 @@
+@startuml
+actor "Quản trị viên" as Admin
+participant "Trang Quản lý bộ sưu tập" as CollectionAdminPage
+participant "Hệ thống" as System
+
+Admin -> CollectionAdminPage: Xem danh sách bộ sưu tập
+CollectionAdminPage -> System: Lấy danh sách bộ sưu tập
+System --> CollectionAdminPage: Trả về danh sách bộ sưu tập
+CollectionAdminPage --> Admin: Hiển thị danh sách bộ sưu tập
+
+Admin -> CollectionAdminPage: Thêm bộ sưu tập mới
+CollectionAdminPage -> System: Thêm bộ sưu tập
+System --> CollectionAdminPage: Kết quả thêm
+CollectionAdminPage --> Admin: Hiển thị kết quả
+
+Admin -> CollectionAdminPage: Sửa bộ sưu tập
+CollectionAdminPage -> System: Sửa bộ sưu tập
+System --> CollectionAdminPage: Kết quả sửa
+CollectionAdminPage --> Admin: Hiển thị kết quả
+
+Admin -> CollectionAdminPage: Xóa bộ sưu tập
+CollectionAdminPage -> System: Xóa bộ sưu tập
+System --> CollectionAdminPage: Kết quả xóa
+CollectionAdminPage --> Admin: Hiển thị kết quả
+@enduml

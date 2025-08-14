@@ -1,0 +1,10 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang chủ" as HomePage
+participant "Hệ thống" as System
+
+User -> HomePage: Truy cập trang chủ
+HomePage -> System: Lấy dữ liệu tổng quan
+System --> HomePage: Banner, sản phẩm nổi bật, bộ sưu tập, dịch vụ, liên hệ
+HomePage --> User: Hiển thị trang chủ
+@enduml

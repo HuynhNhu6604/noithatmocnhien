@@ -1,0 +1,17 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Đăng nhập" as LoginPage
+participant "Hệ thống" as System
+
+User -> LoginPage: Truy cập trang đăng nhập
+User -> LoginPage: Nhập email/username và mật khẩu
+LoginPage -> System: Gửi thông tin đăng nhập
+System -> System: Xác thực thông tin
+alt Đăng nhập thành công
+    System --> LoginPage: Xác thực thành công
+    LoginPage --> User: Chuyển hướng trang chủ
+else Đăng nhập thất bại
+    System --> LoginPage: Thông báo lỗi
+    LoginPage --> User: Hiển thị lỗi
+end
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+actor "Quản trị viên" as Admin
+participant "Trang Quản lý đơn hàng" as OrderAdminPage
+participant "Hệ thống" as System
+
+Admin -> OrderAdminPage: Xem danh sách đơn hàng
+OrderAdminPage -> System: Lấy danh sách đơn hàng
+System --> OrderAdminPage: Trả về danh sách đơn hàng
+OrderAdminPage --> Admin: Hiển thị danh sách đơn hàng
+
+Admin -> OrderAdminPage: Xem chi tiết/trạng thái đơn hàng
+OrderAdminPage -> System: Lấy chi tiết/trạng thái đơn hàng
+System --> OrderAdminPage: Trả về chi tiết/trạng thái đơn hàng
+OrderAdminPage --> Admin: Hiển thị chi tiết/trạng thái đơn hàng
+
+Admin -> OrderAdminPage: Xoá đơn hàng
+OrderAdminPage -> System: Xoá đơn hàng
+System --> OrderAdminPage: Kết quả xoá
+OrderAdminPage --> Admin: Hiển thị kết quả
+@enduml

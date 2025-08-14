@@ -1,0 +1,14 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Khuyến mãi" as PromotionPage
+participant "Hệ thống" as System
+
+User -> PromotionPage: Truy cập trang khuyến mãi
+PromotionPage -> System: Lấy danh sách khuyến mãi
+System --> PromotionPage: Trả về danh sách khuyến mãi
+PromotionPage --> User: Hiển thị danh sách khuyến mãi
+User -> PromotionPage: Xem chi tiết khuyến mãi
+PromotionPage -> System: Lấy chi tiết khuyến mãi
+System --> PromotionPage: Trả về chi tiết khuyến mãi
+PromotionPage --> User: Hiển thị chi tiết khuyến mãi
+@enduml

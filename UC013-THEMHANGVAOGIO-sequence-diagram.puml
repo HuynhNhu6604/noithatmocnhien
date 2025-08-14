@@ -1,0 +1,17 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Sản phẩm" as ProductPage
+participant "Hệ thống" as System
+
+User -> ProductPage: Chọn sản phẩm
+User -> ProductPage: Chọn số lượng
+User -> ProductPage: Thêm vào giỏ hàng
+ProductPage -> System: Kiểm tra tồn kho
+alt Sản phẩm hết hàng
+    System --> ProductPage: Thông báo hết hàng
+    ProductPage --> User: Hiển thị lỗi
+else Còn hàng
+    System --> ProductPage: Thêm vào giỏ hàng thành công
+    ProductPage --> User: Hiển thị thông báo thành công
+end
+@enduml

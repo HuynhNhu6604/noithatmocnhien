@@ -1,0 +1,1972 @@
+{
+  "collections": {
+    "bohemian": {
+      "description": "Phóng khoáng, tự do với màu sắc rực rỡ",
+      "id": "bohemian",
+      "image": "https://vistadecor.vn/upload/images/boho/phong-cach-thiet-ke-bohemian-7.jpeg",
+      "products": {
+        "product1": {
+          "giaSauGiam": 8500000,
+          "hinhAnh": "https://product.hstatic.net/200000670713/product/01_27254fd185aa4a8b9793347c09fed41e_master.jpg",
+          "id": 2,
+          "moTa": "Ghế dài hiện đại với thiết kế tối giản",
+          "style": "bohemian",
+          "tenSanPham": "Ghế dài phòng khách Oslo"
+        },
+        "product2": {
+          "giaSauGiam": 10800000,
+          "hinhAnh": "https://givehome.com.vn/wp-content/uploads/2023/12/Ke-tivi-go-soi-1m2-thiet-ke-hien-dai8.png",
+          "id": 4,
+          "moTa": "Tủ tivi gỗ sồi với thiết kế hiện đại",
+          "style": "bohemian",
+          "tenSanPham": "Tủ tivi gỗ sồi"
+        },
+        "product3": {
+          "giaSauGiam": 5800000,
+          "hinhAnh": "https://api.khanhconcept.vn/storage/images/originals/ke-sach-da-nang-go-tu-nhien-khanhconcept-ts083-1-m7efqmwco1vq5sl.webp",
+          "id": 5,
+          "moTa": "Kệ trưng bày với thiết kế module đa năng",
+          "style": "bohemian",
+          "tenSanPham": "Kệ trưng bày đa năng"
+        },
+        "product4": {
+          "giaSauGiam": 4000000,
+          "hinhAnh": "https://api.togihome.vn/storage/images/originals/tu-giay-ket-hop-ke-treo-linh-hoat-kg08-5-ihpeael9eqg2zvr.webp",
+          "id": 6,
+          "moTa": "Tủ giày thông minh với hệ thống thông gió",
+          "style": "bohemian",
+          "tenSanPham": "Tủ giày thông minh"
+        },
+        "product5": {
+          "giaSauGiam": 32000000,
+          "hinhAnh": "https://noithatchauanh.com/uploaded/giuong-go-oc-cho-mau-14-3.jpg",
+          "id": 12,
+          "moTa": "Giường ngủ gỗ óc chó với thiết kế sang trọng",
+          "style": "bohemian",
+          "tenSanPham": "Giường ngủ gỗ óc chó"
+        },
+        "product6": {
+          "giaSauGiam": 4000000,
+          "hinhAnh": "https://phongkhachdep.org/wp-content/uploads/2021/01/Ba%CC%80n-%C4%90a%CC%82%CC%80u-Giu%CC%9Bo%CC%9B%CC%80ng-Pho%CC%80ng-Ngu%CC%89-.jpg",
+          "id": 13,
+          "moTa": "Bàn đầu giường với thiết kế tối giản",
+          "style": "bohemian",
+          "tenSanPham": "Bàn đầu giường hiện đại"
+        },
+        "product7": {
+          "giaSauGiam": 7500000,
+          "hinhAnh": "https://product.hstatic.net/1000410017/product/2_63e10f5d94af4a40b193a11f4ed86a2b_large.jpg",
+          "id": 20,
+          "moTa": "Bàn ngoài trời gỗ teak chống thấm",
+          "style": "bohemian",
+          "tenSanPham": "Bàn ngoài trời gỗ teak"
+        },
+        "product8": {
+          "giaSauGiam": 4000000,
+          "hinhAnh": "https://sangongoaitroi.co/wp-content/uploads/2018/06/Go-teak-ngoai-troi.jpg",
+          "id": 21,
+          "moTa": "Ghế ngoài trời gỗ teak chống thấm",
+          "style": "bohemian",
+          "tenSanPham": "Ghế ngoài trời gỗ teak"
+        }
+      },
+      "title": "Phong cách Bohemian"
+    },
+    "classic": {
+      "description": "Truyền thống, sang trọng với đường nét tinh xảo",
+      "id": "classic",
+      "image": "https://housedesign.vn/wp-content/uploads/2019/12/phong-cach-thiet-ke-noi-that-classic-1.jpg",
+      "products": {
+        "product1": {
+          "giaSauGiam": 6600000,
+          "hinhAnh": "https://ironstyle.vn/uploads/product/1wUQ_tuong%20ngua%20vang%202%20con.jpg",
+          "id": 28,
+          "moTa": "Tượng ngực trang trí bằng đồng",
+          "style": "classic",
+          "tenSanPham": "Tượng trang trí"
+        },
+        "product2": {
+          "giaSauGiam": 2800000,
+          "hinhAnh": "https://flexhouse.vn/wp-content/uploads/2023/02/Ghe-an-toi-gian-bang-go-uon-nghe-thuat-AH9461-7.jpg",
+          "id": 60,
+          "moTa": "Ghế ăn với thiết kế tối giản, hiện đại",
+          "style": "classic",
+          "tenSanPham": "Ghế ăn tối giản"
+        },
+        "product3": {
+          "giaSauGiam": 32000000,
+          "hinhAnh": "https://noithatvanphonggiare.com/media/product/6072_tu_ruou_go_cong_nghiep_hien_dai_da_nang_kr22.jpg",
+          "id": 67,
+          "moTa": "Tủ ly với thiết kế hiện đại, đa năng",
+          "style": "classic",
+          "tenSanPham": "Tủ ly hiện đại"
+        },
+        "product4": {
+          "giaSauGiam": 5800000,
+          "hinhAnh": "https://bizweb.dktcdn.net/100/391/155/products/z4737893861647-54aa78055e44dec0275dfac922c61bb9.jpg?v=1696665046217",
+          "id": 68,
+          "moTa": "Tủ ly với thiết kế tối giản, hiện đại",
+          "style": "classic",
+          "tenSanPham": "Tủ ly tối giản"
+        }
+      },
+      "title": "Phong cách Classic"
+    },
+    "industrial": {
+      "description": "Phóng khoáng, mạnh mẽ với chất liệu thô mộc",
+      "id": "industrial",
+      "image": "https://www.lanha.vn/wp-content/uploads/2023/07/phong-cach-industrial-7.jpeg",
+      "products": {
+        "product1": {
+          "giaSauGiam": 10800000,
+          "hinhAnh": "https://givehome.com.vn/wp-content/uploads/2023/12/Ke-tivi-go-soi-1m2-thiet-ke-hien-dai8.png",
+          "id": 4,
+          "moTa": "Tủ tivi gỗ sồi với thiết kế hiện đại",
+          "style": "industrial",
+          "tenSanPham": "Tủ tivi gỗ sồi"
+        },
+        "product2": {
+          "giaSauGiam": 10000000,
+          "hinhAnh": "https://bizweb.dktcdn.net/thumb/grande/100/139/088/products/6-ba-n-a-n-go-o-c-cho-f36499c5-9fd6-4e2a-b78a-b77b6db62b7c.jpg?v=1683601413610",
+          "id": 7,
+          "moTa": "Bàn ăn gỗ óc chó 6 chỗ ngồi",
+          "style": "industrial",
+          "tenSanPham": "Bàn ăn gỗ óc chó"
+        },
+        "product3": {
+          "giaSauGiam": 42000000,
+          "hinhAnh": "https://kingsofa.vn/wp-content/uploads/2024/01/KS-GD-5003.webp",
+          "id": 31,
+          "moTa": "Sofa góc với thiết kế tối giản, đa năng",
+          "style": "industrial",
+          "tenSanPham": "Sofa góc hiện đại"
+        },
+        "product4": {
+          "giaSauGiam": 6800000,
+          "hinhAnh": "https://gotrangtri.vn/wp-content/uploads/2019/06/ban-tra-go-soi-tu-nhien-thiet-ke-dep-hien-dai-ghs-4718.jpg",
+          "id": 38,
+          "moTa": "Bàn nước gỗ sồi với thiết kế hiện đại",
+          "style": "industrial",
+          "tenSanPham": "Bàn nước gỗ sồi"
+        },
+        "product5": {
+          "giaSauGiam": 5800000,
+          "hinhAnh": "https://noithatvannguyen.vn/wp-content/uploads/2023/08/mau-tu-giay-go-oc-cho-cao-cap_025605661.jpg",
+          "id": 50,
+          "moTa": "Tủ giày gỗ óc chó với thiết kế sang trọng",
+          "style": "industrial",
+          "tenSanPham": "Tủ giày gỗ óc chó"
+        },
+        "product6": {
+          "giaSauGiam": 4000000,
+          "hinhAnh": "https://noithatlacgia.vn/wp-content/uploads/2023/10/ban-ghe-an-go-oc-cho-ba23-3.jpg",
+          "id": 58,
+          "moTa": "Ghế ăn gỗ óc chó với thiết kế sang trọng",
+          "style": "industrial",
+          "tenSanPham": "Ghế ăn gỗ óc chó"
+        },
+        "product7": {
+          "giaSauGiam": 5000000,
+          "hinhAnh": "https://cdn.dogooccho.com.vn/media/noi-that/ghe-quay-bar-go-oc-cho/ghe-quay-bar-go-oc-cho-04-1.jpg",
+          "id": 62,
+          "moTa": "Ghế bar gỗ óc chó với thiết kế sang trọng",
+          "style": "industrial",
+          "tenSanPham": "Ghế bar gỗ óc chó"
+        },
+        "product8": {
+          "giaSauGiam": 3500000,
+          "hinhAnh": "https://flexhouse.vn/wp-content/uploads/2024/01/Ghe-quay-bar-boc-da-toi-gian-hien-dai-HB6807-6.jpg",
+          "id": 64,
+          "moTa": "Ghế bar với thiết kế tối giản, hiện đại",
+          "style": "industrial",
+          "tenSanPham": "Ghế bar tối giản"
+        }
+      },
+      "title": "Phong cách Industrial"
+    },
+    "minimalist": {
+      "description": "Tối giản, thanh lịch với thiết kế tinh tế",
+      "id": "minimalist",
+      "image": "https://www.lanha.vn/wp-content/uploads/2023/07/phong-cach-minimalism-2.jpg.webp",
+      "products": {
+        "product1": {
+          "giaSauGiam": 13500000,
+          "hinhAnh": "https://product.hstatic.net/200000670713/product/sofa-olso-1_cdc0d3534d21426e8e1e06fb820748ef_master.jpg",
+          "id": 2,
+          "moTa": "Ghế dài hiện đại với thiết kế tối giản",
+          "style": "minimalist",
+          "tenSanPham": "Ghế dài phòng khách Oslo"
+        },
+        "product2": {
+          "giaSauGiam": 16000000,
+          "hinhAnh": "https://sofakimphu.com/wp-content/uploads/2023/05/O1CN01ZHAlXg1GB3box8YoP_2212321110583-0-cib.jpg",
+          "id": 33,
+          "moTa": "Sofa vải nỉ với thiết kế hiện đại, êm ái",
+          "style": "minimalist",
+          "tenSanPham": "Sofa vải nỉ cao cấp"
+        },
+        "product3": {
+          "giaSauGiam": 8500000,
+          "hinhAnh": "https://noithatm8.com/wp-content/uploads/B%C3%A0n-tr%C3%B2n-ch%C3%A2n-x%C3%B2e-ava1.jpg",
+          "id": 56,
+          "moTa": "Bàn ăn với thiết kế tối giản, hiện đại",
+          "style": "minimalist",
+          "tenSanPham": "Bàn ăn tối giản"
+        }
+      },
+      "title": "Phong cách Minimalist"
+    },
+    "modern": {
+      "description": "Hiện đại, sang trọng với thiết kế tối giản",
+      "id": "modern",
+      "image": "https://fedic.vn/wp-content/uploads/2020/09/Phong-cach-Hien-Dai-Fedic-2-of-11.jpg",
+      "products": {
+        "product1": {
+          "giaSauGiam": 22000000,
+          "hinhAnh": "https://dogolegia.vn/wp-content/uploads/2022/09/Mau-tu-bep-dep-hien-dai-go-cong-nghiep-LG-TB102.jpg",
+          "id": 11,
+          "moTa": "Tủ bếp với thiết kế hiện đại, đa năng",
+          "style": "modern",
+          "tenSanPham": "Tủ bếp hiện đại"
+        },
+        "product2": {
+          "giaSauGiam": 42000000,
+          "hinhAnh": "https://kingsofa.vn/wp-content/uploads/2024/01/KS-GD-5003.webp",
+          "id": 31,
+          "moTa": "Sofa góc với thiết kế tối giản, đa năng",
+          "style": "modern",
+          "tenSanPham": "Sofa góc hiện đại"
+        },
+        "product3": {
+          "giaSauGiam": 5800000,
+          "hinhAnh": "https://smlife.vn/wp-content/uploads/2022/05/ban-tra-mat-kinh-3.jpg",
+          "id": 39,
+          "moTa": "Bàn nước kính với thiết kế sang trọng",
+          "style": "modern",
+          "tenSanPham": "Bàn nước kính cường lực"
+        },
+        "product4": {
+          "giaSauGiam": 4000000,
+          "hinhAnh": "https://api.togihome.vn/storage/images/originals/tu-giay-thiet-ke-thanh-lich-toi-gian-kg05-2-gdygceuynexxwe2.webp",
+          "id": 52,
+          "moTa": "Tủ giày với thiết kế tối giản, hiện đại",
+          "style": "modern",
+          "tenSanPham": "Tủ giày tối giản"
+        },
+        "product5": {
+          "giaSauGiam": 8500000,
+          "hinhAnh": "https://noithatm8.com/wp-content/uploads/B%C3%A0n-tr%C3%B2n-ch%C3%A2n-x%C3%B2e-ava1.jpg",
+          "id": 56,
+          "moTa": "Bàn ăn với thiết kế tối giản, hiện đại",
+          "style": "modern",
+          "tenSanPham": "Bàn ăn tối giản"
+        },
+        "product6": {
+          "giaSauGiam": 2800000,
+          "hinhAnh": "https://flexhouse.vn/wp-content/uploads/2023/02/Ghe-an-toi-gian-bang-go-uon-nghe-thuat-AH9461-7.jpg",
+          "id": 60,
+          "moTa": "Ghế ăn với thiết kế tối giản, hiện đại",
+          "style": "modern",
+          "tenSanPham": "Ghế ăn tối giản"
+        },
+        "product7": {
+          "giaSauGiam": 5800000,
+          "hinhAnh": "https://bizweb.dktcdn.net/100/391/155/products/z4737893861647-54aa78055e44dec0275dfac922c61bb9.jpg?v=1696665046217",
+          "id": 68,
+          "moTa": "Tủ ly với thiết kế tối giản, hiện đại",
+          "style": "modern",
+          "tenSanPham": "Tủ ly tối giản"
+        }
+      },
+      "title": "Phong cách Modern"
+    },
+    "scandinavian": {
+      "description": "Tối giản, ấm áp và tinh tế với những đường nét đơn giản",
+      "id": "scandinavian",
+      "image": "https://www.lanha.vn/wp-content/uploads/2023/07/phong-cach-scandinavian-5.jpeg.webp",
+      "products": {
+        "product1": {
+          "giaSauGiam": 400000,
+          "hinhAnh": "https://down-vn.img.susercontent.com/file/2107508fcc2882a15dbc0dd8f5434345",
+          "id": 29,
+          "moTa": "Bộ dụng cụ bếp cao cấp",
+          "style": "scandinavian",
+          "tenSanPham": "Bộ dụng cụ bếp"
+        },
+        "product2": {
+          "giaSauGiam": 40000000,
+          "hinhAnh": "https://dogoxuatkhau.com.vn/wp-content/uploads/2024/05/Sofa-goc-vai-long-cuu.jpg",
+          "id": 30,
+          "moTa": "Sofa vải cao cấp với thiết kế hiện đại, êm ái",
+          "style": "scandinavian",
+          "tenSanPham": "Sofa vải cao cấp Oslo"
+        },
+        "product3": {
+          "giaSauGiam": 6800000,
+          "hinhAnh": "https://gotrangtri.vn/wp-content/uploads/2019/06/ban-tra-go-soi-tu-nhien-thiet-ke-dep-hien-dai-ghs-4718.jpg",
+          "id": 38,
+          "moTa": "Bàn nước gỗ sồi với thiết kế hiện đại",
+          "style": "scandinavian",
+          "tenSanPham": "Bàn nước gỗ sồi"
+        }
+      },
+      "title": "Phong cách Scandinavian"
+    }
+  },
+  "contacts": {
+    "-OVBzTjIRUxDsp8VsLR-": {
+      "createdAt": 1752564624580,
+      "email": "eirian6604@gmail.com",
+      "message": "Giao hàng nhanh, nhân viên tư vấn nhiệt tình",
+      "name": "Nguyễn Thị Huỳnh Như",
+      "phone": "0345142208",
+      "status": "read",
+      "subject": "Đánh giá",
+      "updatedAt": "2025-08-03T08:51:57.987Z",
+      "userId": "Adizpx4xUsZdVB9OrTYGoZnAOMr2"
+    },
+    "-OWOm-CEBc3n6HXsSMFF": {
+      "createdAt": 1753852937283,
+      "email": "eirian6604@gmail.com",
+      "message": "vận chuyển nhanh, hàng còn nguyên vẹn, sản phẩm tốt",
+      "name": "Nguyễn Thị Huỳnh Như",
+      "phone": "0345142208",
+      "status": "read",
+      "subject": "đánh giá",
+      "updatedAt": "2025-07-30T05:23:17.730Z",
+      "userId": "Adizpx4xUsZdVB9OrTYGoZnAOMr2"
+    }
+  },
+  "orders": {
+    "-OVC2WPM5kYxEBYAVEGt": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": "2",
+          "image": "https://product.hstatic.net/200000670713/product/sofa-olso-1_cdc0d3534d21426e8e1e06fb820748ef_master.jpg",
+          "name": "Ghế dài phòng khách Oslo",
+          "originalPrice": 9000000,
+          "price": 8500000,
+          "quantity": 1
+        },
+        {
+          "id": "53",
+          "image": "https://api.togihome.vn/storage/images/originals/tu-giay-ket-hop-ke-treo-thong-minh-kg13-1-mhdywzygaqk5de0.webp",
+          "name": "Tủ giày đa năng",
+          "originalPrice": 5000000,
+          "price": 4500000,
+          "quantity": 1
+        },
+        {
+          "id": "35",
+          "image": "https://noithatm8.com/wp-content/uploads/sofa-goc-L-hien-dai-2-1.jpg",
+          "name": "Ghế dài phòng khách sang trọng",
+          "originalPrice": 18000000,
+          "price": 16000000,
+          "quantity": 1
+        },
+        {
+          "id": 31,
+          "image": "https://kingsofa.vn/wp-content/uploads/2024/01/KS-GD-5003.webp",
+          "name": "Sofa góc hiện đại",
+          "price": 35000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-07-15T07:47:16.908Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 64000000,
+      "note": "Giao sau 15h",
+      "orderId": "1752565636904",
+      "paymentDate": "2025-07-15T07:48:06.872Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15075784",
+        "payDate": "20250715144852",
+        "responseCode": "00",
+        "secureHash": "238e875d4fbc80486947b86c90511d0319c0a505e75c4b995709c600ef30cbfe94f1ead2f06a427af989da78bddbc25459645a99f526d5cc50b78a5be110fdca",
+        "transactionNo": "15075784",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 64000000,
+      "updatedAt": "2025-07-15T07:48:03.862Z",
+      "vnpParams": {
+        "amount": 6400000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1752565636904"
+      }
+    },
+    "-OWOqpWFXIlrwnOMh-P4": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": 6,
+          "image": "https://api.togihome.vn/storage/images/originals/tu-giay-ket-hop-ke-treo-linh-hoat-kg08-5-ihpeael9eqg2zvr.webp",
+          "name": "Tủ giày thông minh",
+          "price": 4000000,
+          "quantity": 1
+        },
+        {
+          "id": "54",
+          "image": "https://gotrangtri.vn/wp-content/uploads/2018/03/Bo-ban-an-go-soi-co-thiet-ke-dep-hien-dai-GHS-4570-ava-2.png",
+          "name": "Bàn ăn gỗ sồi",
+          "originalPrice": 15000000,
+          "price": 13500000,
+          "quantity": 1
+        },
+        {
+          "id": "26",
+          "image": "https://guongnoithat.com/images/stories/virtuemart/product/cnc70.jpg",
+          "name": "Gương trang trí",
+          "originalPrice": 4500000,
+          "price": 4000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-07-30T05:42:34.290Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 21500000,
+      "note": "",
+      "orderId": "1753854154287",
+      "paymentDate": "2025-07-30T05:43:25.228Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15107249",
+        "payDate": "20250730124419",
+        "responseCode": "00",
+        "secureHash": "4dda91b0a86724edfc1fefb8b9e7b4570fdc370659ae4810eb2bc9ebf01b8c06247fe0732395b85eb1eef779a1ba22473acc85b9f10c41518b2b9c9571751095",
+        "transactionNo": "15107249",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 21500000,
+      "updatedAt": "2025-07-30T05:43:23.984Z",
+      "vnpParams": {
+        "amount": 2150000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1753854154287"
+      }
+    },
+    "-OWOrgGtrlWwtH2JybzH": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": "2",
+          "image": "https://product.hstatic.net/200000670713/product/sofa-olso-1_cdc0d3534d21426e8e1e06fb820748ef_master.jpg",
+          "name": "Ghế dài phòng khách Oslo",
+          "originalPrice": 9000000,
+          "price": 8500000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-07-30T05:46:09.353Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 8500000,
+      "note": "",
+      "orderId": "1753854369351",
+      "paymentDate": "2025-07-30T05:47:09.561Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15107251",
+        "payDate": "20250730124756",
+        "responseCode": "00",
+        "secureHash": "4523dab7405c3fd0378745ee0a318a78162b5c2e243e978002474b9f903542bc30aa72972f7f3f2dbfa222a097bef954137b8eaa352e5acb095507c853169f14",
+        "transactionNo": "15107251",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 8500000,
+      "updatedAt": "2025-07-30T05:47:08.280Z",
+      "vnpParams": {
+        "amount": 850000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1753854369351"
+      }
+    },
+    "-OWP51S-fZqbnHUPxPv1": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": "6",
+          "image": "https://api.togihome.vn/storage/images/originals/tu-giay-ket-hop-ke-treo-linh-hoat-kg08-5-ihpeael9eqg2zvr.webp",
+          "name": "Tủ giày thông minh",
+          "originalPrice": 4500000,
+          "price": 4000000,
+          "quantity": 1
+        },
+        {
+          "id": 12,
+          "image": "https://noithatchauanh.com/uploaded/giuong-go-oc-cho-mau-14-3.jpg",
+          "name": "Giường ngủ gỗ óc chó",
+          "price": 32000000,
+          "quantity": 1
+        },
+        {
+          "id": "8",
+          "image": "https://bizweb.dktcdn.net/100/429/325/products/ghe-an-hien-dai-gia-re-ga-42-kho-noi-that-sai-gon.jpg?v=1691459521990",
+          "name": "Ghế ăn hiện đại",
+          "originalPrice": 3500000,
+          "price": 820000,
+          "quantity": 1
+        },
+        {
+          "id": "59",
+          "image": "https://product.hstatic.net/1000372003/product/wishbone_natural_logo_cfdd4e66191a4d84bf74294921038583_master.jpg",
+          "name": "Ghế ăn hiện đại",
+          "originalPrice": 3800000,
+          "price": 3500000,
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "image": "https://product.hstatic.net/200000670713/product/sofa-olso-1_cdc0d3534d21426e8e1e06fb820748ef_master.jpg",
+          "name": "Ghế dài phòng khách Oslo",
+          "originalPrice": 9000000,
+          "price": 8500000,
+          "quantity": 1
+        },
+        {
+          "id": "14",
+          "image": "https://gotrangtri.vn/wp-content/uploads/2023/10/avar-ban-trang-diem.jpg",
+          "name": "Bàn trang điểm cao cấp",
+          "originalPrice": 8500000,
+          "price": 6500000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-07-30T06:48:54.358Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 55320000,
+      "note": "",
+      "orderId": "1753858134354",
+      "paymentDate": "2025-07-30T06:49:50.407Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15107346",
+        "payDate": "20250730135038",
+        "responseCode": "00",
+        "secureHash": "1ccba367c3ae77de408195d727fd6e22f07149c5c9958be29a15a1d10313380121737e85075d8f7c5d0ec2c1ced67bde73eae177596b2ce709461666180271fd",
+        "transactionNo": "15107346",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 55320000,
+      "updatedAt": "2025-07-30T06:49:49.119Z",
+      "vnpParams": {
+        "amount": 5532000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1753858134354"
+      }
+    },
+    "-OWj_Fl77adbPRxAlelA": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": "5",
+          "image": "https://api.khanhconcept.vn/storage/images/originals/ke-sach-da-nang-go-tu-nhien-khanhconcept-ts083-1-m7efqmwco1vq5sl.webp",
+          "name": "Kệ trưng bày đa năng",
+          "originalPrice": 6500000,
+          "price": 5800000,
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "image": "https://noithatminhkhoi.com/upload/sanpham/large/ke-tivi-go-soi-nga-2m--ktv922-1650615086-64231c.jpg",
+          "name": "Tủ tivi gỗ sồi",
+          "price": 10800000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-08-03T10:55:05.941Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 16600000,
+      "note": "",
+      "orderId": "1754218505939",
+      "paymentDate": "2025-08-03T10:58:16.922Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15114039",
+        "payDate": "20250803175906",
+        "responseCode": "00",
+        "secureHash": "b9e9abe14a8ff2f41d455d66958a8a32775b357a6b7034486b0a2de4b10c55dfec3065ccd329676accdf4071235689efbde9d5267759fbeb4d7d5cd49f0beb0b",
+        "transactionNo": "15114039",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 16600000,
+      "updatedAt": "2025-08-03T10:58:15.752Z",
+      "vnpParams": {
+        "amount": 1660000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1754218505939"
+      }
+    },
+    "-OXStuZnCsJZODifZykv": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": "36",
+          "image": "https://galaxyled.vn/wp-content/uploads/2023/05/thiet-ke-phong-khach-toi-gian-thumbnail-1.webp",
+          "name": "Ghế dài phòng khách tối giản",
+          "originalPrice": 9500000,
+          "price": 8500000,
+          "quantity": 2
+        },
+        {
+          "id": "34",
+          "image": "https://bizweb.dktcdn.net/100/153/764/products/ghe-sofa-go-hien-dai-806t-1.jpg?v=1705050015063",
+          "name": "Ghế dài phòng khách hiện đại",
+          "originalPrice": 12000000,
+          "price": 21000000,
+          "quantity": 2
+        },
+        {
+          "id": "58",
+          "image": "https://noithatlacgia.vn/wp-content/uploads/2023/10/ban-ghe-an-go-oc-cho-ba23-3.jpg",
+          "name": "Ghế ăn gỗ óc chó",
+          "originalPrice": 4500000,
+          "price": 4000000,
+          "quantity": 4
+        },
+        {
+          "id": 11,
+          "image": "https://dogolegia.vn/wp-content/uploads/2022/09/Mau-tu-bep-dep-hien-dai-go-cong-nghiep-LG-TB102.jpg",
+          "name": "Tủ bếp hiện đại",
+          "price": 22000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-08-12T10:47:59.750Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 97000000,
+      "note": "",
+      "orderId": "1754995679748",
+      "paymentDate": "2025-08-12T10:51:02.907Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15127911",
+        "payDate": "20250812175138",
+        "responseCode": "00",
+        "transactionNo": "15127911",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 97000000,
+      "updatedAt": "2025-08-12T10:51:01.811Z",
+      "vnpParams": {
+        "amount": 9700000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1754995679748"
+      }
+    }
+  },
+  "products": [
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Vải nỉ cao cấp, gỗ thông",
+        "kichThuoc": "180x80x75 cm",
+        "mauSac": "Xám",
+        "ngayCapNhat": "2025-08-05",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "45 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế dài và đôn trang trí",
+        "tenDanhMuc": "Ghế dài & đôn"
+      },
+      "giaBan": 9000000,
+      "giaSauGiam": 8500000,
+      "hinhAnh": "https://product.hstatic.net/200000670713/product/01_27254fd185aa4a8b9793347c09fed41e_master.jpg",
+      "id": 2,
+      "moTa": "Ghế dài hiện đại với thiết kế tối giản",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Ghế dài phòng khách Oslo"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ sồi tự nhiên",
+        "kichThuoc": "180x45x60 cm",
+        "mauSac": "Nâu sồi",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "50 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ tivi phòng khách",
+        "tenDanhMuc": "Tủ tivi"
+      },
+      "giaBan": 12000000,
+      "giaSauGiam": 12000000,
+      "hinhAnh": "https://givehome.com.vn/wp-content/uploads/2023/12/Ke-tivi-go-soi-1m2-thiet-ke-hien-dai8.png",
+      "id": 4,
+      "moTa": "Tủ tivi gỗ sồi với thiết kế hiện đại",
+      "soLuongTonKho": 6,
+      "tenSanPham": "Tủ tivi gỗ sồi"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF phủ melamine",
+        "kichThuoc": "100x30x180 cm",
+        "mauSac": "Trắng",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "35 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Kệ trưng bày đa năng",
+        "tenDanhMuc": "Kệ trưng bày"
+      },
+      "giaBan": 6500000,
+      "giaSauGiam": 5800000,
+      "hinhAnh": "https://api.khanhconcept.vn/storage/images/originals/ke-sach-da-nang-go-tu-nhien-khanhconcept-ts083-1-m7efqmwco1vq5sl.webp",
+      "id": 5,
+      "moTa": "Kệ trưng bày với thiết kế module đa năng",
+      "soLuongTonKho": 15,
+      "tenSanPham": "Kệ trưng bày đa năng"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ công nghiệp",
+        "kichThuoc": "80x35x100 cm",
+        "mauSac": "Nâu đen",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "30 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ giày thông minh",
+        "tenDanhMuc": "Tủ giày"
+      },
+      "giaBan": 4500000,
+      "giaSauGiam": 4000000,
+      "hinhAnh": "https://api.togihome.vn/storage/images/originals/tu-giay-ket-hop-ke-treo-linh-hoat-kg08-5-ihpeael9eqg2zvr.webp",
+      "id": 6,
+      "moTa": "Tủ giày thông minh với hệ thống thông gió",
+      "soLuongTonKho": 20,
+      "tenSanPham": "Tủ giày thông minh"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ óc chó tự nhiên",
+        "kichThuoc": "180x90x75 cm",
+        "mauSac": "Nâu gỗ tự nhiên",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "80 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn ăn phòng bếp",
+        "tenDanhMuc": "Bàn ăn"
+      },
+      "giaBan": 12000000,
+      "giaSauGiam": 10000000,
+      "hinhAnh": "https://bizweb.dktcdn.net/thumb/grande/100/139/088/products/6-ba-n-a-n-go-o-c-cho-f36499c5-9fd6-4e2a-b78a-b77b6db62b7c.jpg?v=1683601413610",
+      "id": 7,
+      "moTa": "Bàn ăn gỗ óc chó 6 chỗ ngồi",
+      "soLuongTonKho": 4,
+      "tenSanPham": "Bàn ăn gỗ óc chó"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ sồi, đệm vải",
+        "kichThuoc": "45x45x85 cm",
+        "mauSac": "Nâu sồi",
+        "ngayCapNhat": "2025-08-12",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "8 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế ăn phòng bếp",
+        "tenDanhMuc": "Ghế ăn"
+      },
+      "giaBan": 3500000,
+      "giaSauGiam": 3200000,
+      "hinhAnh": "https://bizweb.dktcdn.net/100/429/325/products/ghe-an-hien-dai-gia-re-ga-42-kho-noi-that-sai-gon.jpg?v=1691459521990",
+      "id": 8,
+      "moTa": "Ghế ăn với thiết kế hiện đại, êm ái",
+      "soLuongTonKho": 25,
+      "tenSanPham": "Ghế ăn hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Inox, đệm da",
+        "kichThuoc": "35x35x75 cm",
+        "mauSac": "Đen bóng",
+        "ngayCapNhat": "2025-08-12",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "5 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế bar phòng bếp",
+        "tenDanhMuc": "Ghế Bar"
+      },
+      "giaBan": 2800000,
+      "giaSauGiam": 2500000,
+      "hinhAnh": "https://noithatm8.com/wp-content/uploads/ghe-bar-ma-titan-nhap-khau.jpg",
+      "id": 9,
+      "moTa": "Ghế bar với thiết kế sang trọng",
+      "soLuongTonKho": 15,
+      "tenSanPham": "Ghế bar cao cấp"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Kính cường lực, gỗ MDF",
+        "kichThuoc": "100x40x180 cm",
+        "mauSac": "Trong suốt",
+        "ngayCapNhat": "2025-05-25",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "45 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ ly phòng bếp",
+        "tenDanhMuc": "Tủ ly"
+      },
+      "giaBan": 7500000,
+      "giaSauGiam": 6800000,
+      "hinhAnh": "https://bizweb.dktcdn.net/100/448/909/files/kr02-2.jpg?v=1735840355000",
+      "id": 10,
+      "moTa": "Tủ ly kính với thiết kế hiện đại",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Tủ ly kính"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ công nghiệp, kính cường lực",
+        "kichThuoc": "300x60x90 cm",
+        "mauSac": "Trắng sứ",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "120 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ bếp đa năng",
+        "tenDanhMuc": "Tủ bếp"
+      },
+      "giaBan": 25000000,
+      "giaSauGiam": 22000000,
+      "hinhAnh": "https://dogolegia.vn/wp-content/uploads/2022/09/Mau-tu-bep-dep-hien-dai-go-cong-nghiep-LG-TB102.jpg",
+      "id": 11,
+      "moTa": "Tủ bếp với thiết kế hiện đại, đa năng",
+      "soLuongTonKho": 3,
+      "tenSanPham": "Tủ bếp hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ óc chó tự nhiên",
+        "kichThuoc": "200x180x45 cm",
+        "mauSac": "Nâu gỗ tự nhiên",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "150 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Giường ngủ cao cấp",
+        "tenDanhMuc": "Giường ngủ"
+      },
+      "giaBan": 35000000,
+      "giaSauGiam": 32000000,
+      "hinhAnh": "https://noithatchauanh.com/uploaded/giuong-go-oc-cho-mau-14-3.jpg",
+      "id": 12,
+      "moTa": "Giường ngủ gỗ óc chó với thiết kế sang trọng",
+      "soLuongTonKho": 2,
+      "tenSanPham": "Giường ngủ gỗ óc chó"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ sồi, kính cường lực",
+        "kichThuoc": "50x40x55 cm",
+        "mauSac": "Nâu sồi",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "15 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn đầu giường phòng ngủ",
+        "tenDanhMuc": "Bàn đầu giường"
+      },
+      "giaBan": 4500000,
+      "giaSauGiam": 4000000,
+      "hinhAnh": "https://phongkhachdep.org/wp-content/uploads/2021/01/Ba%CC%80n-%C4%90a%CC%82%CC%80u-Giu%CC%9Bo%CC%9B%CC%80ng-Pho%CC%80ng-Ngu%CC%89-.jpg",
+      "id": 13,
+      "moTa": "Bàn đầu giường với thiết kế tối giản",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Bàn đầu giường hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, kính cường lực",
+        "kichThuoc": "120x45x75 cm",
+        "mauSac": "Trắng",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "40 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn trang điểm phòng ngủ",
+        "tenDanhMuc": "Bàn trang điểm"
+      },
+      "giaBan": 8500000,
+      "giaSauGiam": 6500000,
+      "hinhAnh": "https://gotrangtri.vn/wp-content/uploads/2023/10/avar-ban-trang-diem.jpg",
+      "id": 14,
+      "moTa": "Bàn trang điểm với gương và đèn LED",
+      "soLuongTonKho": 5,
+      "tenSanPham": "Bàn trang điểm cao cấp"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ sồi tự nhiên",
+        "kichThuoc": "200x60x220 cm",
+        "mauSac": "Nâu sồi",
+        "ngayCapNhat": "2025-08-12",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "100 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ áo phòng ngủ",
+        "tenDanhMuc": "Tủ áo"
+      },
+      "giaBan": 28000000,
+      "giaSauGiam": 25000000,
+      "hinhAnh": "https://golathanh.vn/wp-content/uploads/2024/09/avar.jpg",
+      "id": 15,
+      "moTa": "Tủ áo gỗ sồi với thiết kế hiện đại",
+      "soLuongTonKho": 4,
+      "tenSanPham": "Tủ áo gỗ sồi"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, thép không gỉ",
+        "kichThuoc": "140x60x75 cm",
+        "mauSac": "Trắng",
+        "ngayCapNhat": "2025-08-12",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "45 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn làm việc văn phòng",
+        "tenDanhMuc": "Bàn làm việc"
+      },
+      "giaBan": 6000000,
+      "giaSauGiam": 5700000,
+      "hinhAnh": "https://api.thago.vn/storage/images/originals/sku-07-jqh7y342b8qlyfy.webp",
+      "id": 17,
+      "moTa": "Bàn làm việc với thiết kế tối giản",
+      "soLuongTonKho": 12,
+      "tenSanPham": "Bàn làm việc hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Da PU, thép không gỉ",
+        "kichThuoc": "65x65x110 cm",
+        "mauSac": "Đen",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "25 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế làm việc văn phòng",
+        "tenDanhMuc": "Ghế làm việc"
+      },
+      "giaBan": 4500000,
+      "giaSauGiam": 4500000,
+      "hinhAnh": "https://product.hstatic.net/1000069970/product/213_cd36286fd5ef46909864c1786e26dfc3_large.png",
+      "id": 18,
+      "moTa": "Ghế làm việc với đệm lưng êm ái",
+      "soLuongTonKho": 15,
+      "tenSanPham": "Ghế làm việc cao cấp"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF phủ melamine",
+        "kichThuoc": "120x30x180 cm",
+        "mauSac": "Nâu đen",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "40 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Kệ sách đa năng",
+        "tenDanhMuc": "Kệ sách"
+      },
+      "giaBan": 5500000,
+      "giaSauGiam": 4800000,
+      "hinhAnh": "https://api.khanhconcept.vn/storage/images/originals/ke-sach-da-nang-go-tu-nhien-khanhconcept-ts076-2-awvj3yhtrvycg6l.webp",
+      "id": 19,
+      "moTa": "Kệ sách với thiết kế module đa năng",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Kệ sách đa năng"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ teak tự nhiên",
+        "kichThuoc": "120x80x75 cm",
+        "mauSac": "Nâu gỗ tự nhiên",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "50 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn ngoài trời chống thấm",
+        "tenDanhMuc": "Bàn ngoài trời"
+      },
+      "giaBan": 8500000,
+      "giaSauGiam": 7500000,
+      "hinhAnh": "https://product.hstatic.net/1000410017/product/2_63e10f5d94af4a40b193a11f4ed86a2b_large.jpg",
+      "id": 20,
+      "moTa": "Bàn ngoài trời gỗ teak chống thấm",
+      "soLuongTonKho": 6,
+      "tenSanPham": "Bàn ngoài trời gỗ teak"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ teak tự nhiên",
+        "kichThuoc": "60x60x85 cm",
+        "mauSac": "Nâu gỗ tự nhiên",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "25 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế ngoài trời chống thấm",
+        "tenDanhMuc": "Ghế ngoài trời"
+      },
+      "giaBan": 4500000,
+      "giaSauGiam": 4000000,
+      "hinhAnh": "https://sangongoaitroi.co/wp-content/uploads/2018/06/Go-teak-ngoai-troi.jpg",
+      "id": 21,
+      "moTa": "Ghế ngoài trời gỗ teak chống thấm",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Ghế ngoài trời gỗ teak"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Pha lê, đồng mạ vàng",
+        "kichThuoc": "80x80x100 cm",
+        "mauSac": "Trong suốt",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "15 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Đèn trang trí cao cấp",
+        "tenDanhMuc": "Đèn trang trí"
+      },
+      "giaBan": 15000000,
+      "giaSauGiam": 13500000,
+      "hinhAnh": "https://denhiendai.vn/wp-content/uploads/2024/03/den-chum-tan-co-dien-phap-8865t15-768x738.jpg",
+      "id": 22,
+      "moTa": "Đèn chùm pha lê cao cấp",
+      "soLuongTonKho": 3,
+      "tenSanPham": "Đèn chùm pha lê"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Lông cừu tự nhiên",
+        "kichThuoc": "200x300 cm",
+        "mauSac": "Trắng kem",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "8 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Thảm trang trí cao cấp",
+        "tenDanhMuc": "Thảm trang trí"
+      },
+      "giaBan": 8500000,
+      "giaSauGiam": 2500000,
+      "hinhAnh": "https://product.hstatic.net/1000203256/product/dsc06622_1c28ac4c79db4dc59736a424672fe2f9_1024x1024.jpg",
+      "id": 23,
+      "moTa": "Thảm lông cừu cao cấp",
+      "soLuongTonKho": 5,
+      "tenSanPham": "Thảm lông cừu"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gốm sứ cao cấp",
+        "kichThuoc": "30x30x50 cm",
+        "mauSac": "Trắng sứ",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "2 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bình trang trí thủ công",
+        "tenDanhMuc": "Bình trang trí"
+      },
+      "giaBan": 2500000,
+      "giaSauGiam": 2200000,
+      "hinhAnh": "https://gomsunhathan.com.vn/uploads/plugin/product_items/270/20220503-121327.jpg",
+      "id": 24,
+      "moTa": "Bình gốm sứ thủ công",
+      "soLuongTonKho": 15,
+      "tenSanPham": "Bình gốm sứ"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Canvas cao cấp",
+        "kichThuoc": "100x150 cm",
+        "mauSac": "Đa sắc",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "3 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tranh trang trí",
+        "tenDanhMuc": "Tranh"
+      },
+      "giaBan": 3500000,
+      "giaSauGiam": 3200000,
+      "hinhAnh": "https://tuongvip.vn/public/uploads/products/48980/tranh-canvas-treo-tuong-nghe-thuat-mau-sac-5.jpg",
+      "id": 25,
+      "moTa": "Tranh canvas treo tường nghệ thuật",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Tranh canvas"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Kính cường lực, gỗ sồi",
+        "kichThuoc": "100x150 cm",
+        "mauSac": "Trong suốt",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "15 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Gương trang trí",
+        "tenDanhMuc": "Gương"
+      },
+      "giaBan": 4500000,
+      "giaSauGiam": 4000000,
+      "hinhAnh": "https://guongnoithat.com/images/stories/virtuemart/product/cnc70.jpg",
+      "id": 26,
+      "moTa": "Gương trang trí với viền gỗ",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Gương trang trí"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, kim loại",
+        "kichThuoc": "60x60x5 cm",
+        "mauSac": "Đen",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "2 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Đồng hồ trang trí",
+        "tenDanhMuc": "Đồng hồ"
+      },
+      "giaBan": 2800000,
+      "giaSauGiam": 2500000,
+      "hinhAnh": "https://donghothanhthuy.com/wp-content/uploads/2021/11/7267.jpg",
+      "id": 27,
+      "moTa": "Đồng hồ treo tường thiết kế hiện đại",
+      "soLuongTonKho": 12,
+      "tenSanPham": "Đồng hồ treo tường"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Đồng mạ vàng",
+        "kichThuoc": "20x20x30 cm",
+        "mauSac": "Vàng đồng",
+        "ngayCapNhat": "2025-08-12",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "1 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tượng trang trí cao cấp",
+        "tenDanhMuc": "Tượng trang trí"
+      },
+      "giaBan": 15000000,
+      "giaSauGiam": 15000000,
+      "hinhAnh": "https://ironstyle.vn/uploads/product/1wUQ_tuong%20ngua%20vang%202%20con.jpg",
+      "id": 28,
+      "moTa": "Tượng ngực trang trí bằng đồng",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Tượng trang trí"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Vải nỉ cao cấp, gỗ sồi",
+        "kichThuoc": "240x95x85 cm",
+        "mauSac": "Xám",
+        "ngayCapNhat": "2025-05-25",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "75 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Sofa cao cấp cho phòng khách",
+        "tenDanhMuc": "Sofa"
+      },
+      "giaBan": 18000000,
+      "giaSauGiam": 16000000,
+      "hinhAnh": "https://dogoxuatkhau.com.vn/wp-content/uploads/2024/05/Sofa-goc-vai-long-cuu.jpg",
+      "id": 30,
+      "moTa": "Sofa vải cao cấp với thiết kế hiện đại, êm ái",
+      "soLuongTonKho": 4,
+      "tenSanPham": "Sofa vải cao cấp Oslo"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Vải nỉ, gỗ thông",
+        "kichThuoc": "280x180x85 cm",
+        "mauSac": "Be",
+        "ngayCapNhat": "2025-05-25",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "120 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Sofa cao cấp cho phòng khách",
+        "tenDanhMuc": "Sofa"
+      },
+      "giaBan": 44000000,
+      "giaSauGiam": 42000000,
+      "hinhAnh": "https://kingsofa.vn/wp-content/uploads/2024/01/KS-GD-5003.webp",
+      "id": 31,
+      "moTa": "Sofa góc với thiết kế tối giản, đa năng",
+      "soLuongTonKho": 3,
+      "tenSanPham": "Sofa góc hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Da bò cao cấp, gỗ óc chó",
+        "kichThuoc": "260x100x85 cm",
+        "mauSac": "Đen",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "95 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Sofa cao cấp cho phòng khách",
+        "tenDanhMuc": "Sofa"
+      },
+      "giaBan": 32000000,
+      "giaSauGiam": 29000000,
+      "hinhAnh": "https://hally.vn/wp-content/uploads/2023/09/sofa-da-roma-den.jpg",
+      "id": 32,
+      "moTa": "Sofa da cao cấp với thiết kế sang trọng",
+      "soLuongTonKho": 2,
+      "tenSanPham": "Sofa da cao cấp Roma"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Vải nỉ cao cấp, gỗ thông",
+        "kichThuoc": "200x85x85 cm",
+        "mauSac": "Xanh navy",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "65 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Sofa cao cấp cho phòng khách",
+        "tenDanhMuc": "Sofa"
+      },
+      "giaBan": 18000000,
+      "giaSauGiam": 16000000,
+      "hinhAnh": "https://sofakimphu.com/wp-content/uploads/2023/05/O1CN01ZHAlXg1GB3box8YoP_2212321110583-0-cib.jpg",
+      "id": 33,
+      "moTa": "Sofa vải nỉ với thiết kế hiện đại, êm ái",
+      "soLuongTonKho": 6,
+      "tenSanPham": "Sofa vải nỉ cao cấp"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Vải nỉ, gỗ sồi",
+        "kichThuoc": "160x75x75 cm",
+        "mauSac": "Xám",
+        "ngayCapNhat": "2025-08-08",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "40 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế dài và đôn trang trí",
+        "tenDanhMuc": "Ghế dài & đôn"
+      },
+      "giaBan": 12000000,
+      "giaSauGiam": 9000000,
+      "hinhAnh": "https://bizweb.dktcdn.net/100/153/764/products/ghe-sofa-go-hien-dai-806t-1.jpg?v=1705050015063",
+      "id": 34,
+      "moTa": "Ghế dài với thiết kế tối giản, đa năng",
+      "soLuongTonKho": 7,
+      "tenSanPham": "Ghế dài phòng khách hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Da bò cao cấp, gỗ óc chó",
+        "kichThuoc": "200x85x75 cm",
+        "mauSac": "Nâu đậm",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "55 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế dài và đôn trang trí",
+        "tenDanhMuc": "Ghế dài & đôn"
+      },
+      "giaBan": 18000000,
+      "giaSauGiam": 16000000,
+      "hinhAnh": "https://noithatm8.com/wp-content/uploads/sofa-goc-L-hien-dai-2-1.jpg",
+      "id": 35,
+      "moTa": "Ghế dài với thiết kế sang trọng, đẳng cấp",
+      "soLuongTonKho": 4,
+      "tenSanPham": "Ghế dài phòng khách sang trọng"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Vải nỉ, gỗ thông",
+        "kichThuoc": "140x70x75 cm",
+        "mauSac": "Be",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "35 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế dài và đôn trang trí",
+        "tenDanhMuc": "Ghế dài & đôn"
+      },
+      "giaBan": 9500000,
+      "giaSauGiam": 8500000,
+      "hinhAnh": "https://galaxyled.vn/wp-content/uploads/2023/05/thiet-ke-phong-khach-toi-gian-thumbnail-1.webp",
+      "id": 36,
+      "moTa": "Ghế dài với thiết kế tối giản, hiện đại",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Ghế dài phòng khách tối giản"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Vải nỉ cao cấp, gỗ sồi",
+        "kichThuoc": "180x80x75 cm",
+        "mauSac": "Xanh navy",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "45 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế dài và đôn trang trí",
+        "tenDanhMuc": "Ghế dài & đôn"
+      },
+      "giaBan": 14000000,
+      "giaSauGiam": 12500000,
+      "hinhAnh": "https://api.togihome.vn/storage/images/originals/sofa-bed-ket-hop-ghe-phu-da-nang-sb21-9-4ezjibxoq1r74x2.webp",
+      "id": 37,
+      "moTa": "Ghế dài với thiết kế đa năng, tiện dụng",
+      "soLuongTonKho": 6,
+      "tenSanPham": "Ghế dài phòng khách đa năng"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ sồi tự nhiên",
+        "kichThuoc": "100x50x45 cm",
+        "mauSac": "Nâu sồi",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "20 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn nước phòng khách",
+        "tenDanhMuc": "Bàn nước"
+      },
+      "giaBan": 7500000,
+      "giaSauGiam": 6800000,
+      "hinhAnh": "https://gotrangtri.vn/wp-content/uploads/2019/06/ban-tra-go-soi-tu-nhien-thiet-ke-dep-hien-dai-ghs-4718.jpg",
+      "id": 38,
+      "moTa": "Bàn nước gỗ sồi với thiết kế hiện đại",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Bàn nước gỗ sồi"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Kính cường lực, inox",
+        "kichThuoc": "90x45x45 cm",
+        "mauSac": "Trong suốt",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "15 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn nước phòng khách",
+        "tenDanhMuc": "Bàn nước"
+      },
+      "giaBan": 6500000,
+      "giaSauGiam": 5800000,
+      "hinhAnh": "https://smlife.vn/wp-content/uploads/2022/05/ban-tra-mat-kinh-3.jpg",
+      "id": 39,
+      "moTa": "Bàn nước kính với thiết kế sang trọng",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Bàn nước kính cường lực"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ óc chó tự nhiên",
+        "kichThuoc": "100x40x120 cm",
+        "mauSac": "Nâu gỗ tự nhiên",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "40 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ giày thông minh",
+        "tenDanhMuc": "Tủ giày"
+      },
+      "giaBan": 6500000,
+      "giaSauGiam": 5800000,
+      "hinhAnh": "https://noithatvannguyen.vn/wp-content/uploads/2023/08/mau-tu-giay-go-oc-cho-cao-cap_025605661.jpg",
+      "id": 50,
+      "moTa": "Tủ giày gỗ óc chó với thiết kế sang trọng",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Tủ giày gỗ óc chó"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, kính cường lực",
+        "kichThuoc": "90x35x110 cm",
+        "mauSac": "Trắng",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "35 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ giày thông minh",
+        "tenDanhMuc": "Tủ giày"
+      },
+      "giaBan": 5500000,
+      "giaSauGiam": 4800000,
+      "hinhAnh": "https://api.togihome.vn/storage/images/originals/tu-giay-da-nang-thiet-ke-thong-minh-kg01-18-utavpzlxm2nzotg.webp",
+      "id": 51,
+      "moTa": "Tủ giày với thiết kế hiện đại, đa năng",
+      "soLuongTonKho": 12,
+      "tenSanPham": "Tủ giày hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ công nghiệp",
+        "kichThuoc": "80x30x100 cm",
+        "mauSac": "Nâu đen",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "25 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ giày thông minh",
+        "tenDanhMuc": "Tủ giày"
+      },
+      "giaBan": 4500000,
+      "giaSauGiam": 4000000,
+      "hinhAnh": "https://api.togihome.vn/storage/images/originals/tu-giay-thiet-ke-thanh-lich-toi-gian-kg05-2-gdygceuynexxwe2.webp",
+      "id": 52,
+      "moTa": "Tủ giày với thiết kế tối giản, hiện đại",
+      "soLuongTonKho": 15,
+      "tenSanPham": "Tủ giày tối giản"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, kính cường lực",
+        "kichThuoc": "110x40x130 cm",
+        "mauSac": "Trắng sứ",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "45 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ giày thông minh",
+        "tenDanhMuc": "Tủ giày"
+      },
+      "giaBan": 5000000,
+      "giaSauGiam": 4500000,
+      "hinhAnh": "https://api.togihome.vn/storage/images/originals/tu-giay-ket-hop-ke-treo-thong-minh-kg13-1-mhdywzygaqk5de0.webp",
+      "id": 53,
+      "moTa": "Tủ giày với thiết kế đa năng, tiện dụng",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Tủ giày đa năng"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ sồi tự nhiên",
+        "kichThuoc": "160x80x75 cm",
+        "mauSac": "Nâu sồi",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "70 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn ăn phòng bếp",
+        "tenDanhMuc": "Bàn ăn"
+      },
+      "giaBan": 15000000,
+      "giaSauGiam": 13500000,
+      "hinhAnh": "https://gotrangtri.vn/wp-content/uploads/2018/03/Bo-ban-an-go-soi-co-thiet-ke-dep-hien-dai-GHS-4570-ava-2.png",
+      "id": 54,
+      "moTa": "Bàn ăn gỗ sồi với thiết kế hiện đại",
+      "soLuongTonKho": 5,
+      "tenSanPham": "Bàn ăn gỗ sồi"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Kính cường lực, inox",
+        "kichThuoc": "140x80x75 cm",
+        "mauSac": "Trong suốt",
+        "ngayCapNhat": "2025-05-25",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "50 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn ăn phòng bếp",
+        "tenDanhMuc": "Bàn ăn"
+      },
+      "giaBan": 6000000,
+      "giaSauGiam": 4000000,
+      "hinhAnh": "https://hungphatsaigon.vn/wp-content/uploads/2021/04/ban-an-mat-kinh-1.jpg",
+      "id": 55,
+      "moTa": "Bàn ăn kính với thiết kế sang trọng",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Bàn ăn kính cường lực"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ công nghiệp",
+        "kichThuoc": "120x70x75 cm",
+        "mauSac": "Nâu đen",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "45 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn ăn phòng bếp",
+        "tenDanhMuc": "Bàn ăn"
+      },
+      "giaBan": 8500000,
+      "giaSauGiam": 8500000,
+      "hinhAnh": "https://noithatm8.com/wp-content/uploads/B%C3%A0n-tr%C3%B2n-ch%C3%A2n-x%C3%B2e-ava1.jpg",
+      "id": 56,
+      "moTa": "Bàn ăn với thiết kế tối giản, hiện đại",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Bàn ăn tối giản"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, kính cường lực",
+        "kichThuoc": "180x90x75 cm",
+        "mauSac": "Trắng sứ",
+        "ngayCapNhat": "2025-08-12",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "65 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Bàn ăn phòng bếp",
+        "tenDanhMuc": "Bàn ăn"
+      },
+      "giaBan": 4000000,
+      "giaSauGiam": 3500000,
+      "hinhAnh": "https://bizweb.dktcdn.net/100/347/061/files/tb2-xm9aisff1jjsspbxxcskvxa-598869243.jpg?v=1560757303084",
+      "id": 57,
+      "moTa": "Bàn ăn với thiết kế đa năng, tiện dụng",
+      "soLuongTonKho": 6,
+      "tenSanPham": "Bàn ăn đa năng"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ óc chó tự nhiên",
+        "kichThuoc": "50x50x85 cm",
+        "mauSac": "Nâu gỗ tự nhiên",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "12 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế ăn phòng bếp",
+        "tenDanhMuc": "Ghế ăn"
+      },
+      "giaBan": 4500000,
+      "giaSauGiam": 4000000,
+      "hinhAnh": "https://noithatlacgia.vn/wp-content/uploads/2023/10/ban-ghe-an-go-oc-cho-ba23-3.jpg",
+      "id": 58,
+      "moTa": "Ghế ăn gỗ óc chó với thiết kế sang trọng",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Ghế ăn gỗ óc chó"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, đệm vải",
+        "kichThuoc": "45x45x85 cm",
+        "mauSac": "Trắng",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "10 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế ăn phòng bếp",
+        "tenDanhMuc": "Ghế ăn"
+      },
+      "giaBan": 3800000,
+      "giaSauGiam": 3500000,
+      "hinhAnh": "https://product.hstatic.net/1000372003/product/wishbone_natural_logo_cfdd4e66191a4d84bf74294921038583_master.jpg",
+      "id": 59,
+      "moTa": "Ghế ăn với thiết kế hiện đại, đa năng",
+      "soLuongTonKho": 12,
+      "tenSanPham": "Ghế ăn hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ công nghiệp",
+        "kichThuoc": "40x40x85 cm",
+        "mauSac": "Nâu đen",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "8 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế ăn phòng bếp",
+        "tenDanhMuc": "Ghế ăn"
+      },
+      "giaBan": 3200000,
+      "giaSauGiam": 2800000,
+      "hinhAnh": "https://flexhouse.vn/wp-content/uploads/2023/02/Ghe-an-toi-gian-bang-go-uon-nghe-thuat-AH9461-7.jpg",
+      "id": 60,
+      "moTa": "Ghế ăn với thiết kế tối giản, hiện đại",
+      "soLuongTonKho": 15,
+      "tenSanPham": "Ghế ăn tối giản"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, đệm vải",
+        "kichThuoc": "45x45x85 cm",
+        "mauSac": "Trắng sứ",
+        "ngayCapNhat": "2025-08-12",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "9 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế ăn phòng bếp",
+        "tenDanhMuc": "Ghế ăn"
+      },
+      "giaBan": 5500000,
+      "giaSauGiam": 4200000,
+      "hinhAnh": "https://taduko.com/wp-content/uploads/2023/02/ghe-ban-an-nhap-khau-sunny-cao-cap.jpg",
+      "id": 61,
+      "moTa": "Ghế ăn với thiết kế đa năng, tiện dụng",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Ghế ăn đa năng"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ óc chó tự nhiên",
+        "kichThuoc": "45x45x75 cm",
+        "mauSac": "Nâu gỗ tự nhiên",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "15 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế bar phòng bếp",
+        "tenDanhMuc": "Ghế Bar"
+      },
+      "giaBan": 5500000,
+      "giaSauGiam": 5000000,
+      "hinhAnh": "https://cdn.dogooccho.com.vn/media/noi-that/ghe-quay-bar-go-oc-cho/ghe-quay-bar-go-oc-cho-04-1.jpg",
+      "id": 62,
+      "moTa": "Ghế bar gỗ óc chó với thiết kế sang trọng",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Ghế bar gỗ óc chó"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, đệm vải",
+        "kichThuoc": "40x40x75 cm",
+        "mauSac": "Trắng",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "12 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế bar phòng bếp",
+        "tenDanhMuc": "Ghế Bar"
+      },
+      "giaBan": 4500000,
+      "giaSauGiam": 4000000,
+      "hinhAnh": "https://flexhouse.vn/wp-content/uploads/2024/04/Ghe-bar-nang-xoay-hien-dai-phong-cach-Bac-Au-OY5252-2.png",
+      "id": 63,
+      "moTa": "Ghế bar với thiết kế hiện đại, đa năng",
+      "soLuongTonKho": 12,
+      "tenSanPham": "Ghế bar hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ công nghiệp",
+        "kichThuoc": "35x35x75 cm",
+        "mauSac": "Nâu đen",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "10 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế bar phòng bếp",
+        "tenDanhMuc": "Ghế Bar"
+      },
+      "giaBan": 3800000,
+      "giaSauGiam": 3500000,
+      "hinhAnh": "https://flexhouse.vn/wp-content/uploads/2024/01/Ghe-quay-bar-boc-da-toi-gian-hien-dai-HB6807-6.jpg",
+      "id": 64,
+      "moTa": "Ghế bar với thiết kế tối giản, hiện đại",
+      "soLuongTonKho": 15,
+      "tenSanPham": "Ghế bar tối giản"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, đệm vải",
+        "kichThuoc": "40x40x75 cm",
+        "mauSac": "Trắng sứ",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "11 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Ghế bar phòng bếp",
+        "tenDanhMuc": "Ghế Bar"
+      },
+      "giaBan": 4200000,
+      "giaSauGiam": 3800000,
+      "hinhAnh": "https://flexhouse.vn/wp-content/uploads/2023/02/Ghe-quay-bar-bang-go-xoay-360-do-nang-ha-JB1018.jpg",
+      "id": 65,
+      "moTa": "Ghế bar với thiết kế đa năng, tiện dụng",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Ghế bar đa năng"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ óc chó tự nhiên",
+        "kichThuoc": "120x40x180 cm",
+        "mauSac": "Nâu gỗ tự nhiên",
+        "ngayCapNhat": "2025-08-12",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "45 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ ly phòng khách",
+        "tenDanhMuc": "Tủ ly"
+      },
+      "giaBan": 8500000,
+      "giaSauGiam": 7500000,
+      "hinhAnh": "https://anviethouse.vn/wp-content/uploads/2022/02/tu-ruou-go-oc-cho_nhieu-ngan-1.jpg",
+      "id": 66,
+      "moTa": "Tủ ly gỗ óc chó với thiết kế sang trọng",
+      "soLuongTonKho": 8,
+      "tenSanPham": "Tủ ly gỗ óc chó"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, kính cường lực",
+        "kichThuoc": "100x35x160 cm",
+        "mauSac": "Trắng",
+        "ngayCapNhat": "2025-08-12",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "40 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ ly phòng khách",
+        "tenDanhMuc": "Tủ ly"
+      },
+      "giaBan": 35000000,
+      "giaSauGiam": 32000000,
+      "hinhAnh": "https://noithatvanphonggiare.com/media/product/6072_tu_ruou_go_cong_nghiep_hien_dai_da_nang_kr22.jpg",
+      "id": 67,
+      "moTa": "Tủ ly với thiết kế hiện đại, đa năng",
+      "soLuongTonKho": 12,
+      "tenSanPham": "Tủ ly hiện đại"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ công nghiệp",
+        "kichThuoc": "90x30x150 cm",
+        "mauSac": "Nâu đen",
+        "ngayCapNhat": "2025-08-06",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "35 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ ly phòng khách",
+        "tenDanhMuc": "Tủ ly"
+      },
+      "giaBan": 6500000,
+      "giaSauGiam": 5800000,
+      "hinhAnh": "https://bizweb.dktcdn.net/100/391/155/products/z4737893861647-54aa78055e44dec0275dfac922c61bb9.jpg?v=1696665046217",
+      "id": 68,
+      "moTa": "Tủ ly với thiết kế tối giản, hiện đại",
+      "soLuongTonKho": 15,
+      "tenSanPham": "Tủ ly tối giản"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "Gỗ MDF, kính cường lực",
+        "kichThuoc": "110x40x170 cm",
+        "mauSac": "Trắng sứ",
+        "ngayCapNhat": "2024-03-15",
+        "ngayThem": "2024-03-15",
+        "trongLuong": "42 kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Tủ ly phòng khách",
+        "tenDanhMuc": "Tủ ly"
+      },
+      "giaBan": 10000000,
+      "giaSauGiam": 9500000,
+      "hinhAnh": "https://bizweb.dktcdn.net/100/391/155/products/z5938298589985-7f1cee62e88dc38b74a036df51ac5d87.jpg?v=1729136232540",
+      "id": 69,
+      "moTa": "Tủ ly với thiết kế đa năng, tiện dụng",
+      "soLuongTonKho": 10,
+      "tenSanPham": "Tủ ly đa năng"
+    }
+  ],
+  "promotions": {
+    "mid_autumn_2025": {
+      "createdAt": "2024-12-15T00:00:00",
+      "description": "Tặng ngay voucher 1.200.000đ cho đơn hàng từ 10 triệu đồng",
+      "endDate": "2025-08-22",
+      "icon": "🌕",
+      "id": "mid_autumn_2025",
+      "minOrderValue": 10000000,
+      "promoCode": "TRUNGTHU2025",
+      "startDate": "2025-06-22",
+      "status": "active",
+      "title": "Tết Trung Thu",
+      "updatedAt": "2025-08-12T08:09:44.427Z",
+      "voucherAmount": 1200000
+    },
+    "mother_day_2025": {
+      "createdAt": "2024-12-15T00:00:00",
+      "description": "Tặng ngay voucher 500.000đ cho đơn hàng từ 5 triệu đồng",
+      "endDate": "2025-05-22",
+      "icon": "🌺",
+      "id": "mother_day_2025",
+      "minOrderValue": 5000000,
+      "promoCode": "MOM2025",
+      "startDate": "2025-03-12",
+      "status": "inactive",
+      "title": "Ngày của Mẹ",
+      "updatedAt": "2025-08-12T07:56:51.291Z",
+      "voucherAmount": 500000
+    },
+    "reunification_day_2025": {
+      "createdAt": "2024-12-15T00:00:00",
+      "description": "Tặng ngay voucher 1.500.000đ cho đơn hàng từ 12 triệu đồng",
+      "endDate": "2025-05-01T23:59:59",
+      "icon": "🎉",
+      "id": "reunification_day_2025",
+      "minOrderValue": 12000000,
+      "promoCode": "30TH4",
+      "startDate": "2025-04-25T00:00",
+      "status": "inactive",
+      "title": "Ngày Giải phóng miền Nam",
+      "updatedAt": "2024-12-15T00:00:00",
+      "voucherAmount": 1500000
+    },
+    "teacher_day_2025": {
+      "createdAt": "2024-12-15T00:00:00",
+      "description": "Tặng ngay voucher 300.000đ cho đơn hàng từ 3 triệu đồng",
+      "endDate": "2025-11-20T23:59:59",
+      "icon": "📚",
+      "id": "teacher_day_2025",
+      "minOrderValue": 3000000,
+      "promoCode": "20TH11",
+      "startDate": "2025-11-15T00:00",
+      "status": "inactive",
+      "title": "Ngày Nhà giáo Việt Nam",
+      "updatedAt": "2024-12-15T00:00:00",
+      "voucherAmount": 300000
+    },
+    "tet_2025": {
+      "createdAt": "2024-12-15T00:00:00",
+      "description": "Mừng năm mới - Tặng ngay voucher 2.000.000đ cho đơn hàng từ 15 triệu đồng",
+      "endDate": "2025-01-07",
+      "icon": "🏮",
+      "id": "tet_2025",
+      "minOrderValue": 15000000,
+      "promoCode": "TET2025",
+      "startDate": "2024-12-25",
+      "status": "expired",
+      "title": "Khuyến mãi Tết Nguyên Đán",
+      "updatedAt": "2025-08-12T07:56:10.963Z",
+      "voucherAmount": 1100000
+    },
+    "valentine_2025": {
+      "createdAt": "2024-12-15T00:00:00",
+      "description": "Tặng ngay voucher 1.000.000đ cho đơn hàng từ 10 triệu đồng",
+      "endDate": "2025-02-16",
+      "icon": "❤️",
+      "id": "valentine_2025",
+      "minOrderValue": 10000000,
+      "promoCode": "VALENTINE2025",
+      "startDate": "2025-02-10",
+      "status": "expired",
+      "title": "Lễ Tình Nhân 14/02",
+      "updatedAt": "2025-08-12T07:52:29.834Z",
+      "voucherAmount": 1420000
+    }
+  },
+  "users": {
+    "Adizpx4xUsZdVB9OrTYGoZnAOMr2": {
+      "accountType": "email",
+      "address": "Nguyễn Đệ",
+      "city": "Cần Thơ",
+      "createdAt": "2025-07-15T07:24:22.334Z",
+      "displayName": "Nguyễn Thị Huỳnh Như",
+      "district": "Ninh Kiều",
+      "email": "eirian6604@gmail.com",
+      "emailVerified": true,
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "lastLogin": "2025-08-12T08:37:27.123Z",
+      "loginStatus": {
+        "status": "offline",
+        "timestamp": "2025-08-12T12:23:10.871Z"
+      },
+      "phone": "0345142208",
+      "role": "user",
+      "status": "active",
+      "updatedAt": "2025-08-10T11:05:49.059Z"
+    },
+    "r68rIvIXwtbgMMgWOR3t6z51frJ3": {
+      "address": "",
+      "city": "",
+      "createdAt": "2025-07-15T07:34:11.313Z",
+      "displayName": "Nguyễn Thị Huỳnh Như",
+      "district": "",
+      "email": "quantrivienmocnhien@gmail.com",
+      "emailVerified": false,
+      "fullName": "Huỳnh Như",
+      "lastLogin": "2025-08-14T13:49:10.364Z",
+      "loginStatus": {
+        "status": "offline",
+        "timestamp": "2025-08-14T13:49:11.882Z"
+      },
+      "phone": "0345142208",
+      "role": "user",
+      "status": "active",
+      "updatedAt": "2025-08-13T03:30:41.702Z"
+    }
+  }
+}

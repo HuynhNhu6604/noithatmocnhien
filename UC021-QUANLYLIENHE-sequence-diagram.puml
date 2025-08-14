@@ -1,0 +1,20 @@
+@startuml
+actor "Quản trị viên" as Admin
+participant "Trang Quản lý liên hệ" as ContactAdminPage
+participant "Hệ thống" as System
+
+Admin -> ContactAdminPage: Xem danh sách liên hệ
+ContactAdminPage -> System: Lấy danh sách liên hệ
+System --> ContactAdminPage: Trả về danh sách liên hệ
+ContactAdminPage --> Admin: Hiển thị danh sách liên hệ
+
+Admin -> ContactAdminPage: Xem chi tiết liên hệ
+ContactAdminPage -> System: Lấy chi tiết liên hệ
+System --> ContactAdminPage: Trả về chi tiết liên hệ
+ContactAdminPage --> Admin: Hiển thị chi tiết liên hệ
+
+Admin -> ContactAdminPage: Xóa liên hệ
+ContactAdminPage -> System: Xóa liên hệ
+System --> ContactAdminPage: Kết quả xóa
+ContactAdminPage --> Admin: Hiển thị kết quả
+@enduml

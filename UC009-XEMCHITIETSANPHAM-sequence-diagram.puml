@@ -1,0 +1,14 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Chi tiết sản phẩm" as ProductDetailPage
+participant "Hệ thống" as System
+
+User -> ProductDetailPage: Chọn sản phẩm từ danh sách
+ProductDetailPage -> System: Lấy thông tin chi tiết sản phẩm
+System --> ProductDetailPage: Trả về thông tin chi tiết sản phẩm
+ProductDetailPage --> User: Hiển thị thông tin chi tiết sản phẩm
+User -> ProductDetailPage: Xem sản phẩm liên quan (tùy chọn)
+ProductDetailPage -> System: Lấy danh sách sản phẩm liên quan (tùy chọn)
+System --> ProductDetailPage: Trả về danh sách sản phẩm liên quan (tùy chọn)
+ProductDetailPage --> User: Hiển thị sản phẩm liên quan (tùy chọn)
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+actor "Người dùng" as User
+participant "Hệ thống" as System
+
+User -> System: Chọn "Đăng xuất"
+System -> System: Xóa session
+System --> User: Chuyển hướng về trang chủ
+@enduml

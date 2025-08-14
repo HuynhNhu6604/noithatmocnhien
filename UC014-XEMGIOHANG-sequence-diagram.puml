@@ -1,0 +1,18 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Giỏ hàng" as CartPage
+participant "Hệ thống" as System
+
+User -> CartPage: Truy cập trang giỏ hàng
+CartPage -> System: Lấy danh sách sản phẩm trong giỏ
+System --> CartPage: Trả về danh sách sản phẩm
+CartPage --> User: Hiển thị danh sách sản phẩm
+User -> CartPage: Áp dụng mã khuyến mãi (nếu có)
+CartPage -> System: Kiểm tra mã khuyến mãi (nếu có)
+System --> CartPage: Kết quả áp dụng mã (nếu có)
+CartPage --> User: Hiển thị kết quả áp dụng mã (nếu có)
+User -> CartPage: Chỉnh sửa số lượng/xóa sản phẩm (tùy chọn)
+CartPage -> System: Cập nhật giỏ hàng (tùy chọn)
+System --> CartPage: Trả về giỏ hàng đã cập nhật (tùy chọn)
+CartPage --> User: Hiển thị giỏ hàng đã cập nhật (tùy chọn)
+@enduml

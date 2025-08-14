@@ -1,0 +1,15 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Bộ sưu tập" as CollectionPage
+participant "Hệ thống" as System
+
+User -> CollectionPage: Truy cập trang bộ sưu tập
+User -> CollectionPage: Chọn bộ sưu tập
+CollectionPage -> System: Lấy danh sách sản phẩm trong bộ sưu tập
+System --> CollectionPage: Trả về danh sách sản phẩm
+CollectionPage --> User: Hiển thị danh sách sản phẩm
+User -> CollectionPage: Xem chi tiết sản phẩm (tùy chọn)
+CollectionPage -> System: Lấy chi tiết sản phẩm (tùy chọn)
+System --> CollectionPage: Trả về chi tiết sản phẩm (tùy chọn)
+CollectionPage --> User: Hiển thị chi tiết sản phẩm (tùy chọn)
+@enduml

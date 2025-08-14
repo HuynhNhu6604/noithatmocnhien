@@ -1,0 +1,19 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Đăng ký" as RegisterPage
+participant "Hệ thống" as System
+
+User -> RegisterPage: Truy cập trang đăng ký
+User -> RegisterPage: Nhập thông tin (họ tên, email, mật khẩu)
+User -> RegisterPage: Xác nhận mật khẩu
+User -> RegisterPage: Gửi đăng ký
+RegisterPage -> System: Kiểm tra thông tin
+
+alt Email đã tồn tại hoặc thông tin không hợp lệ
+    System --> RegisterPage: Thông báo lỗi
+    RegisterPage --> User: Hiển thị lỗi
+else Thông tin hợp lệ
+    System --> RegisterPage: Tạo tài khoản, kích hoạt
+    RegisterPage --> User: Thông báo thành công
+end
+@enduml

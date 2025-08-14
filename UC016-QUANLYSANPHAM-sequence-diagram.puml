@@ -1,0 +1,30 @@
+@startuml
+actor "Quản trị viên" as Admin
+participant "Trang Quản lý sản phẩm" as ProductAdminPage
+participant "Hệ thống" as System
+
+Admin -> ProductAdminPage: Xem danh sách sản phẩm
+ProductAdminPage -> System: Lấy danh sách sản phẩm
+System --> ProductAdminPage: Trả về danh sách sản phẩm
+ProductAdminPage --> Admin: Hiển thị danh sách sản phẩm
+
+Admin -> ProductAdminPage: Thêm sản phẩm mới
+ProductAdminPage -> System: Thêm sản phẩm
+System --> ProductAdminPage: Kết quả thêm
+ProductAdminPage --> Admin: Hiển thị kết quả
+
+Admin -> ProductAdminPage: Sửa sản phẩm
+ProductAdminPage -> System: Sửa sản phẩm
+System --> ProductAdminPage: Kết quả sửa
+ProductAdminPage --> Admin: Hiển thị kết quả
+
+Admin -> ProductAdminPage: Xóa sản phẩm
+ProductAdminPage -> System: Xóa sản phẩm
+System --> ProductAdminPage: Kết quả xóa
+ProductAdminPage --> Admin: Hiển thị kết quả
+
+Admin -> ProductAdminPage: Upload hình ảnh sản phẩm
+ProductAdminPage -> System: Lưu hình ảnh
+System --> ProductAdminPage: Kết quả upload
+ProductAdminPage --> Admin: Hiển thị kết quả upload
+@enduml

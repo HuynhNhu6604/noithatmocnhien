@@ -417,7 +417,7 @@
                         <i class="fas fa-home"></i>
                         Về trang chủ
                     </a>
-                    <a href="/cart.html" class="button secondary">
+                    <a href="/member.html" class="button secondary">
                         <i class="fas fa-shopping-cart"></i>
                         Xem đơn hàng
                     </a>
@@ -531,11 +531,11 @@
                         transactionNo: vnp_TransactionNo,
                         responseCode: vnp_ResponseCode,
                         transactionStatus: vnp_TransactionStatus,
-                        secureHash: vnp_SecureHash,
                         bankCode: vnp_BankCode,
                         bankTranNo: vnp_BankTranNo,
                         payDate: vnp_PayDate
-                    };
+                    };  secureHash: vnp_SecureHash,
+                      
 
                     // Cập nhật mã đơn hàng và số tiền từ VNPAY
                     orderData.orderId = vnp_TxnRef;

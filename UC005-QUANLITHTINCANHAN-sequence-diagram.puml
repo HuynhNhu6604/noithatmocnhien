@@ -1,0 +1,19 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Thành viên" as MemberPage
+participant "Hệ thống" as System
+
+User -> MemberPage: Truy cập trang thành viên
+MemberPage -> System: Lấy thông tin cá nhân
+System --> MemberPage: Trả về thông tin cá nhân
+MemberPage --> User: Hiển thị thông tin cá nhân
+User -> MemberPage: Chỉnh sửa thông tin, lưu thay đổi
+MemberPage -> System: Gửi thông tin cập nhật
+alt Thông tin không hợp lệ
+    System --> MemberPage: Thông báo lỗi
+    MemberPage --> User: Hiển thị lỗi
+else Thông tin hợp lệ
+    System --> MemberPage: Cập nhật thành công
+    MemberPage --> User: Thông báo thành công
+end
+@enduml

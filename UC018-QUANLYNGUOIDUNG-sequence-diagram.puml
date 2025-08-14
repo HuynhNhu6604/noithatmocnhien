@@ -1,0 +1,25 @@
+@startuml
+actor "Quản trị viên" as Admin
+participant "Trang Quản lý người dùng" as UserAdminPage
+participant "Hệ thống" as System
+
+Admin -> UserAdminPage: Xem danh sách người dùng
+UserAdminPage -> System: Lấy danh sách người dùng
+System --> UserAdminPage: Trả về danh sách người dùng
+UserAdminPage --> Admin: Hiển thị danh sách người dùng
+
+Admin -> UserAdminPage: Xem chi tiết người dùng
+UserAdminPage -> System: Lấy chi tiết người dùng
+System --> UserAdminPage: Trả về chi tiết người dùng
+UserAdminPage --> Admin: Hiển thị chi tiết người dùng
+
+Admin -> UserAdminPage: Khóa/mở khóa tài khoản
+UserAdminPage -> System: Khóa/mở khóa tài khoản
+System --> UserAdminPage: Kết quả xử lý
+UserAdminPage --> Admin: Hiển thị kết quả
+
+Admin -> UserAdminPage: Xóa tài khoản
+UserAdminPage -> System: Xóa tài khoản
+System --> UserAdminPage: Kết quả xóa
+UserAdminPage --> Admin: Hiển thị kết quả
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+actor "Khách hàng" as User
+participant "Website" as Website
+participant "Cổng VNPay" as VNPay
+
+User -> Website: Chọn thanh toán qua VNPay
+Website -> VNPay: Chuyển hướng đến cổng VNPay
+User -> VNPay: Nhập thông tin thẻ
+VNPay -> VNPay: Xác thực thanh toán
+VNPay --> Website: Gửi kết quả thanh toán
+Website --> User: Hiển thị kết quả, quay về website
+@enduml

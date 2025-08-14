@@ -1,0 +1,30 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Giỏ hàng" as CartPage
+participant "Hệ thống" as System
+participant "Cổng thanh toán VNPay" as VNPay
+
+User -> CartPage: Xem trang giỏ hàng
+User -> CartPage: Nhập mã giảm giá (nếu có)
+CartPage -> System: Kiểm tra mã giảm giá (nếu có)
+System --> CartPage: Kết quả mã giảm giá (nếu có)
+User -> CartPage: Kiểm tra thông tin giao hàng
+User -> CartPage: Chọn phương thức thanh toán
+User -> CartPage: Xác nhận đơn hàng
+CartPage -> System: Tạo đơn hàng
+alt Hết hàng
+    System --> CartPage: Thông báo hết hàng
+    CartPage --> User: Hiển thị lỗi
+else Đủ hàng
+    System --> CartPage: Đơn hàng hợp lệ
+    CartPage -> VNPay: Chuyển hướng và tiến hành thanh toán
+    VNPay --> CartPage: Kết quả thanh toán
+    alt Thanh toán thành công
+        CartPage -> System: Hoàn tất đơn hàng
+        System --> CartPage: Thông báo hoàn tất
+        CartPage --> User: Thông báo hoàn tất đơn hàng
+    else Thanh toán thất bại
+        CartPage --> User: Thông báo lỗi thanh toán
+    end
+end
+@enduml

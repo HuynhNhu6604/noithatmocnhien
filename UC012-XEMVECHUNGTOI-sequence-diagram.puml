@@ -1,0 +1,10 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Về chúng tôi" as AboutPage
+participant "Hệ thống" as System
+
+User -> AboutPage: Truy cập trang "Về chúng tôi"
+AboutPage -> System: Lấy thông tin giới thiệu, tầm nhìn, sứ mệnh, giá trị, đội ngũ
+System --> AboutPage: Trả về thông tin giới thiệu, tầm nhìn, sứ mệnh, giá trị, đội ngũ
+AboutPage --> User: Hiển thị thông tin giới thiệu
+@enduml

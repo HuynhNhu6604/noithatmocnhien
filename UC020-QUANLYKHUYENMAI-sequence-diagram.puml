@@ -1,0 +1,25 @@
+@startuml
+actor "Quản trị viên" as Admin
+participant "Trang Quản lý khuyến mãi" as PromotionAdminPage
+participant "Hệ thống" as System
+
+Admin -> PromotionAdminPage: Xem danh sách khuyến mãi
+PromotionAdminPage -> System: Lấy danh sách khuyến mãi
+System --> PromotionAdminPage: Trả về danh sách khuyến mãi
+PromotionAdminPage --> Admin: Hiển thị danh sách khuyến mãi
+
+Admin -> PromotionAdminPage: Tạo khuyến mãi mới
+PromotionAdminPage -> System: Tạo khuyến mãi
+System --> PromotionAdminPage: Kết quả tạo
+PromotionAdminPage --> Admin: Hiển thị kết quả
+
+Admin -> PromotionAdminPage: Thiết lập thời gian hiệu lực
+PromotionAdminPage -> System: Cập nhật thời gian hiệu lực
+System --> PromotionAdminPage: Kết quả cập nhật
+PromotionAdminPage --> Admin: Hiển thị kết quả
+
+Admin -> PromotionAdminPage: Xóa khuyến mãi
+PromotionAdminPage -> System: Xóa khuyến mãi
+System --> PromotionAdminPage: Kết quả xóa
+PromotionAdminPage --> Admin: Hiển thị kết quả
+@enduml

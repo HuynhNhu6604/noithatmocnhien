@@ -1,0 +1,10 @@
+@startuml
+actor "Người dùng" as User
+participant "Trang Chính sách" as PolicyPage
+participant "Hệ thống" as System
+
+User -> PolicyPage: Truy cập trang chính sách
+PolicyPage -> System: Lấy nội dung chính sách và điều khoản
+System --> PolicyPage: Trả về nội dung chính sách và điều khoản
+PolicyPage --> User: Hiển thị nội dung chính sách và điều khoản
+@enduml
