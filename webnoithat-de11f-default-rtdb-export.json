@@ -286,28 +286,44 @@
       "image": "https://www.lanha.vn/wp-content/uploads/2023/07/phong-cach-scandinavian-5.jpeg.webp",
       "products": {
         "product1": {
-          "giaSauGiam": 400000,
-          "hinhAnh": "https://down-vn.img.susercontent.com/file/2107508fcc2882a15dbc0dd8f5434345",
-          "id": 29,
-          "moTa": "Bộ dụng cụ bếp cao cấp",
-          "style": "scandinavian",
-          "tenSanPham": "Bộ dụng cụ bếp"
-        },
-        "product2": {
-          "giaSauGiam": 40000000,
+          "giaSauGiam": 16000000,
           "hinhAnh": "https://dogoxuatkhau.com.vn/wp-content/uploads/2024/05/Sofa-goc-vai-long-cuu.jpg",
           "id": 30,
           "moTa": "Sofa vải cao cấp với thiết kế hiện đại, êm ái",
           "style": "scandinavian",
           "tenSanPham": "Sofa vải cao cấp Oslo"
         },
-        "product3": {
+        "product2": {
           "giaSauGiam": 6800000,
           "hinhAnh": "https://gotrangtri.vn/wp-content/uploads/2019/06/ban-tra-go-soi-tu-nhien-thiet-ke-dep-hien-dai-ghs-4718.jpg",
           "id": 38,
           "moTa": "Bàn nước gỗ sồi với thiết kế hiện đại",
           "style": "scandinavian",
           "tenSanPham": "Bàn nước gỗ sồi"
+        },
+        "product3": {
+          "giaSauGiam": 8500000,
+          "hinhAnh": "https://noithatm8.com/wp-content/uploads/B%C3%A0n-tr%C3%B2n-ch%C3%A2n-x%C3%B2e-ava1.jpg",
+          "id": 56,
+          "moTa": "Bàn ăn với thiết kế tối giản, hiện đại",
+          "style": "scandinavian",
+          "tenSanPham": "Bàn ăn tối giản"
+        },
+        "product4": {
+          "giaSauGiam": 2800000,
+          "hinhAnh": "https://flexhouse.vn/wp-content/uploads/2023/02/Ghe-an-toi-gian-bang-go-uon-nghe-thuat-AH9461-7.jpg",
+          "id": 60,
+          "moTa": "Ghế ăn với thiết kế tối giản, hiện đại",
+          "style": "scandinavian",
+          "tenSanPham": "Ghế ăn tối giản"
+        },
+        "product5": {
+          "giaSauGiam": 5800000,
+          "hinhAnh": "https://bizweb.dktcdn.net/100/391/155/products/z4737893861647-54aa78055e44dec0275dfac922c61bb9.jpg?v=1696665046217",
+          "id": 68,
+          "moTa": "Tủ ly với thiết kế tối giản, hiện đại",
+          "style": "scandinavian",
+          "tenSanPham": "Tủ ly tối giản"
         }
       },
       "title": "Phong cách Scandinavian"
@@ -322,7 +338,7 @@
       "phone": "0345142208",
       "status": "read",
       "subject": "Đánh giá",
-      "updatedAt": "2025-08-03T08:51:57.987Z",
+      "updatedAt": "2025-08-16T08:23:55.957Z",
       "userId": "Adizpx4xUsZdVB9OrTYGoZnAOMr2"
     },
     "-OWOm-CEBc3n6HXsSMFF": {
@@ -682,6 +698,295 @@
         "amount": 9700000000,
         "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
         "txnRef": "1754995679748"
+      }
+    },
+    "-OXcuo2y9u5NSK4eJe2C": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": "55",
+          "image": "https://hungphatsaigon.vn/wp-content/uploads/2021/04/ban-an-mat-kinh-1.jpg",
+          "name": "Bàn ăn kính cường lực",
+          "originalPrice": 6000000,
+          "price": 4000000,
+          "quantity": 1
+        },
+        {
+          "id": "12",
+          "image": "https://noithatchauanh.com/uploaded/giuong-go-oc-cho-mau-14-3.jpg",
+          "name": "Giường ngủ gỗ óc chó",
+          "originalPrice": 35000000,
+          "price": 32000000,
+          "quantity": 1
+        },
+        {
+          "id": "17",
+          "image": "https://api.thago.vn/storage/images/originals/sku-07-jqh7y342b8qlyfy.webp",
+          "name": "Bàn làm việc hiện đại",
+          "originalPrice": 6000000,
+          "price": 5700000,
+          "quantity": 2
+        },
+        {
+          "id": "20",
+          "image": "https://product.hstatic.net/1000410017/product/2_63e10f5d94af4a40b193a11f4ed86a2b_large.jpg",
+          "name": "Bàn ngoài trời gỗ teak",
+          "originalPrice": 8500000,
+          "price": 7500000,
+          "quantity": 2
+        }
+      ],
+      "createdAt": "2025-08-14T14:09:21.941Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 62400000,
+      "note": "",
+      "orderId": "1755180561937",
+      "paymentDate": "2025-08-14T14:10:47.866Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15131365",
+        "payDate": "20250814211149",
+        "responseCode": "00",
+        "transactionNo": "15131365",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 62400000,
+      "updatedAt": "2025-08-14T14:10:46.653Z",
+      "vnpParams": {
+        "amount": 6240000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1755180561937"
+      }
+    },
+    "-OXcvgmLZ_vHj4-uMUfo": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": "67",
+          "image": "https://noithatvanphonggiare.com/media/product/6072_tu_ruou_go_cong_nghiep_hien_dai_da_nang_kr22.jpg",
+          "name": "Tủ ly hiện đại",
+          "originalPrice": 35000000,
+          "price": 32000000,
+          "quantity": 2
+        },
+        {
+          "id": "60",
+          "image": "https://flexhouse.vn/wp-content/uploads/2023/02/Ghe-an-toi-gian-bang-go-uon-nghe-thuat-AH9461-7.jpg",
+          "name": "Ghế ăn tối giản",
+          "originalPrice": 3200000,
+          "price": 2800000,
+          "quantity": 7
+        },
+        {
+          "id": "22",
+          "image": "https://denhiendai.vn/wp-content/uploads/2024/03/den-chum-tan-co-dien-phap-8865t15-768x738.jpg",
+          "name": "Đèn chùm pha lê",
+          "originalPrice": 15000000,
+          "price": 13500000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-08-14T14:13:33.235Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 97100000,
+      "note": "",
+      "orderId": "1755180813231",
+      "paymentDate": "2025-08-14T14:14:40.329Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15131367",
+        "payDate": "20250814211542",
+        "responseCode": "00",
+        "transactionNo": "15131367",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 97100000,
+      "updatedAt": "2025-08-14T14:14:38.997Z",
+      "vnpParams": {
+        "amount": 9710000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1755180813231"
+      }
+    },
+    "-OXheP63D4gvZct8X_KJ": {
+      "address": "Cần thơ",
+      "cart": [
+        {
+          "id": "4",
+          "image": "https://givehome.com.vn/wp-content/uploads/2023/12/Ke-tivi-go-soi-1m2-thiet-ke-hien-dai8.png",
+          "name": "Tủ tivi gỗ sồi",
+          "originalPrice": 12000000,
+          "price": 12000000,
+          "quantity": 3
+        },
+        {
+          "id": "54",
+          "image": "https://gotrangtri.vn/wp-content/uploads/2018/03/Bo-ban-an-go-soi-co-thiet-ke-dep-hien-dai-GHS-4570-ava-2.png",
+          "name": "Bàn ăn gỗ sồi",
+          "originalPrice": 15000000,
+          "price": 13500000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-08-15T12:15:53.812Z",
+      "email": "maithanhphat@gmail.com",
+      "fullName": "ThanhPhat",
+      "grandTotal": 49500000,
+      "note": "",
+      "orderId": "1755260153810",
+      "paymentDate": "2025-08-15T12:17:13.394Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15132773",
+        "payDate": "20250815191814",
+        "responseCode": "00",
+        "transactionNo": "15132773",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0774924706",
+      "status": "paid",
+      "totalAmount": 49500000,
+      "updatedAt": "2025-08-15T12:17:12.131Z",
+      "vnpParams": {
+        "amount": 4950000000,
+        "orderInfo": "Thanh toán đơn hàng cho ThanhPhat",
+        "txnRef": "1755260153810"
+      }
+    },
+    "-OXhgVX-HYVUV66cSmgq": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": "11",
+          "image": "https://dogolegia.vn/wp-content/uploads/2022/09/Mau-tu-bep-dep-hien-dai-go-cong-nghiep-LG-TB102.jpg",
+          "name": "Tủ bếp hiện đại",
+          "originalPrice": 25000000,
+          "price": 22000000,
+          "quantity": 1
+        }
+      ],
+      "createdAt": "2025-08-15T12:25:46.106Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 22000000,
+      "note": "",
+      "orderId": "1755260746103",
+      "paymentDate": "2025-08-15T12:26:23.805Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15132776",
+        "payDate": "20250815192724",
+        "responseCode": "00",
+        "transactionNo": "15132776",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 22000000,
+      "updatedAt": "2025-08-15T12:26:22.719Z",
+      "vnpParams": {
+        "amount": 2200000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1755260746103"
+      }
+    },
+    "-OXiIsGEBxGstA6xuPAb": {
+      "address": "Cần Thơ",
+      "cart": [
+        {
+          "id": "23",
+          "image": "https://product.hstatic.net/1000203256/product/dsc06622_1c28ac4c79db4dc59736a424672fe2f9_1024x1024.jpg",
+          "name": "Thảm lông cừu",
+          "originalPrice": 8500000,
+          "price": 2500000,
+          "quantity": 2
+        }
+      ],
+      "createdAt": "2025-08-15T15:16:29.140Z",
+      "email": "lekhangan1610@gmail.com",
+      "fullName": "Nguyễn Như",
+      "grandTotal": 5000000,
+      "note": "",
+      "orderId": "1755270989137",
+      "paymentDate": "2025-08-15T15:18:24.796Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15132955",
+        "payDate": "20250815221926",
+        "responseCode": "00",
+        "transactionNo": "15132955",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 5000000,
+      "updatedAt": "2025-08-15T15:18:23.567Z",
+      "vnpParams": {
+        "amount": 500000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Như",
+        "txnRef": "1755270989137"
+      }
+    },
+    "-OXly8_CgTE9qol8gXIh": {
+      "address": "Nguyễn Đệ, Ninh Kiều, Cần Thơ",
+      "cart": [
+        {
+          "id": "10",
+          "image": "https://bizweb.dktcdn.net/100/448/909/files/kr02-2.jpg?v=1735840355000",
+          "name": "Tủ ly kính",
+          "originalPrice": 7500000,
+          "price": 6800000,
+          "quantity": 2
+        },
+        {
+          "id": 2,
+          "image": "https://product.hstatic.net/200000670713/product/sofa-olso-1_cdc0d3534d21426e8e1e06fb820748ef_master.jpg",
+          "name": "Ghế dài phòng khách Oslo",
+          "price": 13500000,
+          "quantity": 2
+        }
+      ],
+      "createdAt": "2025-08-16T08:21:07.801Z",
+      "email": "eirian6604@gmail.com",
+      "fullName": "Nguyễn Thị Huỳnh Như",
+      "grandTotal": 40600000,
+      "note": "",
+      "orderId": "1755332467797",
+      "paymentDate": "2025-08-16T08:21:57.327Z",
+      "paymentDetails": {
+        "bankCode": "NCB",
+        "bankTranNo": "VNP15133663",
+        "payDate": "20250816152255",
+        "responseCode": "00",
+        "transactionNo": "15133663",
+        "transactionStatus": "00"
+      },
+      "paymentMethod": "vnpay",
+      "paymentStatus": "completed",
+      "phone": "0345142208",
+      "status": "paid",
+      "totalAmount": 40600000,
+      "updatedAt": "2025-08-16T08:21:56.173Z",
+      "vnpParams": {
+        "amount": 4060000000,
+        "orderInfo": "Thanh toán đơn hàng cho Nguyễn Thị Huỳnh Như",
+        "txnRef": "1755332467797"
       }
     }
   },
@@ -1363,7 +1668,7 @@
         "chatLieu": "Vải nỉ cao cấp, gỗ sồi",
         "kichThuoc": "180x80x75 cm",
         "mauSac": "Xanh navy",
-        "ngayCapNhat": "2024-03-15",
+        "ngayCapNhat": "2025-08-19",
         "ngayThem": "2024-03-15",
         "trongLuong": "45 kg"
       },
@@ -1376,7 +1681,7 @@
       "hinhAnh": "https://api.togihome.vn/storage/images/originals/sofa-bed-ket-hop-ghe-phu-da-nang-sb21-9-4ezjibxoq1r74x2.webp",
       "id": 37,
       "moTa": "Ghế dài với thiết kế đa năng, tiện dụng",
-      "soLuongTonKho": 6,
+      "soLuongTonKho": 12,
       "tenSanPham": "Ghế dài phòng khách đa năng"
     },
     {
@@ -1420,27 +1725,6 @@
       "moTa": "Bàn nước kính với thiết kế sang trọng",
       "soLuongTonKho": 10,
       "tenSanPham": "Bàn nước kính cường lực"
-    },
-    {
-      "chiTietSanPham": {
-        "chatLieu": "Gỗ óc chó tự nhiên",
-        "kichThuoc": "100x40x120 cm",
-        "mauSac": "Nâu gỗ tự nhiên",
-        "ngayCapNhat": "2024-03-15",
-        "ngayThem": "2024-03-15",
-        "trongLuong": "40 kg"
-      },
-      "danhMucSanPham": {
-        "moTa": "Tủ giày thông minh",
-        "tenDanhMuc": "Tủ giày"
-      },
-      "giaBan": 6500000,
-      "giaSauGiam": 5800000,
-      "hinhAnh": "https://noithatvannguyen.vn/wp-content/uploads/2023/08/mau-tu-giay-go-oc-cho-cao-cap_025605661.jpg",
-      "id": 50,
-      "moTa": "Tủ giày gỗ óc chó với thiết kế sang trọng",
-      "soLuongTonKho": 8,
-      "tenSanPham": "Tủ giày gỗ óc chó"
     },
     {
       "chiTietSanPham": {
@@ -1741,7 +2025,7 @@
         "chatLieu": "Gỗ MDF, đệm vải",
         "kichThuoc": "40x40x75 cm",
         "mauSac": "Trắng sứ",
-        "ngayCapNhat": "2024-03-15",
+        "ngayCapNhat": "2025-08-19",
         "ngayThem": "2024-03-15",
         "trongLuong": "11 kg"
       },
@@ -1754,7 +2038,7 @@
       "hinhAnh": "https://flexhouse.vn/wp-content/uploads/2023/02/Ghe-quay-bar-bang-go-xoay-360-do-nang-ha-JB1018.jpg",
       "id": 65,
       "moTa": "Ghế bar với thiết kế đa năng, tiện dụng",
-      "soLuongTonKho": 10,
+      "soLuongTonKho": 18,
       "tenSanPham": "Ghế bar đa năng"
     },
     {
@@ -1840,9 +2124,86 @@
       "moTa": "Tủ ly với thiết kế đa năng, tiện dụng",
       "soLuongTonKho": 10,
       "tenSanPham": "Tủ ly đa năng"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "gỗ teak",
+        "kichThuoc": "10cm",
+        "mauSac": "nâu gỗ",
+        "ngayCapNhat": "2025-08-19",
+        "ngayThem": "2025-08-19",
+        "trongLuong": "20 gram"
+      },
+      "danhMucSanPham": {
+        "moTa": "Dụng cụ nhà bếp",
+        "tenDanhMuc": "Dụng cụ bếp"
+      },
+      "giaBan": 5000000,
+      "giaSauGiam": 5000000,
+      "hinhAnh": "https://i.ebayimg.com/images/g/jnYAAOSwo4pnDUys/s-l1600.webp",
+      "id": 70,
+      "moTa": "Bộ muỗng nĩa gỗ teak cao cấp tiện lợi",
+      "soLuongTonKho": 6,
+      "tenSanPham": "Bộ muỗng nĩa gỗ teak"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "gỗ nâu",
+        "kichThuoc": "12cm",
+        "mauSac": "nâu gỗ",
+        "ngayCapNhat": "2025-08-19",
+        "ngayThem": "2025-08-19",
+        "trongLuong": "20 gram"
+      },
+      "danhMucSanPham": {
+        "moTa": "Dụng cụ nhà bếp",
+        "tenDanhMuc": "Dụng cụ bếp"
+      },
+      "giaBan": 3000000,
+      "giaSauGiam": 2800000,
+      "hinhAnh": "https://img4.dhresource.com/webp/m/0x0/f3/albu/jc/z/18/2b098b8d-75f1-40d7-8d16-9ecf5e4e7e2c.jpg",
+      "id": 71,
+      "moTa": "Muỗng nĩa gỗ chống dính",
+      "soLuongTonKho": 5,
+      "tenSanPham": "Bộ muỗng nĩa chống dính gỗ nâu"
+    },
+    {
+      "chiTietSanPham": {
+        "chatLieu": "gỗ hương",
+        "kichThuoc": "22x46x52",
+        "mauSac": "nâu vàng gỗ",
+        "ngayCapNhat": "2025-08-19",
+        "ngayThem": "2025-08-19",
+        "trongLuong": "5kg"
+      },
+      "danhMucSanPham": {
+        "moTa": "Dụng cụ nhà bếp",
+        "tenDanhMuc": "Dụng cụ bếp"
+      },
+      "giaBan": 6000000,
+      "giaSauGiam": 6000000,
+      "hinhAnh": "https://godinh.com/web/image/product.image/458341/image_1024/khay-tra-tieu-dong-go-huong-viet-cao-22-ngang-46-sau-52-cm-458341?unique=be29906",
+      "id": 72,
+      "moTa": "Khay trà gỗ hương hình con trâu cao cấp",
+      "soLuongTonKho": 6,
+      "tenSanPham": "Khay trà gỗ hương"
     }
   ],
   "promotions": {
+    "QUOC KHANH": {
+      "createdAt": "2025-08-14T14:39:06.528Z",
+      "description": "Mừng ngày Quốc Khánh giảm 2.900000đ cho đơn hàng từ 1.000000đ",
+      "endDate": "2025-09-03",
+      "icon": "🎆",
+      "id": "QUOC KHANH",
+      "minOrderValue": 6000000,
+      "promoCode": "QUOCKHANH2/9",
+      "startDate": "2025-08-29",
+      "status": "active",
+      "title": "MỪNG LỄ QUỐC KHÁNH 2/9/2025",
+      "updatedAt": "2025-08-16T08:23:39.965Z",
+      "voucherAmount": 2900000
+    },
     "mid_autumn_2025": {
       "createdAt": "2024-12-15T00:00:00",
       "description": "Tặng ngay voucher 1.200.000đ cho đơn hàng từ 10 triệu đồng",
@@ -1866,9 +2227,9 @@
       "minOrderValue": 5000000,
       "promoCode": "MOM2025",
       "startDate": "2025-03-12",
-      "status": "inactive",
+      "status": "active",
       "title": "Ngày của Mẹ",
-      "updatedAt": "2025-08-12T07:56:51.291Z",
+      "updatedAt": "2025-08-14T14:35:06.575Z",
       "voucherAmount": 500000
     },
     "reunification_day_2025": {
@@ -1939,15 +2300,45 @@
       "email": "eirian6604@gmail.com",
       "emailVerified": true,
       "fullName": "Nguyễn Thị Huỳnh Như",
-      "lastLogin": "2025-08-12T08:37:27.123Z",
+      "lastLogin": "2025-08-19T07:24:22.840Z",
       "loginStatus": {
         "status": "offline",
-        "timestamp": "2025-08-12T12:23:10.871Z"
+        "timestamp": "2025-08-19T07:35:04.045Z"
       },
       "phone": "0345142208",
       "role": "user",
       "status": "active",
       "updatedAt": "2025-08-10T11:05:49.059Z"
+    },
+    "bxlYjfodQoOvCYSYB9R07t0HxSO2": {
+      "accountType": "email",
+      "createdAt": "2025-08-15T12:14:13.673Z",
+      "displayName": "",
+      "email": "maithanhphat@gmail.com",
+      "emailVerified": false,
+      "fullName": "ThanhPhat",
+      "lastLogin": "2025-08-15T12:14:31.071Z",
+      "loginStatus": {
+        "status": "offline",
+        "timestamp": "2025-08-15T12:15:53.813Z"
+      },
+      "role": "user",
+      "status": "active"
+    },
+    "poXjhTzojJNCVDK9d8oM2ChH4U22": {
+      "accountType": "email",
+      "createdAt": "2025-08-15T14:36:31.866Z",
+      "displayName": "",
+      "email": "lekhangan1610@gmail.com",
+      "emailVerified": false,
+      "fullName": "Nguyễn Như",
+      "lastLogin": "2025-08-15T15:15:48.398Z",
+      "loginStatus": {
+        "status": "offline",
+        "timestamp": "2025-08-16T08:18:44.757Z"
+      },
+      "role": "user",
+      "status": "active"
     },
     "r68rIvIXwtbgMMgWOR3t6z51frJ3": {
       "address": "",
@@ -1958,10 +2349,10 @@
       "email": "quantrivienmocnhien@gmail.com",
       "emailVerified": false,
       "fullName": "Huỳnh Như",
-      "lastLogin": "2025-08-14T13:49:10.364Z",
+      "lastLogin": "2025-08-19T07:35:01.890Z",
       "loginStatus": {
         "status": "offline",
-        "timestamp": "2025-08-14T13:49:11.882Z"
+        "timestamp": "2025-08-19T07:35:04.047Z"
       },
       "phone": "0345142208",
       "role": "user",

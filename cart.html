@@ -1971,7 +1971,7 @@
                     <span class="cart-icon">🛒</span>
                     <span>Giỏ hàng</span>
                 </a>
-                <a href="#" class="login-btn" onclick="showModal('loginModal')">
+                <a href="#" class="login-btn" id="loginBtn">
                     <span>👤</span>
                     <span>Đăng nhập</span>
                 </a>
@@ -2574,7 +2574,7 @@
 
             // Kiểm tra trạng thái đăng nhập
             auth.onAuthStateChanged((user) => {
-                const loginBtn = document.querySelector('.login-btn');
+                const loginBtn = document.getElementById('loginBtn');
                 if (user) {
                     updateLoginStatus(user, 'online');
                     
@@ -2601,7 +2601,7 @@
                         <span>👤</span>
                         <span>Đăng nhập</span>
                     `;
-                    loginBtn.onclick = () => showModal('loginModal');
+                    loginBtn.onclick = () => window.location.href = 'auth.html';
                 }
             });
 

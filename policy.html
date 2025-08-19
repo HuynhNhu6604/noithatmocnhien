@@ -1127,7 +1127,7 @@
         </div>
         <nav class="header-nav">
             <div class="nav-links">
-                <a href="index.html" class="nav-btn active">Trang chủ</a>
+                <a href="index.html" class="nav-btn ">Trang chủ</a>
                 <div class="dropdown">
                     <a href="products.html" class="nav-btn">Sản phẩm</a>
                     <div class="mega-menu">
@@ -1175,13 +1175,13 @@
                 <a href="collection.html" class="nav-btn">Bộ sưu tập</a>
                 <a href="promotion.html" class="nav-btn">Khuyến mãi</a>
                 <a href="member.html" class="nav-btn">Thành viên</a>
-                <a href="policy.html" class="nav-btn">Chính sách</a>
+                <a href="policy.html" class="nav-btn active">Chính sách</a>
                 <a href="about.html" class="nav-btn">Về chúng tôi</a>
                 <a href="cart.html" class="cart-btn">
                     <span class="cart-icon">🛒</span>
                     <span>Giỏ hàng</span>
                 </a>
-                <a href="#" class="login-btn" onclick="showModal('loginModal')">
+                <a href="#" class="login-btn" id="loginBtn">
                     <span>👤</span>
                     <span>Đăng nhập</span>
                 </a>
@@ -1722,7 +1722,7 @@
 
             // Kiểm tra trạng thái đăng nhập
             auth.onAuthStateChanged((user) => {
-                const loginBtn = document.querySelector('.login-btn');
+                const loginBtn = document.getElementById('loginBtn');
                 if (user) {
                     updateLoginStatus(user, 'online');
                     
@@ -1749,7 +1749,7 @@
                         <span>👤</span>
                         <span>Đăng nhập</span>
                     `;
-                    loginBtn.onclick = () => showModal('loginModal');
+                    loginBtn.onclick = () => window.location.href = 'auth.html';
                 }
             });
 
