@@ -8,8 +8,8 @@ const VNPAY_CONFIG = {
     vnpUrl: 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html',
 
     // Cấu hình return URL
-    // URL đã được phê duyệt trên VNPay Sandbox
-    returnUrl: 'https://noithatmocnhien.netlify.app/vnpay_return.html',
+    // Test mode: localhost
+    returnUrl: 'http://localhost:5500/vnpay_return.html',
 
     // Thông tin cố định
     version: '2.1.0',
