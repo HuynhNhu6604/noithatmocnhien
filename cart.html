@@ -3511,8 +3511,8 @@
             };
             if (paymentMethod === 'vnpay') {
                 // Cấu hình VNPAY
-                const vnp_TmnCode = 'HPVOQ9TR';
-                const vnp_HashSecret = 'KF294SKU4OPBO1H1K5PXYC5572PUGXML';
+                const vnp_TmnCode = 'Y7CBEPJ0';
+                const vnp_HashSecret = 'B7XA8SZ917ZJ4FN667VURCMVR1GVJ0PV';
                 const vnp_Url = 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html';
                 const vnp_ReturnUrl = window.location.origin + '/vnpay_return.html';
 
@@ -3621,8 +3621,8 @@
         document.getElementById('checkout-button').addEventListener('click', processPayment);
 
         async function processVNPayPayment(order, orderKey) {
-            const vnp_TmnCode = "HPVOQ9TR";
-            const vnp_HashSecret = "KF294SKU4OPBO1H1K5PXYC5572PUGXML";
+            const vnp_TmnCode = "Y7CBEPJ0";
+            const vnp_HashSecret = "B7XA8SZ917ZJ4FN667VURCMVR1GVJ0PV";
             const vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
             const vnp_ReturnUrl = window.location.origin + "/vnpay_return.html";
 
