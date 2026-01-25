@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VNPay IPN Handler</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script>
+        // VNPay IPN Handler - Server to Server notification
+        // Parse URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const vnpParams = {};
+
+        for (const [key, value] of urlParams.entries()) {
+            if (key.startsWith('vnp_')) {
+                vnpParams[key] = value;
+            }
+        }
+
+        // Extract and verify checksum
+        const secureHash = vnpParams['vnp_SecureHash'];
+        delete vnpParams['vnp_SecureHash'];
+        delete vnpParams['vnp_SecureHashType'];
+
+        // Sort parameters
+        const sortedParams = Object.keys(vnpParams).sort().reduce((obj, key) => {
+            obj[key] = vnpParams[key];
+            return obj;
+        }, {});
+
+        // Create hash data
+        const signData = new URLSearchParams(sortedParams).toString();
+        const hashSecret = 'B7XA8SZ917ZJ4FN667VURCMVR1GVJ0PV';
+        const hmac = CryptoJS.HmacSHA512(signData, hashSecret);
+        const checkSum = hmac.toString(CryptoJS.enc.Hex);
+
+        // Verify signature
+        let response;
+        if (secureHash === checkSum) {
+            // Valid signature
+            const orderId = vnpParams['vnp_TxnRef'];
+            const amount = vnpParams['vnp_Amount'] / 100;
+            const responseCode = vnpParams['vnp_ResponseCode'];
+            const transactionStatus = vnpParams['vnp_TransactionStatus'];
+
+            // Check transaction status
+            if (responseCode === '00' && transactionStatus === '00') {
+                // Payment successful
+                response = {
+                    RspCode: '00',
+                    Message: 'Confirm Success'
+                };
+
+                console.log('✅ Payment successful:', {
+                    orderId,
+                    amount,
+                    transactionNo: vnpParams['vnp_TransactionNo']
+                });
+            } else {
+                // Payment failed
+                response = {
+                    RspCode: '00',
+                    Message: 'Confirm Success'
+                };
+
+                console.log('❌ Payment failed:', {
+                    orderId,
+                    responseCode,
+                    transactionStatus
+                });
+            }
+        } else {
+            // Invalid signature
+            response = {
+                RspCode: '97',
+                Message: 'Invalid signature'
+            };
+
+            console.error('❌ Invalid checksum');
+        }
+
+        // Return JSON response to VNPay
+        document.write(JSON.stringify(response));
+
+        // Log for debugging
+        console.log('IPN Response:', response);
+        console.log('VNPay Params:', vnpParams);
+    </script>
+</body>
+
+</html>
