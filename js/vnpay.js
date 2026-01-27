@@ -63,8 +63,8 @@ function createVNPayPaymentUrl(orderInfo) {
     // Tạo query string
     const signData = new URLSearchParams(vnp_Params).toString();
 
-    // Tạo secure hash (VNPay yêu cầu HmacSHA256)
-    const hmac = CryptoJS.HmacSHA256(signData, VNPAY_CONFIG.hashSecret);
+    // Tạo secure hash (VNPay yêu cầu HmacSHA512)
+    const hmac = CryptoJS.HmacSHA512(signData, VNPAY_CONFIG.hashSecret);
     const secureHash = hmac.toString(CryptoJS.enc.Hex);
 
     // Thêm secure hash vào params
@@ -111,8 +111,8 @@ function verifyVNPayReturn(vnpParams) {
     // Tạo sign data
     const signData = new URLSearchParams(sortedParams).toString();
 
-    // Tạo hash để so sánh (VNPay yêu cầu HmacSHA256)
-    const hmac = CryptoJS.HmacSHA256(signData, VNPAY_CONFIG.hashSecret);
+    // Tạo hash để so sánh (VNPay yêu cầu HmacSHA512)
+    const hmac = CryptoJS.HmacSHA512(signData, VNPAY_CONFIG.hashSecret);
     const checkSum = hmac.toString(CryptoJS.enc.Hex);
 
     return secureHash === checkSum;

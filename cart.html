@@ -29,9 +29,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script>
         const VNPAY_CONFIG = { tmnCode: 'Y7CBEPJ0', hashSecret: 'B7XA8SZ917ZJ4FN667VURCMVR1GVJ0PV', vnpUrl: 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html', returnUrl: window.location.hostname === 'localhost' ? 'http://localhost:5500/vnpay_return.html' : 'https://noithatmocnhien.netlify.app/vnpay_return.html', version: '2.1.0', command: 'pay', currCode: 'VND', locale: 'vn', orderType: 'other' };
-        function createVNPayPaymentUrl(orderInfo) { const { orderId, amount, orderDesc, bankCode = '', ipAddr = '127.0.0.1' } = orderInfo; const createDate = moment().format('YYYYMMDDHHmmss'); let vnp_Params = { vnp_Version: VNPAY_CONFIG.version, vnp_Command: VNPAY_CONFIG.command, vnp_TmnCode: VNPAY_CONFIG.tmnCode, vnp_Locale: VNPAY_CONFIG.locale, vnp_CurrCode: VNPAY_CONFIG.currCode, vnp_TxnRef: orderId, vnp_OrderInfo: orderDesc, vnp_OrderType: VNPAY_CONFIG.orderType, vnp_Amount: amount * 100, vnp_ReturnUrl: VNPAY_CONFIG.returnUrl, vnp_IpAddr: ipAddr, vnp_CreateDate: createDate }; if (bankCode && bankCode !== '') vnp_Params['vnp_BankCode'] = bankCode; vnp_Params = sortObject(vnp_Params); const signData = new URLSearchParams(vnp_Params).toString(); const hmac = CryptoJS.HmacSHA256(signData, VNPAY_CONFIG.hashSecret); const secureHash = hmac.toString(CryptoJS.enc.Hex); vnp_Params['vnp_SecureHash'] = secureHash; const querystring = new URLSearchParams(vnp_Params).toString(); return VNPAY_CONFIG.vnpUrl + '?' + querystring; }
+        function createVNPayPaymentUrl(orderInfo) { const { orderId, amount, orderDesc, bankCode = '', ipAddr = '127.0.0.1' } = orderInfo; const createDate = moment().format('YYYYMMDDHHmmss'); let vnp_Params = { vnp_Version: VNPAY_CONFIG.version, vnp_Command: VNPAY_CONFIG.command, vnp_TmnCode: VNPAY_CONFIG.tmnCode, vnp_Locale: VNPAY_CONFIG.locale, vnp_CurrCode: VNPAY_CONFIG.currCode, vnp_TxnRef: orderId, vnp_OrderInfo: orderDesc, vnp_OrderType: VNPAY_CONFIG.orderType, vnp_Amount: amount * 100, vnp_ReturnUrl: VNPAY_CONFIG.returnUrl, vnp_IpAddr: ipAddr, vnp_CreateDate: createDate }; if (bankCode && bankCode !== '') vnp_Params['vnp_BankCode'] = bankCode; vnp_Params = sortObject(vnp_Params); const signData = new URLSearchParams(vnp_Params).toString(); const hmac = CryptoJS.HmacSHA512(signData, VNPAY_CONFIG.hashSecret); const secureHash = hmac.toString(CryptoJS.enc.Hex); vnp_Params['vnp_SecureHash'] = secureHash; const querystring = new URLSearchParams(vnp_Params).toString(); return VNPAY_CONFIG.vnpUrl + '?' + querystring; }
         function sortObject(obj) { const sorted = {}; Object.keys(obj).sort().forEach(key => sorted[key] = obj[key]); return sorted; }
-        function verifyVNPayReturn(vnpParams) { const secureHash = vnpParams['vnp_SecureHash']; delete vnpParams['vnp_SecureHash']; delete vnpParams['vnp_SecureHashType']; const sortedParams = sortObject(vnpParams); const signData = new URLSearchParams(sortedParams).toString(); const hmac = CryptoJS.HmacSHA256(signData, VNPAY_CONFIG.hashSecret); return secureHash === hmac.toString(CryptoJS.enc.Hex); }
+        function verifyVNPayReturn(vnpParams) { const secureHash = vnpParams['vnp_SecureHash']; delete vnpParams['vnp_SecureHash']; delete vnpParams['vnp_SecureHashType']; const sortedParams = sortObject(vnpParams); const signData = new URLSearchParams(sortedParams).toString(); const hmac = CryptoJS.HmacSHA512(signData, VNPAY_CONFIG.hashSecret); return secureHash === hmac.toString(CryptoJS.enc.Hex); }
         function getClientIp() { return '127.0.0.1'; }
         function formatCurrency(amount) { return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount); }
         window.VNPAY_CONFIG = VNPAY_CONFIG; window.createVNPayPaymentUrl = createVNPayPaymentUrl; window.verifyVNPayReturn = verifyVNPayReturn; window.getClientIp = getClientIp; window.formatCurrency = formatCurrency;
@@ -3096,27 +3096,17 @@
                     });
 
                     // Tạo chuỗi ký tự cần mã hóa
-                    const signData = Object.keys(sortedParams)
-                        .map(key => {
-                            const value = sortedParams[key];
-                            return `${key}=${encodeURIComponent(String(value)).replace(/%20/g, '+')}`;
-                        })
-                        .join('&');
+                    const signData = new URLSearchParams(sortedParams).toString();
 
                     // Tạo chữ ký
-                    const hmac = CryptoJS.HmacSHA256(signData, vnp_HashSecret);
+                    const hmac = CryptoJS.HmacSHA512(signData, vnp_HashSecret);
                     const vnp_SecureHash = hmac.toString(CryptoJS.enc.Hex);
 
                     // Thêm chữ ký vào tham số
                     sortedParams.vnp_SecureHash = vnp_SecureHash;
 
                     // Tạo URL thanh toán
-                    const paymentUrl = vnp_Url + '?' + Object.keys(sortedParams)
-                        .map(key => {
-                            const value = sortedParams[key];
-                            return `${key}=${encodeURIComponent(String(value)).replace(/%20/g, '+')}`;
-                        })
-                        .join('&');
+                    const paymentUrl = vnp_Url + '?' + new URLSearchParams(sortedParams).toString();
 
                     // Lưu thông tin đơn hàng vào localStorage
                     const orderInfo = {
@@ -3539,27 +3529,17 @@
                 });
 
                 // Tạo chuỗi ký tự cần mã hóa
-                const signData = Object.keys(sortedParams)
-                    .map(key => {
-                        const value = sortedParams[key];
-                        return `${key}=${encodeURIComponent(String(value)).replace(/%20/g, '+')}`;
-                    })
-                    .join('&');
+                const signData = new URLSearchParams(sortedParams).toString();
 
                 // Tạo chữ ký
-                const hmac = CryptoJS.HmacSHA256(signData, vnp_HashSecret);
+                const hmac = CryptoJS.HmacSHA512(signData, vnp_HashSecret);
                 const vnp_SecureHash = hmac.toString(CryptoJS.enc.Hex);
 
                 // Thêm chữ ký vào tham số
                 sortedParams.vnp_SecureHash = vnp_SecureHash;
 
                 // Tạo URL thanh toán
-                const paymentUrl = vnp_Url + '?' + Object.keys(sortedParams)
-                    .map(key => {
-                        const value = sortedParams[key];
-                        return `${key}=${encodeURIComponent(String(value)).replace(/%20/g, '+')}`;
-                    })
-                    .join('&');
+                const paymentUrl = vnp_Url + '?' + new URLSearchParams(sortedParams).toString();
 
                 // Lưu thông tin đơn hàng vào localStorage
                 localStorage.setItem('currentOrder', JSON.stringify({ orderKey, ...order }));
@@ -3660,21 +3640,17 @@
             }, {});
 
             // Tạo chuỗi ký tự cần mã hóa
-            const signData = Object.keys(sortedParams)
-                .map(key => `${key}=${encodeURIComponent(sortedParams[key]).replace(/%20/g, '+')}`)
-                .join('&');
+            const signData = new URLSearchParams(sortedParams).toString();
 
             // Tạo chữ ký
-            const hmac = CryptoJS.HmacSHA256(signData, vnp_HashSecret);
+            const hmac = CryptoJS.HmacSHA512(signData, vnp_HashSecret);
             const vnp_SecureHash = hmac.toString(CryptoJS.enc.Hex);
 
             // Thêm chữ ký vào tham số
             sortedParams.vnp_SecureHash = vnp_SecureHash;
 
             // Tạo URL thanh toán
-            const paymentUrl = vnp_Url + '?' + Object.keys(sortedParams)
-                .map(key => `${key}=${encodeURIComponent(sortedParams[key]).replace(/%20/g, '+')}`)
-                .join('&');
+            const paymentUrl = vnp_Url + '?' + new URLSearchParams(sortedParams).toString();
 
             // Chuyển hướng
             window.location.href = paymentUrl;
@@ -3905,27 +3881,17 @@
                     });
 
                     // Tạo chuỗi ký tự cần mã hóa
-                    const signData = Object.keys(sortedParams)
-                        .map(key => {
-                            const value = sortedParams[key];
-                            return `${key}=${encodeURIComponent(String(value)).replace(/%20/g, '+')}`;
-                        })
-                        .join('&');
+                    const signData = new URLSearchParams(sortedParams).toString();
 
                     // Tạo chữ ký
-                    const hmac = CryptoJS.HmacSHA256(signData, vnp_HashSecret);
+                    const hmac = CryptoJS.HmacSHA512(signData, vnp_HashSecret);
                     const vnp_SecureHash = hmac.toString(CryptoJS.enc.Hex);
 
                     // Thêm chữ ký vào tham số
                     sortedParams.vnp_SecureHash = vnp_SecureHash;
 
                     // Tạo URL thanh toán
-                    const paymentUrl = vnp_Url + '?' + Object.keys(sortedParams)
-                        .map(key => {
-                            const value = sortedParams[key];
-                            return `${key}=${encodeURIComponent(String(value)).replace(/%20/g, '+')}`;
-                        })
-                        .join('&');
+                    const paymentUrl = vnp_Url + '?' + new URLSearchParams(sortedParams).toString();
 
                     // Lưu thông tin đơn hàng vào localStorage
                     const orderInfo = {
