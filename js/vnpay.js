@@ -2,9 +2,9 @@
 // Môi trường: Sandbox (Test)
 
 const VNPAY_CONFIG = {
-    // Thông tin từ VNPay Sandbox - Account: (TMN Code cũ - test)
-    tmnCode: 'HPVOQ9TR',
-    hashSecret: 'KF294SKU4OPBO1H1K5PXYC5572PUGXML',
+    // Thông tin từ VNPay Sandbox - Account: clone1khangzzz@gmail.com (Cập nhật 27/01/2026)
+    tmnCode: 'Y7CBEPJ0',
+    hashSecret: 'B7XA8SZ917ZJ4FN667VURCMVR1GVJ0PV',
     vnpUrl: 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html',
 
     // Cấu hình return URL

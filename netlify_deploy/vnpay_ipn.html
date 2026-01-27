@@ -35,7 +35,7 @@
         // Create hash data
         const signData = new URLSearchParams(sortedParams).toString();
         const hashSecret = 'B7XA8SZ917ZJ4FN667VURCMVR1GVJ0PV';
-        const hmac = CryptoJS.HmacSHA512(signData, hashSecret);
+        const hmac = CryptoJS.HmacSHA256(signData, hashSecret);
         const checkSum = hmac.toString(CryptoJS.enc.Hex);
 
         // Verify signature
