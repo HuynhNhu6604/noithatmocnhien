@@ -1,1109 +1,1169 @@
 <!DOCTYPE html>
 <html lang="vi">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- SEO Meta Tags -->
-        <meta name="description" content="Nội thất Mộc Nhiên - Chuyên cung cấp các sản phẩm nội thất gỗ tự nhiên cao cấp, thiết kế độc đáo và tinh tế. Sofa, bàn ghế, tủ kệ, giường ngủ và các sản phẩm trang trí nội thất chất lượng cao.">
-        <meta name="keywords" content="nội thất mộc nhiên, nội thất gỗ tự nhiên, sofa gỗ, bàn ghế gỗ, tủ kệ gỗ, giường ngủ gỗ, nội thất phòng khách, nội thất phòng ngủ, nội thất phòng bếp, nội thất văn phòng, đồ trang trí nội thất, thiết kế nội thất, nội thất cao cấp, nội thất hiện đại, nội thất truyền thống, nội thất việt nam, nội thất cần thơ">
-        <meta name="author" content="Nội thất Mộc Nhiên">
-        <meta name="robots" content="index, follow">
-        <meta property="og:title" content="Nội thất Mộc Nhiên - Nội thất gỗ tự nhiên cao cấp">
-        <meta property="og:description" content="Chuyên cung cấp các sản phẩm nội thất gỗ tự nhiên cao cấp, thiết kế độc đáo và tinh tế. Sofa, bàn ghế, tủ kệ, giường ngủ và các sản phẩm trang trí nội thất chất lượng cao.">
-        <meta property="og:image" content="https://noithatmocnhien.netlify.app/picture/logo.jpg">
-        <meta property="og:url" content="https://noithatmocnhien.netlify.app">
-        <meta property="og:type" content="website">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Nội thất Mộc Nhiên - Nội thất gỗ tự nhiên cao cấp">
-        <meta name="twitter:description" content="Chuyên cung cấp các sản phẩm nội thất gỗ tự nhiên cao cấp, thiết kế độc đáo và tinh tế.">
-        <meta name="twitter:image" content="https://noithatmocnhien.netlify.app/picture/logo.jpg">
-        <link rel="canonical" href="https://noithatmocnhien.netlify.app">
-        
-        <title>Nội thất Mộc Nhiên - Nội thất gỗ tự nhiên cao cấp</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-        
-        <!-- Firebase SDK -->
-        <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
-        
-        <!-- Sweetalert2 -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            body {
-                font-family: 'Montserrat', sans-serif;
-                background-color: #f9f7f3;
-            }
-            .header-top {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-color: #5a3d2b;
-                padding: 18px 0 12px 0;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            }
-            .logo {
-                width: 90px;
-                height: 90px;
-                margin-right: 18px;
-                border-radius: 60%;
-                border: 3px solid #e9c46a;
-                box-shadow: 0 0 15px rgba(233, 196, 106, 0.6);
-                transition: transform 0.3s, box-shadow 0.3s;
-                object-fit: cover;
-            }
-            .logo:hover {
-                transform: scale(1.05);
-                box-shadow: 0 0 20px rgba(233, 196, 106, 0.8);
-            }
-            .store-name {
-                font-family: 'Great Vibes', cursive;
-                font-size: 2.7rem;
-                font-weight: 400;
-                color: #e9c46a;
-                text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-                letter-spacing: 1.5px;
-            }
-            .header-nav {
-                width: 100%;
-                background-color: #4a3322;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-                display: flex;
-                justify-content: center;
-            }
-            .nav-links {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
-                padding: 0 10px;
-                min-height: 48px;
-            }
-            .nav-btn {
-                font-family: 'Montserrat', sans-serif;
-                text-decoration: none;
-                color: #f9f7f3;
-                font-weight: 500;
-                padding: 8px 12px;
-                border-radius: 5px;
-                transition: all 0.3s;
-                border: 1px solid transparent;
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-                font-size: 0.75rem;
-                position: relative;
-                white-space: nowrap;
-            }
-            .nav-btn:hover {
-                background-color: rgba(233, 196, 106, 0.2);
-                border-color: #e9c46a;
-            }
-            .active {
-                background-color: rgba(233, 196, 106, 0.2);
-                border: 1px solid #e9c46a;
-            }
-            
-            /* Dropdown menu */
-            .dropdown {
-                position: relative;
-            }
-            .mega-menu {
-                display: none;
-                position: absolute;
-                left: 0;
-                top: 100%;
-                background: #fff;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-                padding: 24px 32px;
-                display: flex;
-                gap: 40px;
-                z-index: 100;
-                min-width: 800px;
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(10px);
-                transition: all 0.3s ease;
-            }
-            .dropdown:hover .mega-menu {
-                display: flex;
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-            }
-            .mega-column {
-                display: flex;
-                flex-direction: column;
-                min-width: 160px;
-                margin-right: 24px;
-            }
-            .mega-menu a {
-                color: #555;
-                padding: 8px 0;
-                text-decoration: none;
-                font-size: 0.9rem;
-                transition: all 0.2s;
-                border-bottom: 1px solid transparent;
-            }
-            .mega-menu a:hover {
-                color: #e9c46a;
-                border-bottom: 1px solid #e9c46a;
-                transform: translateX(5px);
-            }
-            
-            /* Thêm mũi tên cho dropdown */
-            .dropdown > .nav-btn::after {
-                content: '▼';
-                font-size: 0.7em;
-                margin-left: 5px;
-                display: inline-block;
-                transition: transform 0.3s;
-            }
-            .dropdown:hover > .nav-btn::after {
-                transform: rotate(180deg);
-            }
-            
-            /* Nút giỏ hàng */
-            .cart-btn {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                color: #d9d1cc;
-                padding: 8px 12px;
-                border-radius: 5px;
-                text-decoration: none;
-                transition: all 0.3s;
-                font-weight: 600;
-                margin-left: 10px;
-                font-size: 0.75rem;
-            }
-            .cart-icon {
-                font-size: 2rem;
-            }
-            .cart-btn:hover {
-                background: #d4b054;
-                transform: translateY(-2px);
-            }
-            
-            /* Style cho nút đăng nhập */
-            .login-btn {
-                display: flex;
-                align-items: center;
-                gap: 6px;
-                color: #5a3d2b;
-                padding: 8px 16px;
-                border-radius: 5px;
-                text-decoration: none;
-                transition: all 0.3s;
-                font-weight: 600;
-                margin-left: 10px;
-                font-size: 0.75rem;
-                background-color: #e9c46a;
-                border: 1px solid #e9c46a;
-            }
-            .login-btn:hover {
-                background-color: #5a3d2b;
-                color: #e9c46a;
-                transform: translateY(-2px);
-            }
-            main {
-                padding: 30px;
-                min-height: 600px;
-                background-color: #f9f7f3;
-            }
-            .banner {
-                width: 100%;
-                max-height: 600px;
-                position: relative;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .banner-image {
-                width: 100%;
-                height: auto;
-                min-height: 400px;
-                max-height: 600px;
-                object-fit: cover;
-                object-position: center;
-                transition: transform 10s ease;
-                display: block;
-                image-rendering: -webkit-optimize-contrast;
-                image-rendering: crisp-edges;
-                -webkit-image-rendering: crisp-edges;
-                backface-visibility: hidden;
-            }
-            .banner:hover .banner-image {
-                transform: scale(1.05);
-            }
-            .banner-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1));
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                color: white;
-                padding: 0 20px;
-                text-align: center;
-            }
-            .banner-title {
-                font-family: 'Great Vibes', cursive;
-                font-size: 4rem;
-                margin-bottom: 20px;
-                text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-                color: #ffffff;
-            }
-            .banner-subtitle {
-                font-family: 'Montserrat', sans-serif;
-                font-size: 1.5rem;
-                font-weight: 300;
-                max-width: 800px;
-                text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-                color: #ffffff;
-            }
-            /* Phần footer */
-            .footer {
-                background-color: #5a3d2b;
-                color: #e9e2d0;
-                padding: 50px 0 20px;
-            }
-            .footer-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-            .footer-section {
-                flex: 1;
-                min-width: 250px;
-                margin-bottom: 30px;
-                padding: 0 15px;
-            }
-            .footer-title {
-                font-size: 1.3rem;
-                font-weight: 600;
-                margin-bottom: 20px;
-                color: #e9c46a;
-                position: relative;
-                padding-bottom: 10px;
-            }
-            .footer-title::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 50px;
-                height: 2px;
-                background-color: #e9c46a;
-            }
-            .footer-contact-item {
-                display: flex;
-                align-items: flex-start;
-                margin-bottom: 15px;
-            }
-            .footer-contact-icon {
-                min-width: 20px;
-                margin-right: 10px;
-                color: #e9c46a;
-            }
-            .footer-links {
-                list-style: none;
-            }
-            .footer-links li {
-                margin-bottom: 10px;
-            }
-            .footer-links a {
-                color: #e9e2d0;
-                text-decoration: none;
-                transition: color 0.3s;
-            }
-            .footer-links a:hover {
-                color: #e9c46a;
-            }
-            .footer-bottom {
-                text-align: center;
-                padding-top: 20px;
-                margin-top: 20px;
-                border-top: 1px solid rgba(233, 196, 106, 0.2);
-                font-size: 0.9rem;
-            }
-
-            .posters {
-                display: flex;
-                gap: 30px;
-                justify-content: center;
-                align-items: stretch;
-                margin: 40px 0 60px 0;
-                flex-wrap: wrap;
-            }
-            .poster {
-                background: #fff8ed;
-                border-radius: 16px;
-                box-shadow: 0 4px 16px rgba(90,61,43,0.08);
-                overflow: hidden;
-                width: 320px;
-                display: flex;
-                flex-direction: column;
-                transition: transform 0.2s, box-shadow 0.2s;
-                border: 1.5px solid #e9c46a;
-                cursor: pointer;
-            }
-            .poster:hover {
-                transform: translateY(-6px) scale(1.03);
-                box-shadow: 0 8px 32px rgba(90,61,43,0.16);
-            }
-            .poster-img {
-                width: 100%;
-                height: 170px;
-                object-fit: cover;
-                background: #e9e2d0;
-            }
-            .poster-content {
-                padding: 20px 18px 24px 18px;
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-            }
-            .poster-title {
-                font-size: 1.25rem;
-                color: #5a3d2b;
-                margin-bottom: 10px;
-                font-weight: 700;
-            }
-            .poster-desc {
-                color: #4a3322;
-                font-size: 1rem;
-                margin-bottom: 18px;
-            }
-            .poster-btn {
-                display: inline-block;
-                background: #e9c46a;
-                color: #5a3d2b;
-                padding: 8px 20px;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 600;
-                letter-spacing: 0.5px;
-                transition: background 0.2s, color 0.2s;
-            }
-            .poster-btn:hover {
-                background: #5a3d2b;
-                color: #fff8ed;
-            }
-
-            /* Styles cho modal */
-            .modal-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 1000;
-                -webkit-backdrop-filter: blur(5px);
-                backdrop-filter: blur(5px);
-            }
-
-            .modal {
-                display: none;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: #fff8ed;
-                padding: 30px;
-                border-radius: 12px;
-                box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
-                z-index: 1001;
-                width: 90%;
-                max-width: 400px;
-            }
-
-            .modal.active {
-                display: block;
-            }
-
-            .modal-header {
-                text-align: center;
-                margin-bottom: 25px;
-            }
-
-            .modal-title {
-                color: #5a3d2b;
-                font-size: 1.5rem;
-                font-weight: 600;
-                margin-bottom: 10px;
-            }
-
-            .modal-subtitle {
-                color: #4a3322;
-                font-size: 0.9rem;
-                margin-bottom: 20px;
-            }
-
-            .modal-form {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .form-group {
-                position: relative;
-            }
-
-            .form-input {
-                width: 100%;
-                padding: 12px 15px;
-                border: 1.5px solid #e9c46a;
-                border-radius: 8px;
-                font-size: 0.9rem;
-                color: #5a3d2b;
-                background: #fff;
-                transition: all 0.3s;
-            }
-
-            .form-input:focus {
-                outline: none;
-                border-color: #5a3d2b;
-                box-shadow: 0 0 0 2px rgba(90, 61, 43, 0.1);
-            }
-
-            .form-button {
-                width: 100%;
-                padding: 12px;
-                background: #e9c46a;
-                color: #5a3d2b;
-                border: none;
-                border-radius: 8px;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.3s;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 10px;
-            }
-
-            .form-button:hover:not(:disabled) {
-                background: #5a3d2b;
-                color: #fff8ed;
-            }
-
-            .form-button:disabled {
-                opacity: 0.7;
-                cursor: not-allowed;
-            }
-
-            .modal-links {
-                margin-top: 20px;
-                text-align: center;
-                font-size: 0.9rem;
-            }
-
-            .modal-link {
-                color: #5a3d2b;
-                text-decoration: none;
-                cursor: pointer;
-                transition: color 0.3s;
-            }
-
-            .modal-link:hover {
-                color: #e9c46a;
-            }
-
-            .spinner {
-                width: 20px;
-                height: 20px;
-                border: 2px solid #5a3d2b;
-                border-top: 2px solid transparent;
-                border-radius: 50%;
-                animation: spin 0.8s linear infinite;
-                display: none;
-            }
-
-            .form-button:disabled .spinner {
-                display: inline-block;
-            }
-
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-
-            /* Styles cho các section mới */
-            .section-header {
-                text-align: center;
-                margin-bottom: 40px;
-                padding: 0 20px;
-            }
-
-            .section-header h2 {
-                font-size: 2.5rem;
-                color: #5a3d2b;
-                margin-bottom: 15px;
-                font-weight: 600;
-            }
-
-            .section-header p {
-                color: #666;
-                font-size: 1.1rem;
-                max-width: 600px;
-                margin: 0 auto;
-            }
-
-            /* Featured Products */
-            .featured-products {
-                padding: 60px 20px;
-                background: #fff;
-            }
-
-            .product-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 30px;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .product-card {
-                background: #fff;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-                transition: transform 0.3s, box-shadow 0.3s;
-                position: relative;
-            }
-
-            .product-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            }
-
-            .product-badge {
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                background: #e9c46a;
-                color: #5a3d2b;
-                padding: 5px 12px;
-                border-radius: 20px;
-                font-size: 0.8rem;
-                font-weight: 600;
-            }
-
-            .product-image {
-                width: 100%;
-                height: 250px;
-                object-fit: cover;
-            }
-
-            .product-info {
-                padding: 20px;
-            }
-
-            .product-info h3 {
-                font-size: 1.2rem;
-                color: #5a3d2b;
-                margin-bottom: 10px;
-            }
-
-            .product-price {
-                color: #e9c46a;
-                font-size: 1.3rem;
-                font-weight: 600;
-                margin-bottom: 15px;
-            }
-
-            .original-price {
-                text-decoration: line-through;
-                color: #999;
-                font-size: 1rem;
-                margin-right: 10px;
-            }
-
-            .discounted-price {
-                color: #e9c46a;
-                font-size: 1.3rem;
-                font-weight: 600;
-            }
-
-            .current-price {
-                color: #e9c46a;
-                font-size: 1.3rem;
-                font-weight: 600;
-            }
-
-            .product-actions {
-                display: flex;
-                gap: 10px;
-            }
-
-            .btn-primary, .btn-secondary {
-                padding: 8px 20px;
-                border-radius: 6px;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.3s;
-                border: none;
-            }
-
-            .btn-primary {
-                background: #e9c46a;
-                color: #5a3d2b;
-            }
-
-            .btn-secondary {
-                background: transparent;
-                border: 2px solid #e9c46a;
-                color: #5a3d2b;
-            }
-
-            .btn-primary:hover {
-                background: #5a3d2b;
-                color: #e9c46a;
-            }
-
-            .btn-secondary:hover {
-                background: #e9c46a;
-            }
-
-            /* Collections */
-            .collections {
-                padding: 60px 20px;
-                background: #f9f7f3;
-            }
-
-            .collection-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .collection-card {
-                position: relative;
-                border-radius: 12px;
-                overflow: hidden;
-                height: 400px;
-            }
-
-            .collection-image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.5s;
-            }
-
-            .collection-overlay {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(transparent, rgba(0,0,0,0.7));
-                padding: 30px;
-                color: white;
-                transform: translateY(100px);
-                transition: transform 0.3s;
-            }
-
-            .collection-card:hover .collection-image {
-                transform: scale(1.1);
-            }
-
-            .collection-card:hover .collection-overlay {
-                transform: translateY(0);
-            }
-
-            .collection-overlay h3 {
-                font-size: 1.5rem;
-                margin-bottom: 10px;
-            }
-
-            .btn-outline {
-                display: inline-block;
-                padding: 8px 20px;
-                border: 2px solid white;
-                color: white;
-                text-decoration: none;
-                border-radius: 6px;
-                margin-top: 15px;
-                transition: all 0.3s;
-            }
-
-            .btn-outline:hover {
-                background: white;
-                color: #5a3d2b;
-            }
-
-            /* Services */
-            .services {
-                padding: 60px 20px;
-                background: #fff;
-            }
-
-            .service-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 30px;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .service-card {
-                text-align: center;
-                padding: 30px;
-                background: #f9f7f3;
-                border-radius: 12px;
-                transition: transform 0.3s;
-            }
-
-            .service-card:hover {
-                transform: translateY(-5px);
-            }
-
-            .service-icon {
-                font-size: 2.5rem;
-                margin-bottom: 20px;
-            }
-
-            .service-card h3 {
-                color: #5a3d2b;
-                margin-bottom: 10px;
-            }
-
-            .service-card p {
-                color: #666;
-            }
-
-            /* News */
-            .news {
-                padding: 60px 20px;
-                background: #f9f7f3;
-            }
-
-            .news-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
-                max-width: 1200px;
-                margin: 0 auto;
-            }
-
-            .news-card {
-                background: white;
-                border-radius: 12px;
-                overflow: hidden;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            }
-
-            .news-image {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-            }
-
-            .news-content {
-                padding: 20px;
-            }
-
-            .news-date {
-                color: #666;
-                font-size: 0.9rem;
-            }
-
-            .news-content h3 {
-                color: #5a3d2b;
-                margin: 10px 0;
-                font-size: 1.2rem;
-            }
-
-            .read-more {
-                display: inline-block;
-                color: #e9c46a;
-                text-decoration: none;
-                margin-top: 15px;
-                font-weight: 600;
-            }
-
-            /* Testimonials */
-            .testimonials {
-                padding: 60px 20px;
-                background: #fff;
-            }
-
-            .testimonial-slider {
-                max-width: 800px;
-                margin: 0 auto;
-            }
-
-            .testimonial-card {
-                background: #f9f7f3;
-                padding: 30px;
-                border-radius: 12px;
-                margin: 20px;
-            }
-
-            .testimonial-content {
-                font-style: italic;
-                color: #666;
-                margin-bottom: 20px;
-            }
-
-            .testimonial-author {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-            }
-
-            .author-image {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                object-fit: cover;
-            }
-
-            .author-info h4 {
-                color: #5a3d2b;
-                margin-bottom: 5px;
-            }
-
-            .author-info p {
-                color: #666;
-                font-size: 0.9rem;
-            }
-
-            /* Contact */
-            .contact {
-                padding: 80px 20px;
-                background-color: #f9f7f3;
-            }
 
-            .contact-header {
-                text-align: center;
-                margin-bottom: 50px;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Nội thất Mộc Nhiên - Chuyên cung cấp các sản phẩm nội thất gỗ tự nhiên cao cấp, thiết kế độc đáo và tinh tế. Sofa, bàn ghế, tủ kệ, giường ngủ và các sản phẩm trang trí nội thất chất lượng cao.">
+    <meta name="keywords"
+        content="nội thất mộc nhiên, nội thất gỗ tự nhiên, sofa gỗ, bàn ghế gỗ, tủ kệ gỗ, giường ngủ gỗ, nội thất phòng khách, nội thất phòng ngủ, nội thất phòng bếp, nội thất văn phòng, đồ trang trí nội thất, thiết kế nội thất, nội thất cao cấp, nội thất hiện đại, nội thất truyền thống, nội thất việt nam, nội thất cần thơ">
+    <meta name="author" content="Nội thất Mộc Nhiên">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Nội thất Mộc Nhiên - Nội thất gỗ tự nhiên cao cấp">
+    <meta property="og:description"
+        content="Chuyên cung cấp các sản phẩm nội thất gỗ tự nhiên cao cấp, thiết kế độc đáo và tinh tế. Sofa, bàn ghế, tủ kệ, giường ngủ và các sản phẩm trang trí nội thất chất lượng cao.">
+    <meta property="og:image" content="https://noithatmocnhien.netlify.app/picture/logo.jpg">
+    <meta property="og:url" content="https://noithatmocnhien.netlify.app">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nội thất Mộc Nhiên - Nội thất gỗ tự nhiên cao cấp">
+    <meta name="twitter:description"
+        content="Chuyên cung cấp các sản phẩm nội thất gỗ tự nhiên cao cấp, thiết kế độc đáo và tinh tế.">
+    <meta name="twitter:image" content="https://noithatmocnhien.netlify.app/picture/logo.jpg">
+    <link rel="canonical" href="https://noithatmocnhien.netlify.app">
+
+    <title>Nội thất Mộc Nhiên - Nội thất gỗ tự nhiên cao cấp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+
+    <!-- Sweetalert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f7f3;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #5a3d2b;
+            padding: 18px 0 12px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin-right: 18px;
+            border-radius: 60%;
+            border: 3px solid #e9c46a;
+            box-shadow: 0 0 15px rgba(233, 196, 106, 0.6);
+            transition: transform 0.3s, box-shadow 0.3s;
+            object-fit: cover;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(233, 196, 106, 0.8);
+        }
+
+        .store-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.7rem;
+            font-weight: 400;
+            color: #e9c46a;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1.5px;
+        }
+
+        .header-nav {
+            width: 100%;
+            background-color: #4a3322;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 10px;
+            min-height: 48px;
+        }
+
+        .nav-btn {
+            font-family: 'Montserrat', sans-serif;
+            text-decoration: none;
+            color: #f9f7f3;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-btn:hover {
+            background-color: rgba(233, 196, 106, 0.2);
+            border-color: #e9c46a;
+        }
+
+        .active {
+            background-color: rgba(233, 196, 106, 0.2);
+            border: 1px solid #e9c46a;
+        }
+
+        /* Dropdown menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .mega-menu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            padding: 24px 32px;
+            display: flex;
+            gap: 40px;
+            z-index: 100;
+            min-width: 800px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .mega-menu {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mega-column {
+            display: flex;
+            flex-direction: column;
+            min-width: 160px;
+            margin-right: 24px;
+        }
+
+        .mega-menu a {
+            color: #555;
+            padding: 8px 0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .mega-menu a:hover {
+            color: #e9c46a;
+            border-bottom: 1px solid #e9c46a;
+            transform: translateX(5px);
+        }
+
+        /* Thêm mũi tên cho dropdown */
+        .dropdown>.nav-btn::after {
+            content: '▼';
+            font-size: 0.7em;
+            margin-left: 5px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .dropdown:hover>.nav-btn::after {
+            transform: rotate(180deg);
+        }
+
+        /* Nút giỏ hàng */
+        .cart-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #d9d1cc;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            margin-left: 10px;
+            font-size: 0.75rem;
+        }
+
+        .cart-icon {
+            font-size: 2rem;
+        }
+
+        .cart-btn:hover {
+            background: #d4b054;
+            transform: translateY(-2px);
+        }
+
+        /* Style cho nút đăng nhập */
+        .login-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #5a3d2b;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            margin-left: 10px;
+            font-size: 0.75rem;
+            background-color: #e9c46a;
+            border: 1px solid #e9c46a;
+        }
+
+        .login-btn:hover {
+            background-color: #5a3d2b;
+            color: #e9c46a;
+            transform: translateY(-2px);
+        }
+
+        main {
+            padding: 30px;
+            min-height: 600px;
+            background-color: #f9f7f3;
+        }
+
+        .banner {
+            width: 100%;
+            max-height: 600px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            min-height: 400px;
+            max-height: 600px;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 10s ease;
+            display: block;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            -webkit-image-rendering: crisp-edges;
+            backface-visibility: hidden;
+        }
+
+        .banner:hover .banner-image {
+            transform: scale(1.05);
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .banner-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        .banner-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            max-width: 800px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        /* Phần footer */
+        .footer {
+            background-color: #5a3d2b;
+            color: #e9e2d0;
+            padding: 50px 0 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            padding: 0 15px;
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #e9c46a;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #e9c46a;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact-icon {
+            min-width: 20px;
+            margin-right: 10px;
+            color: #e9c46a;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #e9e2d0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #e9c46a;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(233, 196, 106, 0.2);
+            font-size: 0.9rem;
+        }
+
+        .posters {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+            margin: 40px 0 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .poster {
+            background: #fff8ed;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(90, 61, 43, 0.08);
+            overflow: hidden;
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1.5px solid #e9c46a;
+            cursor: pointer;
+        }
+
+        .poster:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(90, 61, 43, 0.16);
+        }
+
+        .poster-img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            background: #e9e2d0;
+        }
+
+        .poster-content {
+            padding: 20px 18px 24px 18px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .poster-title {
+            font-size: 1.25rem;
+            color: #5a3d2b;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .poster-desc {
+            color: #4a3322;
+            font-size: 1rem;
+            margin-bottom: 18px;
+        }
+
+        .poster-btn {
+            display: inline-block;
+            background: #e9c46a;
+            color: #5a3d2b;
+            padding: 8px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .poster-btn:hover {
+            background: #5a3d2b;
+            color: #fff8ed;
+        }
+
+        /* Styles cho modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff8ed;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+            z-index: 1001;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .modal-title {
+            color: #5a3d2b;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .modal-subtitle {
+            color: #4a3322;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1.5px solid #e9c46a;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #5a3d2b;
+            background: #fff;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #5a3d2b;
+            box-shadow: 0 0 0 2px rgba(90, 61, 43, 0.1);
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 12px;
+            background: #e9c46a;
+            color: #5a3d2b;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-button:hover:not(:disabled) {
+            background: #5a3d2b;
+            color: #fff8ed;
+        }
+
+        .form-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .modal-links {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .modal-link {
+            color: #5a3d2b;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .modal-link:hover {
+            color: #e9c46a;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #5a3d2b;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: none;
+        }
+
+        .form-button:disabled .spinner {
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Styles cho các section mới */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #5a3d2b;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Featured Products */
+        .featured-products {
+            padding: 60px 20px;
+            background: #fff;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #e9c46a;
+            color: #5a3d2b;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.2rem;
+            color: #5a3d2b;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: #e9c46a;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+
+        .discounted-price {
+            color: #e9c46a;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .current-price {
+            color: #e9c46a;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: #e9c46a;
+            color: #5a3d2b;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #e9c46a;
+            color: #5a3d2b;
+        }
+
+        .btn-primary:hover {
+            background: #5a3d2b;
+            color: #e9c46a;
+        }
+
+        .btn-secondary:hover {
+            background: #e9c46a;
+        }
+
+        /* Collections */
+        .collections {
+            padding: 60px 20px;
+            background: #f9f7f3;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .collection-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .collection-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 30px;
+            color: white;
+            transform: translateY(100px);
+            transition: transform 0.3s;
+        }
+
+        .collection-card:hover .collection-image {
+            transform: scale(1.1);
+        }
+
+        .collection-card:hover .collection-overlay {
+            transform: translateY(0);
+        }
+
+        .collection-overlay h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 8px 20px;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #5a3d2b;
+        }
+
+        /* Services */
+        .services {
+            padding: 60px 20px;
+            background: #fff;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 30px;
+            background: #f9f7f3;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: #5a3d2b;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #666;
+        }
+
+        /* News */
+        .news {
+            padding: 60px 20px;
+            background: #f9f7f3;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .news-content h3 {
+            color: #5a3d2b;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: #e9c46a;
+            text-decoration: none;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 60px 20px;
+            background: #fff;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #f9f7f3;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: #5a3d2b;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact {
+            padding: 80px 20px;
+            background-color: #f9f7f3;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-header h2 {
+            font-size: 2.5rem;
+            color: #5a3d2b;
+            margin-bottom: 15px;
+        }
+
+        .contact-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: #e9c46a;
+            margin-top: 5px;
+        }
+
+        .info-item h3 {
+            font-size: 1.2rem;
+            color: #5a3d2b;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #5a3d2b;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #e9c46a;
+            box-shadow: 0 0 0 3px rgba(233, 196, 106, 0.2);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #e9c46a;
+            color: #5a3d2b;
+        }
+
+        .btn-primary:hover {
+            background: #5a3d2b;
+            color: #e9c46a;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
             }
 
             .contact-header h2 {
-                font-size: 2.5rem;
-                color: #5a3d2b;
-                margin-bottom: 15px;
+                font-size: 2rem;
             }
+        }
+    </style>
+    <meta name="google-site-verification" content="mPFXKkzZD3UbPwutDg34FNGK9F7kwx3v2mU9DlG09QY" />
+</head>
 
-            .contact-header p {
-                color: #666;
-                font-size: 1.1rem;
-            }
-
-            .contact-container {
-                max-width: 1200px;
-                margin: 0 auto;
-                display: grid;
-                grid-template-columns: 1fr 2fr;
-                gap: 50px;
-            }
-
-            .contact-info {
-                background: white;
-                padding: 30px;
-                border-radius: 12px;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            }
-
-            .info-item {
-                display: flex;
-                align-items: flex-start;
-                gap: 15px;
-                margin-bottom: 25px;
-            }
-
-            .info-item:last-child {
-                margin-bottom: 0;
-            }
-
-            .info-item i {
-                font-size: 1.5rem;
-                color: #e9c46a;
-                margin-top: 5px;
-            }
-
-            .info-item h3 {
-                font-size: 1.2rem;
-                color: #5a3d2b;
-                margin-bottom: 5px;
-            }
-
-            .info-item p {
-                color: #666;
-                line-height: 1.5;
-            }
-
-            .contact-form {
-                background: white;
-                padding: 30px;
-                border-radius: 12px;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            }
-
-            .form-group {
-                margin-bottom: 20px;
-            }
-
-            .form-group label {
-                display: block;
-                margin-bottom: 8px;
-                color: #5a3d2b;
-                font-weight: 500;
-            }
-
-            .form-control {
-                width: 100%;
-                padding: 12px;
-                border: 1px solid #ddd;
-                border-radius: 6px;
-                font-size: 1rem;
-            }
-
-            .form-control:focus {
-                outline: none;
-                border-color: #e9c46a;
-                box-shadow: 0 0 0 3px rgba(233, 196, 106, 0.2);
-            }
-
-            textarea.form-control {
-                resize: vertical;
-                min-height: 120px;
-            }
-
-            .btn {
-                padding: 12px 24px;
-                border: none;
-                border-radius: 6px;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.3s;
-                font-size: 1rem;
-            }
-
-            .btn-primary {
-                background: #e9c46a;
-                color: #5a3d2b;
-            }
-
-            .btn-primary:hover {
-                background: #5a3d2b;
-                color: #e9c46a;
-            }
-
-            @media (max-width: 768px) {
-                .contact-container {
-                    grid-template-columns: 1fr;
-                }
-                
-                .contact-header h2 {
-                    font-size: 2rem;
-                }
-            }
-        </style>
-        <meta name="google-site-verification" content="mPFXKkzZD3UbPwutDg34FNGK9F7kwx3v2mU9DlG09QY" />
-    </head>
-    <body>
-        <div class="header-top">
-            <img src="picture/logo.jpg" alt="Mộc Nhiên Logo" class="logo">
-            <div class="store-name">Nội thất Mộc Nhiên</div>
-        </div>
-        <nav class="header-nav">
-            <div class="nav-links">
-                <a href="index.html" class="nav-btn active">Trang chủ</a>
-                <div class="dropdown">
-                    <a href="products.html" class="nav-btn">Sản phẩm</a>
-                    <div class="mega-menu">
-                        <div class="mega-column">
-                            <a href="products.html?category=Sofa">Sofa</a>
-                            <a href="products.html?category=Ghế dài & đôn">Ghế dài & đôn</a>
-                            <a href="products.html?category=Bàn nước">Bàn nước</a>
-                            <a href="products.html?category=Tủ tivi">Tủ tivi</a>
-                            <a href="products.html?category=Kệ trưng bày">Kệ trưng bày</a>
-                            <a href="products.html?category=Tủ giày">Tủ giày</a>
-                        </div>
-                        <div class="mega-column">
-                            <a href="products.html?category=Bàn ăn">Bàn ăn</a>
-                            <a href="products.html?category=Ghế ăn">Ghế ăn</a>
-                            <a href="products.html?category=Ghế Bar">Ghế Bar</a>
-                            <a href="products.html?category=Tủ ly">Tủ ly</a>
-                            <a href="products.html?category=Tủ bếp">Tủ bếp</a>
-                        </div>
-                        <div class="mega-column">
-                            <a href="products.html?category=Giường ngủ">Giường ngủ</a>
-                            <a href="products.html?category=Bàn đầu giường">Bàn đầu giường</a>
-                            <a href="products.html?category=Bàn trang điểm">Bàn trang điểm</a>
-                            <a href="products.html?category=Tủ áo">Tủ áo</a>
-                            <a href="products.html?category=Nệm">Nệm</a>
-                        </div>
-                        <div class="mega-column">
-                            <a href="products.html?category=Bàn làm việc">Bàn làm việc</a>
-                            <a href="products.html?category=Ghế làm việc">Ghế làm việc</a>
-                            <a href="products.html?category=Kệ sách">Kệ sách</a>
-                            <a href="products.html?category=Bàn ngoài trời">Bàn ngoài trời</a>
-                            <a href="products.html?category=Ghế ngoài trời">Ghế ngoài trời</a>
-                        </div>
-                        <div class="mega-column">
-                            <a href="products.html?category=Đèn trang trí">Đèn trang trí</a>
-                            <a href="products.html?category=Thảm trang trí">Thảm trang trí</a>
-                            <a href="products.html?category=Bình trang trí">Bình trang trí</a>
-                            <a href="products.html?category=Tranh">Tranh</a>
-                            <a href="products.html?category=Gương">Gương</a>
-                            <a href="products.html?category=Đồng hồ">Đồng hồ</a>
-                            <a href="products.html?category=Tượng trang trí">Tượng trang trí</a>
-                            <a href="products.html?category=Dụng cụ bếp">Dụng cụ bếp</a>
-                        </div>
+<body>
+    <div class="header-top">
+        <img src="picture/logo.jpg" alt="Mộc Nhiên Logo" class="logo">
+        <div class="store-name">Nội thất Mộc Nhiên</div>
+    </div>
+    <nav class="header-nav">
+        <div class="nav-links">
+            <a href="index.html" class="nav-btn active">Trang chủ</a>
+            <div class="dropdown">
+                <a href="products.html" class="nav-btn">Sản phẩm</a>
+                <div class="mega-menu">
+                    <div class="mega-column">
+                        <a href="products.html?category=Sofa">Sofa</a>
+                        <a href="products.html?category=Ghế dài & đôn">Ghế dài & đôn</a>
+                        <a href="products.html?category=Bàn nước">Bàn nước</a>
+                        <a href="products.html?category=Tủ tivi">Tủ tivi</a>
+                        <a href="products.html?category=Kệ trưng bày">Kệ trưng bày</a>
+                        <a href="products.html?category=Tủ giày">Tủ giày</a>
+                    </div>
+                    <div class="mega-column">
+                        <a href="products.html?category=Bàn ăn">Bàn ăn</a>
+                        <a href="products.html?category=Ghế ăn">Ghế ăn</a>
+                        <a href="products.html?category=Ghế Bar">Ghế Bar</a>
+                        <a href="products.html?category=Tủ ly">Tủ ly</a>
+                        <a href="products.html?category=Tủ bếp">Tủ bếp</a>
+                    </div>
+                    <div class="mega-column">
+                        <a href="products.html?category=Giường ngủ">Giường ngủ</a>
+                        <a href="products.html?category=Bàn đầu giường">Bàn đầu giường</a>
+                        <a href="products.html?category=Bàn trang điểm">Bàn trang điểm</a>
+                        <a href="products.html?category=Tủ áo">Tủ áo</a>
+                        <a href="products.html?category=Nệm">Nệm</a>
+                    </div>
+                    <div class="mega-column">
+                        <a href="products.html?category=Bàn làm việc">Bàn làm việc</a>
+                        <a href="products.html?category=Ghế làm việc">Ghế làm việc</a>
+                        <a href="products.html?category=Kệ sách">Kệ sách</a>
+                        <a href="products.html?category=Bàn ngoài trời">Bàn ngoài trời</a>
+                        <a href="products.html?category=Ghế ngoài trời">Ghế ngoài trời</a>
+                    </div>
+                    <div class="mega-column">
+                        <a href="products.html?category=Đèn trang trí">Đèn trang trí</a>
+                        <a href="products.html?category=Thảm trang trí">Thảm trang trí</a>
+                        <a href="products.html?category=Bình trang trí">Bình trang trí</a>
+                        <a href="products.html?category=Tranh">Tranh</a>
+                        <a href="products.html?category=Gương">Gương</a>
+                        <a href="products.html?category=Đồng hồ">Đồng hồ</a>
+                        <a href="products.html?category=Tượng trang trí">Tượng trang trí</a>
+                        <a href="products.html?category=Dụng cụ bếp">Dụng cụ bếp</a>
                     </div>
                 </div>
-                <a href="collection.html" class="nav-btn">Bộ sưu tập</a>
-                <a href="promotion.html" class="nav-btn">Khuyến mãi</a>
-                <a href="member.html" class="nav-btn">Thành viên</a>
-                <a href="policy.html" class="nav-btn">Chính sách</a>
-                <a href="about.html" class="nav-btn">Về chúng tôi</a>
-                <a href="cart.html" class="cart-btn">
-                    <span class="cart-icon">🛒</span>
-                    <span>Giỏ hàng</span>
-                </a>
-                <a href="#" class="login-btn" id="loginBtn">
-                    <span>👤</span>
-                    <span>Đăng nhập</span>
-                </a>
             </div>
-        </nav>
-        
-        <section class="banner">
-            <img src="picture/banner1.webp" alt="Nội thất Mộc Nhiên Banner" class="banner-image">
-            <div class="banner-overlay">
-                <h1 class="banner-title">Nội thất Mộc Nhiên</h1>
-                <p class="banner-subtitle">Mang vẻ đẹp tự nhiên của gỗ vào không gian sống của bạn</p>
-            </div>
-        </section>
-        
-        <!-- <section class="posters">
+            <a href="collection.html" class="nav-btn">Bộ sưu tập</a>
+            <a href="promotion.html" class="nav-btn">Khuyến mãi</a>
+            <a href="member.html" class="nav-btn">Thành viên</a>
+            <a href="policy.html" class="nav-btn">Chính sách</a>
+            <a href="about.html" class="nav-btn">Về chúng tôi</a>
+            <a href="cart.html" class="cart-btn">
+                <span class="cart-icon">🛒</span>
+                <span>Giỏ hàng</span>
+            </a>
+            <a href="#" class="login-btn" id="loginBtn">
+                <span>👤</span>
+                <span>Đăng nhập</span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="banner">
+        <img src="picture/banner1.webp" alt="Nội thất Mộc Nhiên Banner" class="banner-image">
+        <div class="banner-overlay">
+            <h1 class="banner-title">Nội thất Mộc Nhiên</h1>
+            <p class="banner-subtitle">Mang vẻ đẹp tự nhiên của gỗ vào không gian sống của bạn</p>
+        </div>
+    </section>
+
+    <!-- <section class="posters">
             <div class="poster" onclick="window.location.href='product-detail.html?id=1'">
                 <img src="picture/trang-tri-phong-khach-nha-cap-4-06-hungphatsaigon.vn_.jpg" alt="Khuyến mãi mùa hè" class="poster-img" onerror="this.src='picture/logo.jpg'">
                 <div class="poster-content">
@@ -1129,69 +1189,70 @@
                 </div>
             </div>
         </section> -->
-        
-        <main>
-            <!-- Section Sản phẩm nổi bật -->
-            <section class="featured-products">
-                <div class="section-header">
-                    <h2>Sản phẩm nổi bật</h2>
-                    <p>Khám phá những sản phẩm được yêu thích nhất của chúng tôi</p>
-                </div>
-                <div class="product-grid" id="featuredProductsContainer">
-                    <!-- Sản phẩm sẽ được load động từ Firebase -->
-                </div>
-            </section>
 
-            <!-- Section Bộ sưu tập -->
-            <section class="collections">
-                <div class="section-header">
-                    <h2>Bộ sưu tập</h2>
-                    <p>Khám phá các bộ sưu tập độc đáo của Mộc Nhiên</p>
-                </div>
-                <div class="collection-grid">
-                    <div class="collection-card">
-                        <img src="picture/trang-tri-phong-khach-nha-cap-4-06-hungphatsaigon.vn_.jpg" alt="Phong cách Scandinavian" class="collection-image">
-                        <div class="collection-overlay">
-                            <h3>Phong cách Scandinavian</h3>
-                            <p>Đơn giản, tinh tế và hiện đại</p>
-                            <a href="#" class="btn-outline">Khám phá</a>
-                        </div>
-                    </div>
-                    <!-- Thêm các collection-card tương tự -->
-                </div>
-            </section>
+    <main>
+        <!-- Section Sản phẩm nổi bật -->
+        <section class="featured-products">
+            <div class="section-header">
+                <h2>Sản phẩm nổi bật</h2>
+                <p>Khám phá những sản phẩm được yêu thích nhất của chúng tôi</p>
+            </div>
+            <div class="product-grid" id="featuredProductsContainer">
+                <!-- Sản phẩm sẽ được load động từ Firebase -->
+            </div>
+        </section>
 
-            <!-- Section Dịch vụ -->
-            <section class="services">
-                <div class="section-header">
-                    <h2>Dịch vụ của chúng tôi</h2>
-                    <p>Cam kết mang đến trải nghiệm tốt nhất cho khách hàng</p>
-                </div>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <div class="service-icon">🚚</div>
-                        <h3>Miễn phí vận chuyển</h3>
-                        <p>Cho đơn hàng từ 5 triệu đồng</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🔧</div>
-                        <h3>Lắp đặt chuyên nghiệp</h3>
-                        <p>Đội ngũ kỹ thuật viên giàu kinh nghiệm</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🔄</div>
-                        <h3>Đổi trả dễ dàng</h3>
-                        <p>Trong vòng 30 ngày</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">💎</div>
-                        <h3>Bảo hành tận tâm</h3>
-                        <p>Bảo hành 2 năm cho tất cả sản phẩm</p>
+        <!-- Section Bộ sưu tập -->
+        <section class="collections">
+            <div class="section-header">
+                <h2>Bộ sưu tập</h2>
+                <p>Khám phá các bộ sưu tập độc đáo của Mộc Nhiên</p>
+            </div>
+            <div class="collection-grid">
+                <div class="collection-card">
+                    <img src="picture/trang-tri-phong-khach-nha-cap-4-06-hungphatsaigon.vn_.jpg"
+                        alt="Phong cách Scandinavian" class="collection-image">
+                    <div class="collection-overlay">
+                        <h3>Phong cách Scandinavian</h3>
+                        <p>Đơn giản, tinh tế và hiện đại</p>
+                        <a href="#" class="btn-outline">Khám phá</a>
                     </div>
                 </div>
-            </section>
+                <!-- Thêm các collection-card tương tự -->
+            </div>
+        </section>
 
-            <!-- Section Tin tức
+        <!-- Section Dịch vụ -->
+        <section class="services">
+            <div class="section-header">
+                <h2>Dịch vụ của chúng tôi</h2>
+                <p>Cam kết mang đến trải nghiệm tốt nhất cho khách hàng</p>
+            </div>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <h3>Miễn phí vận chuyển</h3>
+                    <p>Cho đơn hàng từ 5 triệu đồng</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Lắp đặt chuyên nghiệp</h3>
+                    <p>Đội ngũ kỹ thuật viên giàu kinh nghiệm</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔄</div>
+                    <h3>Đổi trả dễ dàng</h3>
+                    <p>Trong vòng 30 ngày</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💎</div>
+                    <h3>Bảo hành tận tâm</h3>
+                    <p>Bảo hành 2 năm cho tất cả sản phẩm</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Tin tức
             <section class="news">
                 <div class="section-header">
                     <h2>Tin tức & Sự kiện</h2>
@@ -1210,106 +1271,107 @@
                 </div>
             </section> -->
 
-            <!-- Section Đánh giá -->
-            <section class="testimonials">
-                <div class="section-header">
-                    <h2>Khách hàng nói gì về chúng tôi</h2>
-                    <p>Những phản hồi chân thực từ khách hàng</p>
-                </div>
-                <div class="testimonial-slider" id="testimonialContainer">
-                    <!-- Testimonials will be loaded here dynamically -->
-                </div>
-            </section>
+        <!-- Section Đánh giá -->
+        <section class="testimonials">
+            <div class="section-header">
+                <h2>Khách hàng nói gì về chúng tôi</h2>
+                <p>Những phản hồi chân thực từ khách hàng</p>
+            </div>
+            <div class="testimonial-slider" id="testimonialContainer">
+                <!-- Testimonials will be loaded here dynamically -->
+            </div>
+        </section>
 
-            <!-- Section Liên hệ -->
-            <section class="contact">
-                <div class="contact-header">
-                    <h2>Liên hệ với chúng tôi</h2>
-                    <p>Chúng tôi luôn sẵn sàng lắng nghe ý kiến của bạn</p>
-                </div>
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h3>Địa chỉ</h3>
-                                <p>Nguyễn Văn Cừ, An Khánh, Ninh Kiều, Cần Thơ</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h3>Điện thoại</h3>
-                                <p>0999 666 777</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Email</h3>
-                                <p>noithatmocnhien@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h3>Giờ làm việc</h3>
-                                <p>Thứ 2 - Thứ 7: 8:00 - 20:00</p>
-                                <p>Chủ nhật: 9:00 - 17:00</p>
-                            </div>
+        <!-- Section Liên hệ -->
+        <section class="contact">
+            <div class="contact-header">
+                <h2>Liên hệ với chúng tôi</h2>
+                <p>Chúng tôi luôn sẵn sàng lắng nghe ý kiến của bạn</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Địa chỉ</h3>
+                            <p>Nguyễn Văn Cừ, An Khánh, Ninh Kiều, Cần Thơ</p>
                         </div>
                     </div>
-                    <form id="contactForm" class="contact-form" onsubmit="submitContact(event)">
-                        <div class="form-group">
-                            <label for="contactName">Họ và tên</label>
-                            <input type="text" id="contactName" class="form-control" required>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Điện thoại</h3>
+                            <p>0999 666 777</p>
                         </div>
-                        <div class="form-group">
-                            <label for="contactEmail">Email</label>
-                            <input type="email" id="contactEmail" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactPhone">Số điện thoại</label>
-                            <input type="tel" id="contactPhone" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactSubject">Tiêu đề</label>
-                            <input type="text" id="contactSubject" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contactMessage">Nội dung</label>
-                            <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Gửi tin nhắn</button>
-                    </form>
-                </div>
-            </section>
-        </main>
-        
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-section">
-                    <h3 class="footer-title">Về Mộc Nhiên</h3>
-                    <p>Với nhiểu năm nghiên cứu về các sản phẩm nội thất, Mộc Nhiên tự hào mang đến những sản phẩm nội thất gỗ tự nhiên chất lượng cao, thiết kế độc đáo và tinh tế.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Liên hệ</h3>
-                    <div class="footer-contact-item">
-                        <span class="footer-contact-icon">📍</span>
-                        <span>Nguyễn Văn Cừ, An Khánh, Ninh Kiều, Cần Thơ </span>
                     </div>
-                    <div class="footer-contact-item">
-                        <span class="footer-contact-icon">📱</span>
-                        <span>0999 666 777</span>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>noithatmocnhien@gmail.com</p>
+                        </div>
                     </div>
-                    <div class="footer-contact-item">
-                        <span class="footer-contact-icon">✉️</span>
-                        <span>noithatmocnhien@gmail.com</span>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Giờ làm việc</h3>
+                            <p>Thứ 2 - Thứ 7: 8:00 - 20:00</p>
+                            <p>Chủ nhật: 9:00 - 17:00</p>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- <div class="footer-section">
+                <form id="contactForm" class="contact-form" onsubmit="submitContact(event)">
+                    <div class="form-group">
+                        <label for="contactName">Họ và tên</label>
+                        <input type="text" id="contactName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPhone">Số điện thoại</label>
+                        <input type="tel" id="contactPhone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Tiêu đề</label>
+                        <input type="text" id="contactSubject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Nội dung</label>
+                        <textarea id="contactMessage" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Gửi tin nhắn</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3 class="footer-title">Về Mộc Nhiên</h3>
+                <p>Với nhiểu năm nghiên cứu về các sản phẩm nội thất, Mộc Nhiên tự hào mang đến những sản phẩm nội thất
+                    gỗ tự nhiên chất lượng cao, thiết kế độc đáo và tinh tế.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3 class="footer-title">Liên hệ</h3>
+                <div class="footer-contact-item">
+                    <span class="footer-contact-icon">📍</span>
+                    <span>Nguyễn Văn Cừ, An Khánh, Ninh Kiều, Cần Thơ </span>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="footer-contact-icon">📱</span>
+                    <span>0999 666 777</span>
+                </div>
+                <div class="footer-contact-item">
+                    <span class="footer-contact-icon">✉️</span>
+                    <span>noithatmocnhien@gmail.com</span>
+                </div>
+            </div>
+
+            <!-- <div class="footer-section">
                     <h3 class="footer-title">Danh mục</h3>  
                     <ul class="footer-links">
                         <li><a href="#">Phòng khách</a></li>
@@ -1318,585 +1380,621 @@
                         <li><a href="#">Phòng làm việc</a></li>
                     </ul>
                 </div> -->
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Theo dõi</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Email</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nội thất Mộc Nhiên. Tất cả quyền được bảo lưu.</p>
-            </div>
-        </footer>
 
-        <!-- Modal Overlay -->
-        <div class="modal-overlay" id="modalOverlay"></div>
-
-        <!-- Modal Đăng nhập -->
-        <div class="modal" id="loginModal">
-            <div class="modal-header">
-                <h2 class="modal-title">Đăng nhập</h2>
-                <p class="modal-subtitle">Đăng nhập để trải nghiệm dịch vụ tốt nhất từ Mộc Nhiên</p>
-            </div>
-            <form class="modal-form" onsubmit="handleLogin(event)">
-                <div class="form-group">
-                    <input type="email" class="form-input" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-input" placeholder="Mật khẩu" required>
-                </div>
-                <button type="submit" class="form-button">
-                    <span>Đăng nhập</span>
-                    <div class="spinner"></div>
-                </button>
-            </form>
-            <div class="modal-links">
-                <a class="modal-link" onclick="showModal('registerModal')">Đăng ký tài khoản mới</a>
-                <br>
-                <a class="modal-link" onclick="showModal('forgotModal')">Quên mật khẩu?</a>
+            <div class="footer-section">
+                <h3 class="footer-title">Theo dõi</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
             </div>
         </div>
 
-        <!-- Modal Đăng ký -->
-        <div class="modal" id="registerModal">
-            <div class="modal-header">
-                <h2 class="modal-title">Đăng ký</h2>
-                <p class="modal-subtitle">Tạo tài khoản để nhận nhiều ưu đãi từ Mộc Nhiên</p>
-            </div>
-            <form class="modal-form" onsubmit="handleRegister(event)">
-                <div class="form-group">
-                    <input type="text" class="form-input" placeholder="Họ và tên" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-input" placeholder="Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-input" placeholder="Mật khẩu" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-input" placeholder="Xác nhận mật khẩu" required>
-                </div>
-                <button type="submit" class="form-button">
-                    <span>Đăng ký</span>
-                    <div class="spinner"></div>
-                </button>
-            </form>
-            <div class="modal-links">
-                <a class="modal-link" onclick="showModal('loginModal')">Đã có tài khoản? Đăng nhập</a>
-            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nội thất Mộc Nhiên. Tất cả quyền được bảo lưu.</p>
         </div>
+    </footer>
 
-        <!-- Modal Quên mật khẩu -->
-        <div class="modal" id="forgotModal">
-            <div class="modal-header">
-                <h2 class="modal-title">Quên mật khẩu</h2>
-                <p class="modal-subtitle">Nhập email để nhận link đặt lại mật khẩu</p>
-            </div>
-            <form class="modal-form" onsubmit="handleForgotPassword(event)">
-                <div class="form-group">
-                    <input type="email" class="form-input" placeholder="Email" required>
-                </div>
-                <button type="submit" class="form-button">
-                    <span>Gửi yêu cầu</span>
-                    <div class="spinner"></div>
-                </button>
-            </form>
-            <div class="modal-links">
-                <a class="modal-link" onclick="showModal('loginModal')">Quay lại đăng nhập</a>
-            </div>
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Modal Đăng nhập -->
+    <div class="modal" id="loginModal">
+        <div class="modal-header">
+            <h2 class="modal-title">Đăng nhập</h2>
+            <p class="modal-subtitle">Đăng nhập để trải nghiệm dịch vụ tốt nhất từ Mộc Nhiên</p>
         </div>
+        <form class="modal-form" onsubmit="handleLogin(event)">
+            <div class="form-group">
+                <input type="email" class="form-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="Mật khẩu" required>
+            </div>
+            <button type="submit" class="form-button">
+                <span>Đăng nhập</span>
+                <div class="spinner"></div>
+            </button>
+        </form>
+        <div class="modal-links">
+            <a class="modal-link" onclick="showModal('registerModal')">Đăng ký tài khoản mới</a>
+            <br>
+            <a class="modal-link" onclick="showModal('forgotModal')">Quên mật khẩu?</a>
+        </div>
+    </div>
 
-        <script>
-            // Hàm hiển thị thông báo lỗi
-            function showError(title, message) {
-                Swal.fire({
-                    icon: 'error',
-                    title: title,
-                    text: message,
-                    confirmButtonColor: '#5a3d2b',
-                });
-            }
+    <!-- Modal Đăng ký -->
+    <div class="modal" id="registerModal">
+        <div class="modal-header">
+            <h2 class="modal-title">Đăng ký</h2>
+            <p class="modal-subtitle">Tạo tài khoản để nhận nhiều ưu đãi từ Mộc Nhiên</p>
+        </div>
+        <form class="modal-form" onsubmit="handleRegister(event)">
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Họ và tên" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-input" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="Mật khẩu" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="Xác nhận mật khẩu" required>
+            </div>
+            <button type="submit" class="form-button">
+                <span>Đăng ký</span>
+                <div class="spinner"></div>
+            </button>
+        </form>
+        <div class="modal-links">
+            <a class="modal-link" onclick="showModal('loginModal')">Đã có tài khoản? Đăng nhập</a>
+        </div>
+    </div>
 
-            // Hàm hiển thị thông báo thành công
-            function showSuccess(title, message) {
-                Swal.fire({
-                    icon: 'success',
-                    title: title,
-                    text: message,
-                    confirmButtonColor: '#5a3d2b',
-                });
-            }
+    <!-- Modal Quên mật khẩu -->
+    <div class="modal" id="forgotModal">
+        <div class="modal-header">
+            <h2 class="modal-title">Quên mật khẩu</h2>
+            <p class="modal-subtitle">Nhập email để nhận link đặt lại mật khẩu</p>
+        </div>
+        <form class="modal-form" onsubmit="handleForgotPassword(event)">
+            <div class="form-group">
+                <input type="email" class="form-input" placeholder="Email" required>
+            </div>
+            <button type="submit" class="form-button">
+                <span>Gửi yêu cầu</span>
+                <div class="spinner"></div>
+            </button>
+        </form>
+        <div class="modal-links">
+            <a class="modal-link" onclick="showModal('loginModal')">Quay lại đăng nhập</a>
+        </div>
+    </div>
 
-            // Hàm hiển thị xác nhận
-            function showConfirm(title, message) {
-                return Swal.fire({
-                    icon: 'question',
-                    title: title,
-                    text: message,
-                    showCancelButton: true,
-                    confirmButtonColor: '#5a3d2b',
-                    cancelButtonColor: '#6c757d',
-                    confirmButtonText: 'Đồng ý',
-                    cancelButtonText: 'Hủy'
-                });
-            }
+    <script>
+        // Hàm hiển thị thông báo lỗi
+        function showError(title, message) {
+            Swal.fire({
+                icon: 'error',
+                title: title,
+                text: message,
+                confirmButtonColor: '#5a3d2b',
+            });
+        }
 
-            // Cấu hình Firebase
-            const firebaseConfig = {
-                apiKey: "AIzaSyBHTL0ZIZkmRNi7kRF8UJdjR1qhx8cdre4",
-                authDomain: "webnoithat-de11f.firebaseapp.com",
-                databaseURL: "https://webnoithat-de11f-default-rtdb.firebaseio.com",
-                projectId: "webnoithat-de11f",
-                storageBucket: "webnoithat-de11f.firebasestorage.app",
-                messagingSenderId: "919918511984",
-                appId: "1:919918511984:web:d1b260dc52102fd279b1b5",
-                measurementId: "G-H1G2WJETSH"
-            };
+        // Hàm hiển thị thông báo thành công
+        function showSuccess(title, message) {
+            Swal.fire({
+                icon: 'success',
+                title: title,
+                text: message,
+                confirmButtonColor: '#5a3d2b',
+            });
+        }
 
-            // Khởi tạo Firebase
-            firebase.initializeApp(firebaseConfig);
-            const analytics = firebase.analytics();
-            const auth = firebase.auth();
-            const database = firebase.database();
+        // Hàm hiển thị xác nhận
+        function showConfirm(title, message) {
+            return Swal.fire({
+                icon: 'question',
+                title: title,
+                text: message,
+                showCancelButton: true,
+                confirmButtonColor: '#5a3d2b',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Đồng ý',
+                cancelButtonText: 'Hủy'
+            });
+        }
 
-            // Hiển thị modal
-            function showModal(modalId) {
-                // Ẩn tất cả các modal
-                document.querySelectorAll('.modal').forEach(modal => {
-                    modal.classList.remove('active');
-                });
-                
-                // Hiển thị modal được chọn và overlay
-                document.getElementById(modalId).classList.add('active');
-                document.getElementById('modalOverlay').style.display = 'block';
-            }
+        // Cấu hình Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBHTL0ZIZkmRNi7kRF8UJdjR1qhx8cdre4",
+            authDomain: "webnoithat-de11f.firebaseapp.com",
+            databaseURL: "https://webnoithat-de11f-default-rtdb.firebaseio.com",
+            projectId: "webnoithat-de11f",
+            storageBucket: "webnoithat-de11f.firebasestorage.app",
+            messagingSenderId: "919918511984",
+            appId: "1:919918511984:web:d1b260dc52102fd279b1b5",
+            measurementId: "G-H1G2WJETSH"
+        };
 
-            // Đóng modal khi click vào overlay
-            document.getElementById('modalOverlay').addEventListener('click', function() {
-                this.style.display = 'none';
-                document.querySelectorAll('.modal').forEach(modal => {
-                    modal.classList.remove('active');
-                });
+        // Khởi tạo Firebase
+        firebase.initializeApp(firebaseConfig);
+        const analytics = firebase.analytics();
+        const auth = firebase.auth();
+        const database = firebase.database();
+
+        // Hiển thị modal
+        function showModal(modalId) {
+            // Ẩn tất cả các modal
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.classList.remove('active');
             });
 
-            // Cập nhật hàm saveUserData
-            async function saveUserData(user, additionalData = {}) {
-                if (!user) return false;
+            // Hiển thị modal được chọn và overlay
+            document.getElementById(modalId).classList.add('active');
+            document.getElementById('modalOverlay').style.display = 'block';
+        }
 
-                const userData = {
-                    email: user.email || '',
-                    emailVerified: user.emailVerified || false,
-                    displayName: user.displayName || additionalData.fullName || '',
-                    lastLogin: new Date().toISOString(),
-                    role: 'user',  // Mặc định role là user
-                    ...additionalData
+        // Đóng modal khi click vào overlay
+        document.getElementById('modalOverlay').addEventListener('click', function () {
+            this.style.display = 'none';
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.classList.remove('active');
+            });
+        });
+
+        // Cập nhật hàm saveUserData
+        async function saveUserData(user, additionalData = {}) {
+            if (!user) return false;
+
+            const userData = {
+                email: user.email || '',
+                emailVerified: user.emailVerified || false,
+                displayName: user.displayName || additionalData.fullName || '',
+                lastLogin: new Date().toISOString(),
+                role: 'user',  // Mặc định role là user
+                ...additionalData
+            };
+
+            try {
+                // Kiểm tra và tạo reference đến node user
+                const userRef = database.ref('users/' + user.uid);
+
+                // Lấy dữ liệu hiện tại của user (nếu có)
+                const snapshot = await userRef.once('value');
+                const currentData = snapshot.val() || {};
+
+                // Gộp dữ liệu mới với dữ liệu hiện tại
+                const updatedData = {
+                    ...currentData,
+                    ...userData,
+                    // Giữ lại createdAt nếu đã tồn tại, nếu không thì tạo mới
+                    createdAt: currentData.createdAt || new Date().toISOString()
                 };
 
-                try {
-                    // Kiểm tra và tạo reference đến node user
-                    const userRef = database.ref('users/' + user.uid);
-                    
-                    // Lấy dữ liệu hiện tại của user (nếu có)
-                    const snapshot = await userRef.once('value');
-                    const currentData = snapshot.val() || {};
+                // Cập nhật dữ liệu
+                await userRef.set(updatedData);
+                return true;
+            } catch (error) {
+                console.error('Error saving user data:', error);
+                if (error.code === 'PERMISSION_DENIED') {
+                    showError('Lỗi phân quyền', 'Không thể cập nhật thông tin. Vui lòng đăng nhập lại.');
+                } else {
+                    showError('Lỗi cập nhật', 'Không thể cập nhật thông tin người dùng. Vui lòng thử lại sau.');
+                }
+                return false;
+            }
+        }
 
-                    // Gộp dữ liệu mới với dữ liệu hiện tại
-                    const updatedData = {
-                        ...currentData,
-                        ...userData,
-                        // Giữ lại createdAt nếu đã tồn tại, nếu không thì tạo mới
-                        createdAt: currentData.createdAt || new Date().toISOString()
-                    };
+        // Cập nhật hàm updateLoginStatus
+        async function updateLoginStatus(user, status) {
+            if (!user) return false;
 
-                    // Cập nhật dữ liệu
-                    await userRef.set(updatedData);
-                    return true;
-                } catch (error) {
-                    console.error('Error saving user data:', error);
-                    if (error.code === 'PERMISSION_DENIED') {
-                        showError('Lỗi phân quyền', 'Không thể cập nhật thông tin. Vui lòng đăng nhập lại.');
+            try {
+                const statusData = {
+                    status: status,
+                    timestamp: new Date().toISOString()
+                };
+
+                // Cập nhật trạng thái đăng nhập
+                await database.ref(`users/${user.uid}/loginStatus`).set(statusData);
+                return true;
+            } catch (error) {
+                console.error('Error updating login status:', error);
+                // Chỉ hiển thị lỗi nếu không phải là PERMISSION_DENIED
+                if (error.code !== 'PERMISSION_DENIED') {
+                    showError('Lỗi cập nhật', 'Không thể cập nhật trạng thái đăng nhập.');
+                }
+                return false;
+            }
+        }
+
+        // Cập nhật xử lý đăng nhập
+        async function handleLogin(event) {
+            event.preventDefault();
+            const button = event.target.querySelector('button');
+            const email = event.target.querySelector('input[type="email"]').value;
+            const password = event.target.querySelector('input[type="password"]').value;
+
+            button.disabled = true;
+
+            try {
+                const userCredential = await auth.signInWithEmailAndPassword(email, password);
+                const user = userCredential.user;
+
+                const [savedData, updatedStatus] = await Promise.all([
+                    saveUserData(user),
+                    updateLoginStatus(user, 'online')
+                ]);
+
+                if (savedData && updatedStatus) {
+                    // Kiểm tra email và chuyển hướng nếu là admin
+                    if (email === 'quantrivienmocnhien@gmail.com') {
+                        showSuccess('Đăng nhập thành công', 'Chào mừng Admin!');
+                        setTimeout(() => {
+                            window.location.href = 'admin.html';
+                        }, 1000);
                     } else {
-                        showError('Lỗi cập nhật', 'Không thể cập nhật thông tin người dùng. Vui lòng thử lại sau.');
+                        showSuccess('Đăng nhập thành công', 'Chào mừng bạn đã quay trở lại!');
+                        document.getElementById('modalOverlay').style.display = 'none';
+                        document.querySelectorAll('.modal').forEach(modal => {
+                            modal.classList.remove('active');
+                        });
                     }
-                    return false;
                 }
+            } catch (error) {
+                console.error('Lỗi đăng nhập:', error);
+                let errorMessage = 'Đã có lỗi xảy ra';
+                switch (error.code) {
+                    case 'auth/invalid-email':
+                        errorMessage = 'Email không hợp lệ';
+                        break;
+                    case 'auth/user-disabled':
+                        errorMessage = 'Tài khoản đã bị vô hiệu hóa';
+                        break;
+                    case 'auth/user-not-found':
+                        errorMessage = 'Không tìm thấy tài khoản với email này';
+                        break;
+                    case 'auth/wrong-password':
+                        errorMessage = 'Mật khẩu không chính xác';
+                        break;
+                }
+                showError('Đăng nhập thất bại', errorMessage);
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        // Cập nhật xử lý đăng ký
+        async function handleRegister(event) {
+            event.preventDefault();
+            const form = event.target;
+            const button = form.querySelector('button');
+            const fullName = form.querySelector('input[type="text"]').value;
+            const email = form.querySelector('input[type="email"]').value;
+            const password = form.querySelectorAll('input[type="password"]')[0].value;
+            const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
+
+            if (password !== confirmPassword) {
+                showError('Lỗi xác nhận', 'Mật khẩu xác nhận không khớp!');
+                return;
             }
 
-            // Cập nhật hàm updateLoginStatus
-            async function updateLoginStatus(user, status) {
-                if (!user) return false;
-
-                try {
-                    const statusData = {
-                        status: status,
-                        timestamp: new Date().toISOString()
-                    };
-
-                    // Cập nhật trạng thái đăng nhập
-                    await database.ref(`users/${user.uid}/loginStatus`).set(statusData);
-                    return true;
-                } catch (error) {
-                    console.error('Error updating login status:', error);
-                    // Chỉ hiển thị lỗi nếu không phải là PERMISSION_DENIED
-                    if (error.code !== 'PERMISSION_DENIED') {
-                        showError('Lỗi cập nhật', 'Không thể cập nhật trạng thái đăng nhập.');
-                    }
-                    return false;
-                }
+            if (password.length < 6) {
+                showError('Lỗi mật khẩu', 'Mật khẩu phải có ít nhất 6 ký tự!');
+                return;
             }
 
-            // Cập nhật xử lý đăng nhập
-            async function handleLogin(event) {
-                event.preventDefault();
-                const button = event.target.querySelector('button');
-                const email = event.target.querySelector('input[type="email"]').value;
-                const password = event.target.querySelector('input[type="password"]').value;
-                
-                button.disabled = true;
-                
-                try {
-                    const userCredential = await auth.signInWithEmailAndPassword(email, password);
-                    const user = userCredential.user;
-                    
-                    const [savedData, updatedStatus] = await Promise.all([
-                        saveUserData(user),
-                        updateLoginStatus(user, 'online')
-                    ]);
+            button.disabled = true;
 
-                    if (savedData && updatedStatus) {
-                        // Kiểm tra email và chuyển hướng nếu là admin
-                        if (email === 'quantrivienmocnhien@gmail.com') {
-                            showSuccess('Đăng nhập thành công', 'Chào mừng Admin!');
-                            setTimeout(() => {
-                                window.location.href = 'admin.html';
-                            }, 1000);
-                        } else {
-                            showSuccess('Đăng nhập thành công', 'Chào mừng bạn đã quay trở lại!');
-                            document.getElementById('modalOverlay').style.display = 'none';
-                            document.querySelectorAll('.modal').forEach(modal => {
-                                modal.classList.remove('active');
-                            });
-                        }
-                    }
-                } catch (error) {
-                    console.error('Lỗi đăng nhập:', error);
+            try {
+                // Tạo tài khoản
+                const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+                const user = userCredential.user;
+
+                // Lưu thông tin bổ sung
+                const success = await saveUserData(user, {
+                    fullName,
+                    accountType: 'email',
+                    status: 'active'
+                });
+
+                if (success) {
+                    showSuccess('Đăng ký thành công', 'Vui lòng đăng nhập để tiếp tục!');
+                    // Reset form
+                    form.reset();
+                    showModal('loginModal');
+                }
+            } catch (error) {
+                console.error('Lỗi đăng ký:', error);
+                let errorMessage = 'Đã có lỗi xảy ra';
+                switch (error.code) {
+                    case 'auth/email-already-in-use':
+                        errorMessage = 'Email này đã được sử dụng bởi tài khoản khác';
+                        break;
+                    case 'auth/invalid-email':
+                        errorMessage = 'Email không hợp lệ';
+                        break;
+                    case 'auth/operation-not-allowed':
+                        errorMessage = 'Tính năng đăng ký tạm thời không khả dụng';
+                        break;
+                    case 'auth/weak-password':
+                        errorMessage = 'Mật khẩu không đủ mạnh';
+                        break;
+                }
+                showError('Đăng ký thất bại', errorMessage);
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        // Xử lý quên mật khẩu
+        function handleForgotPassword(event) {
+            event.preventDefault();
+            const button = event.target.querySelector('button');
+            const email = event.target.querySelector('input[type="email"]').value;
+
+            button.disabled = true;
+
+            auth.sendPasswordResetEmail(email)
+                .then(() => {
+                    showSuccess('Gửi email thành công', 'Vui lòng kiểm tra hộp thư của bạn để đặt lại mật khẩu.');
+                    showModal('loginModal');
+                })
+                .catch((error) => {
+                    console.error('Lỗi gửi email:', error);
                     let errorMessage = 'Đã có lỗi xảy ra';
                     switch (error.code) {
                         case 'auth/invalid-email':
                             errorMessage = 'Email không hợp lệ';
-                            break;
-                        case 'auth/user-disabled':
-                            errorMessage = 'Tài khoản đã bị vô hiệu hóa';
                             break;
                         case 'auth/user-not-found':
                             errorMessage = 'Không tìm thấy tài khoản với email này';
                             break;
-                        case 'auth/wrong-password':
-                            errorMessage = 'Mật khẩu không chính xác';
-                            break;
                     }
-                    showError('Đăng nhập thất bại', errorMessage);
-                } finally {
+                    showError('Gửi email thất bại', errorMessage);
+                })
+                .finally(() => {
                     button.disabled = false;
-                }
-            }
+                });
+        }
 
-            // Cập nhật xử lý đăng ký
-            async function handleRegister(event) {
-                event.preventDefault();
-                const form = event.target;
-                const button = form.querySelector('button');
-                const fullName = form.querySelector('input[type="text"]').value;
-                const email = form.querySelector('input[type="email"]').value;
-                const password = form.querySelectorAll('input[type="password"]')[0].value;
-                const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
-
-                if (password !== confirmPassword) {
-                    showError('Lỗi xác nhận', 'Mật khẩu xác nhận không khớp!');
-                    return;
-                }
-
-                if (password.length < 6) {
-                    showError('Lỗi mật khẩu', 'Mật khẩu phải có ít nhất 6 ký tự!');
-                    return;
-                }
-
-                button.disabled = true;
-
-                try {
-                    // Tạo tài khoản
-                    const userCredential = await auth.createUserWithEmailAndPassword(email, password);
-                    const user = userCredential.user;
-
-                    // Lưu thông tin bổ sung
-                    const success = await saveUserData(user, {
-                        fullName,
-                        accountType: 'email',
-                        status: 'active'
-                    });
-
-                    if (success) {
-                        showSuccess('Đăng ký thành công', 'Vui lòng đăng nhập để tiếp tục!');
-                        // Reset form
-                        form.reset();
-                        showModal('loginModal');
+        // Kiểm tra trạng thái đăng nhập
+        auth.onAuthStateChanged((user) => {
+            const loginBtn = document.getElementById('loginBtn');
+            if (user) {
+                // Đảm bảo user được lưu vào database
+                console.log('[INDEX.HTML] User logged in:', user.email, 'UID:', user.uid);
+                database.ref('users/' + user.uid).once('value').then((snapshot) => {
+                    if (!snapshot.exists()) {
+                        // User chưa tồn tại trong database, tạo mới
+                        console.log('[INDEX.HTML] Creating new user in database...');
+                        const userData = {
+                            email: user.email,
+                            displayName: user.displayName || user.email.split('@')[0],
+                            photoURL: user.photoURL || '',
+                            emailVerified: user.emailVerified,
+                            createdAt: new Date().toISOString(),
+                            lastLogin: new Date().toISOString(),
+                            provider: user.providerData[0]?.providerId || 'unknown',
+                            status: 'active',
+                            role: 'user'
+                        };
+                        return database.ref('users/' + user.uid).set(userData).then(() => {
+                            console.log('[INDEX.HTML] ✅ User created successfully!', userData);
+                        });
+                    } else {
+                        // User đã tồn tại, cập nhật lastLogin
+                        console.log('[INDEX.HTML] Updating existing user lastLogin...');
+                        return database.ref('users/' + user.uid).update({
+                            lastLogin: new Date().toISOString(),
+                            emailVerified: user.emailVerified
+                        }).then(() => {
+                            console.log('[INDEX.HTML] ✅ User updated successfully!');
+                        });
                     }
-                } catch (error) {
-                    console.error('Lỗi đăng ký:', error);
-                    let errorMessage = 'Đã có lỗi xảy ra';
-                    switch (error.code) {
-                        case 'auth/email-already-in-use':
-                            errorMessage = 'Email này đã được sử dụng bởi tài khoản khác';
-                            break;
-                        case 'auth/invalid-email':
-                            errorMessage = 'Email không hợp lệ';
-                            break;
-                        case 'auth/operation-not-allowed':
-                            errorMessage = 'Tính năng đăng ký tạm thời không khả dụng';
-                            break;
-                        case 'auth/weak-password':
-                            errorMessage = 'Mật khẩu không đủ mạnh';
-                            break;
-                    }
-                    showError('Đăng ký thất bại', errorMessage);
-                } finally {
-                    button.disabled = false;
-                }
-            }
+                }).catch((error) => {
+                    console.error('[INDEX.HTML] ❌ Error saving/updating user:', error);
+                    console.error('[INDEX.HTML] Error code:', error.code);
+                    console.error('[INDEX.HTML] Error message:', error.message);
+                });
 
-            // Xử lý quên mật khẩu
-            function handleForgotPassword(event) {
-                event.preventDefault();
-                const button = event.target.querySelector('button');
-                const email = event.target.querySelector('input[type="email"]').value;
-                
-                button.disabled = true;
-                
-                auth.sendPasswordResetEmail(email)
-                    .then(() => {
-                        showSuccess('Gửi email thành công', 'Vui lòng kiểm tra hộp thư của bạn để đặt lại mật khẩu.');
-                        showModal('loginModal');
-                    })
-                    .catch((error) => {
-                        console.error('Lỗi gửi email:', error);
-                        let errorMessage = 'Đã có lỗi xảy ra';
-                        switch (error.code) {
-                            case 'auth/invalid-email':
-                                errorMessage = 'Email không hợp lệ';
-                                break;
-                            case 'auth/user-not-found':
-                                errorMessage = 'Không tìm thấy tài khoản với email này';
-                                break;
-                        }
-                        showError('Gửi email thất bại', errorMessage);
-                    })
-                    .finally(() => {
-                        button.disabled = false;
-                    });
-            }
+                updateLoginStatus(user, 'online');
 
-            // Kiểm tra trạng thái đăng nhập
-            auth.onAuthStateChanged((user) => {
-                const loginBtn = document.getElementById('loginBtn');
-                if (user) {
-                    updateLoginStatus(user, 'online');
-                    
-                    loginBtn.innerHTML = `
+                loginBtn.innerHTML = `
                         <span>👤</span>
                         <span>${user.email}</span>
                     `;
-                    loginBtn.onclick = () => {
-                        showConfirm('Đăng xuất', 'Bạn có chắc chắn muốn đăng xuất?')
-                            .then((result) => {
-                                if (result.isConfirmed) {
-                                    updateLoginStatus(user, 'offline').then(() => {
-                                        auth.signOut();
-                                    });
-                                }
-                            });
-                    };
+                loginBtn.onclick = () => {
+                    showConfirm('Đăng xuất', 'Bạn có chắc chắn muốn đăng xuất?')
+                        .then((result) => {
+                            if (result.isConfirmed) {
+                                updateLoginStatus(user, 'offline').then(() => {
+                                    auth.signOut();
+                                });
+                            }
+                        });
+                };
 
-                    window.addEventListener('beforeunload', () => {
-                        updateLoginStatus(user, 'offline');
-                    });
-                } else {
-                    loginBtn.innerHTML = `
+                window.addEventListener('beforeunload', () => {
+                    updateLoginStatus(user, 'offline');
+                });
+            } else {
+                loginBtn.innerHTML = `
                         <span>👤</span>
                         <span>Đăng nhập</span>
                     `;
-                    loginBtn.onclick = () => window.location.href = 'auth.html';
-                }
-            });
+                loginBtn.onclick = () => window.location.href = 'auth.html';
+            }
+        });
 
-            // Kiểm tra đăng nhập và điền thông tin vào form liên hệ
-            auth.onAuthStateChanged((user) => {
-                if (user) {
-                    // Load thông tin user từ database
-                    database.ref('users/' + user.uid).once('value')
-                        .then((snapshot) => {
-                            const userData = snapshot.val();
-                            if (userData) {
-                                document.getElementById('contactName').value = userData.displayName || '';
-                                document.getElementById('contactEmail').value = user.email;
-                                document.getElementById('contactPhone').value = userData.phone || '';
-                            }
-                        })
-                        .catch((error) => {
-                            console.error('Lỗi khi load thông tin user:', error);
-                        });
-                }
-            });
-
-            // Hàm gửi thông tin liên hệ
-            function submitContact(event) {
-                event.preventDefault();
-                
-                const user = auth.currentUser;
-                const contactData = {
-                    name: document.getElementById('contactName').value.trim(),
-                    email: document.getElementById('contactEmail').value.trim(),
-                    phone: document.getElementById('contactPhone').value.trim(),
-                    subject: document.getElementById('contactSubject').value.trim(),
-                    message: document.getElementById('contactMessage').value.trim(),
-                    createdAt: firebase.database.ServerValue.TIMESTAMP,
-                    status: 'pending'
-                };
-
-                // Validate dữ liệu
-                if (!contactData.name || !contactData.email || !contactData.phone || !contactData.subject || !contactData.message) {
-                    Swal.fire('Lỗi', 'Vui lòng điền đầy đủ thông tin', 'error');
-                    return;
-                }
-
-                // Validate email
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(contactData.email)) {
-                    Swal.fire('Lỗi', 'Email không hợp lệ', 'error');
-                    return;
-                }
-
-                // Validate phone
-                const phoneRegex = /^[0-9]{10,11}$/;
-                if (!phoneRegex.test(contactData.phone)) {
-                    Swal.fire('Lỗi', 'Số điện thoại không hợp lệ', 'error');
-                    return;
-                }
-
-                // Show loading
-                Swal.fire({
-                    title: 'Đang gửi...',
-                    allowOutsideClick: false,
-                    didOpen: () => {
-                        Swal.showLoading();
-                    }
-                });
-
-                // Kiểm tra đăng nhập trước khi gửi
-                if (!user) {
-                    Swal.fire({
-                        title: 'Vui lòng đăng nhập',
-                        text: 'Bạn cần đăng nhập để gửi thông tin liên hệ',
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonText: 'Đăng nhập',
-                        cancelButtonText: 'Hủy'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            showModal('loginModal');
+        // Kiểm tra đăng nhập và điền thông tin vào form liên hệ
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                // Load thông tin user từ database
+                database.ref('users/' + user.uid).once('value')
+                    .then((snapshot) => {
+                        const userData = snapshot.val();
+                        if (userData) {
+                            document.getElementById('contactName').value = userData.displayName || '';
+                            document.getElementById('contactEmail').value = user.email;
+                            document.getElementById('contactPhone').value = userData.phone || '';
                         }
-                    });
-                    return;
-                }
-
-                // Lưu thông tin liên hệ vào Firebase
-                const contactRef = database.ref('contacts').push();
-                contactData.userId = user.uid;
-                
-                contactRef.set(contactData)
-                    .then(() => {
-                        Swal.fire({
-                            title: 'Thành công',
-                            text: 'Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi sớm nhất có thể.',
-                            icon: 'success',
-                            confirmButtonText: 'OK'
-                        }).then(() => {
-                            // Reset form
-                            document.getElementById('contactForm').reset();
-                            // Giữ lại thông tin cá nhân
-                            database.ref('users/' + user.uid).once('value')
-                                .then((snapshot) => {
-                                    const userData = snapshot.val();
-                                    if (userData) {
-                                        document.getElementById('contactName').value = userData.displayName || '';
-                                        document.getElementById('contactEmail').value = user.email;
-                                        document.getElementById('contactPhone').value = userData.phone || '';
-                                    }
-                                });
-                        });
                     })
                     .catch((error) => {
-                        console.error('Lỗi khi gửi thông tin liên hệ:', error);
-                        let errorMessage = 'Không thể gửi thông tin liên hệ. Vui lòng thử lại sau.';
-                        
-                        if (error.code === 'PERMISSION_DENIED') {
-                            errorMessage = 'Bạn không có quyền gửi thông tin liên hệ. Vui lòng đăng nhập lại.';
-                            // Tự động đăng xuất nếu có lỗi permission
-                            auth.signOut().then(() => {
-                                showModal('loginModal');
-                            });
-                        }
-                        
-                        Swal.fire({
-                            title: 'Lỗi',
-                            text: errorMessage,
-                            icon: 'error',
-                            confirmButtonText: 'OK'
-                        });
+                        console.error('Lỗi khi load thông tin user:', error);
                     });
             }
+        });
 
-            // Hàm để load và hiển thị đánh giá từ Firebase
-            function loadTestimonials() {
-                const testimonialContainer = document.getElementById('testimonialContainer');
-                
-                // Lắng nghe thay đổi theo thời gian thực
-                database.ref('contacts')
-                    .orderByChild('createdAt')
-                    .limitToLast(5)
-                    .on('value', (snapshot) => {
-                        const testimonials = [];
-                        snapshot.forEach((childSnapshot) => {
-                            testimonials.push({
-                                id: childSnapshot.key,
-                                ...childSnapshot.val()
+        // Hàm gửi thông tin liên hệ
+        function submitContact(event) {
+            event.preventDefault();
+
+            const user = auth.currentUser;
+            const contactData = {
+                name: document.getElementById('contactName').value.trim(),
+                email: document.getElementById('contactEmail').value.trim(),
+                phone: document.getElementById('contactPhone').value.trim(),
+                subject: document.getElementById('contactSubject').value.trim(),
+                message: document.getElementById('contactMessage').value.trim(),
+                createdAt: firebase.database.ServerValue.TIMESTAMP,
+                status: 'pending'
+            };
+
+            // Validate dữ liệu
+            if (!contactData.name || !contactData.email || !contactData.phone || !contactData.subject || !contactData.message) {
+                Swal.fire('Lỗi', 'Vui lòng điền đầy đủ thông tin', 'error');
+                return;
+            }
+
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(contactData.email)) {
+                Swal.fire('Lỗi', 'Email không hợp lệ', 'error');
+                return;
+            }
+
+            // Validate phone
+            const phoneRegex = /^[0-9]{10,11}$/;
+            if (!phoneRegex.test(contactData.phone)) {
+                Swal.fire('Lỗi', 'Số điện thoại không hợp lệ', 'error');
+                return;
+            }
+
+            // Show loading
+            Swal.fire({
+                title: 'Đang gửi...',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            // Kiểm tra đăng nhập trước khi gửi
+            if (!user) {
+                Swal.fire({
+                    title: 'Vui lòng đăng nhập',
+                    text: 'Bạn cần đăng nhập để gửi thông tin liên hệ',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Đăng nhập',
+                    cancelButtonText: 'Hủy'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        showModal('loginModal');
+                    }
+                });
+                return;
+            }
+
+            // Lưu thông tin liên hệ vào Firebase
+            const contactRef = database.ref('contacts').push();
+            contactData.userId = user.uid;
+
+            contactRef.set(contactData)
+                .then(() => {
+                    Swal.fire({
+                        title: 'Thành công',
+                        text: 'Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi sớm nhất có thể.',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        // Reset form
+                        document.getElementById('contactForm').reset();
+                        // Giữ lại thông tin cá nhân
+                        database.ref('users/' + user.uid).once('value')
+                            .then((snapshot) => {
+                                const userData = snapshot.val();
+                                if (userData) {
+                                    document.getElementById('contactName').value = userData.displayName || '';
+                                    document.getElementById('contactEmail').value = user.email;
+                                    document.getElementById('contactPhone').value = userData.phone || '';
+                                }
                             });
+                    });
+                })
+                .catch((error) => {
+                    console.error('Lỗi khi gửi thông tin liên hệ:', error);
+                    let errorMessage = 'Không thể gửi thông tin liên hệ. Vui lòng thử lại sau.';
+
+                    if (error.code === 'PERMISSION_DENIED') {
+                        errorMessage = 'Bạn không có quyền gửi thông tin liên hệ. Vui lòng đăng nhập lại.';
+                        // Tự động đăng xuất nếu có lỗi permission
+                        auth.signOut().then(() => {
+                            showModal('loginModal');
                         });
-                        
-                        // Đảo ngược mảng để hiển thị mới nhất lên đầu
-                        testimonials.reverse();
-                        
-                        // Xóa nội dung cũ
-                        testimonialContainer.innerHTML = '';
-                        
-                        // Hiển thị từng đánh giá
-                        testimonials.forEach(testimonial => {
-                            const testimonialCard = document.createElement('div');
-                            testimonialCard.className = 'testimonial-card';
-                            
-                            // Format ngày tháng
-                            const date = new Date(testimonial.createdAt);
-                            const formattedDate = date.toLocaleDateString('vi-VN', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric'
-                            });
-                            
-                            testimonialCard.innerHTML = `
+                    }
+
+                    Swal.fire({
+                        title: 'Lỗi',
+                        text: errorMessage,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                });
+        }
+
+        // Hàm để load và hiển thị đánh giá từ Firebase
+        function loadTestimonials() {
+            const testimonialContainer = document.getElementById('testimonialContainer');
+
+            // Lắng nghe thay đổi theo thời gian thực
+            database.ref('contacts')
+                .orderByChild('createdAt')
+                .limitToLast(5)
+                .on('value', (snapshot) => {
+                    const testimonials = [];
+                    snapshot.forEach((childSnapshot) => {
+                        testimonials.push({
+                            id: childSnapshot.key,
+                            ...childSnapshot.val()
+                        });
+                    });
+
+                    // Đảo ngược mảng để hiển thị mới nhất lên đầu
+                    testimonials.reverse();
+
+                    // Xóa nội dung cũ
+                    testimonialContainer.innerHTML = '';
+
+                    // Hiển thị từng đánh giá
+                    testimonials.forEach(testimonial => {
+                        const testimonialCard = document.createElement('div');
+                        testimonialCard.className = 'testimonial-card';
+
+                        // Format ngày tháng
+                        const date = new Date(testimonial.createdAt);
+                        const formattedDate = date.toLocaleDateString('vi-VN', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+
+                        testimonialCard.innerHTML = `
                                 <div class="testimonial-content">
                                     <p>"${testimonial.message}"</p>
                                 </div>
@@ -1907,62 +2005,62 @@
                                     </div>
                                 </div>
                             `;
-                            
-                            testimonialContainer.appendChild(testimonialCard);
-                        });
-                    }, (error) => {
-                        console.error('Lỗi khi load đánh giá:', error);
-                        testimonialContainer.innerHTML = `
+
+                        testimonialContainer.appendChild(testimonialCard);
+                    });
+                }, (error) => {
+                    console.error('Lỗi khi load đánh giá:', error);
+                    testimonialContainer.innerHTML = `
                             <div class="testimonial-card">
                                 <div class="testimonial-content">
                                     <p>Không thể tải đánh giá. Vui lòng thử lại sau.</p>
                                 </div>
                             </div>
                         `;
-                    });
-            }
+                });
+        }
 
-            // Hàm để load và hiển thị sản phẩm nổi bật từ Firebase
-            function loadFeaturedProducts() {
-                const productsContainer = document.getElementById('featuredProductsContainer');
-                
-                // Lắng nghe thay đổi theo thời gian thực
-                database.ref('products')
-                    .orderByChild('ngayThem')
-                    .limitToLast(6) // Hiển thị 6 sản phẩm mới nhất
-                    .on('value', (snapshot) => {
-                        const products = [];
-                        snapshot.forEach((childSnapshot) => {
-                            products.push({
-                                id: childSnapshot.key,
-                                ...childSnapshot.val()
-                            });
+        // Hàm để load và hiển thị sản phẩm nổi bật từ Firebase
+        function loadFeaturedProducts() {
+            const productsContainer = document.getElementById('featuredProductsContainer');
+
+            // Lắng nghe thay đổi theo thời gian thực
+            database.ref('products')
+                .orderByChild('ngayThem')
+                .limitToLast(6) // Hiển thị 6 sản phẩm mới nhất
+                .on('value', (snapshot) => {
+                    const products = [];
+                    snapshot.forEach((childSnapshot) => {
+                        products.push({
+                            id: childSnapshot.key,
+                            ...childSnapshot.val()
                         });
-                        
-                        // Đảo ngược mảng để hiển thị mới nhất lên đầu
-                        products.reverse();
-                        
-                        // Xóa nội dung cũ
-                        productsContainer.innerHTML = '';
-                        
-                        // Hiển thị từng sản phẩm
-                        products.forEach(product => {
-                            const productCard = document.createElement('div');
-                            productCard.className = 'product-card';
-                            
-                            // Tính phần trăm giảm giá
-                            const discountPercentage = product.giaSauGiam ? 
-                                Math.round(((product.giaBan - product.giaSauGiam) / product.giaBan) * 100) : 0;
-                            
-                            // Format giá tiền
-                            const formatPrice = (price) => {
-                                return new Intl.NumberFormat('vi-VN', {
-                                    style: 'currency',
-                                    currency: 'VND'
-                                }).format(price);
-                            };
+                    });
 
-                            productCard.innerHTML = `
+                    // Đảo ngược mảng để hiển thị mới nhất lên đầu
+                    products.reverse();
+
+                    // Xóa nội dung cũ
+                    productsContainer.innerHTML = '';
+
+                    // Hiển thị từng sản phẩm
+                    products.forEach(product => {
+                        const productCard = document.createElement('div');
+                        productCard.className = 'product-card';
+
+                        // Tính phần trăm giảm giá
+                        const discountPercentage = product.giaSauGiam ?
+                            Math.round(((product.giaBan - product.giaSauGiam) / product.giaBan) * 100) : 0;
+
+                        // Format giá tiền
+                        const formatPrice = (price) => {
+                            return new Intl.NumberFormat('vi-VN', {
+                                style: 'currency',
+                                currency: 'VND'
+                            }).format(price);
+                        };
+
+                        productCard.innerHTML = `
                                 ${discountPercentage > 0 ? `<div class="product-badge">-${discountPercentage}%</div>` : ''}
                                 <img src="${product.hinhAnh}" alt="${product.tenSanPham}" class="product-image" 
                                     onerror="this.src='picture/logo.jpg'">
@@ -1970,79 +2068,79 @@
                                     <h3>${product.tenSanPham}</h3>
                                     <p class="product-desc">${product.moTa}</p>
                                     <div class="product-price">
-                                        ${product.giaSauGiam ? 
-                                            `<span class="original-price">${formatPrice(product.giaBan)}</span>
+                                        ${product.giaSauGiam ?
+                                `<span class="original-price">${formatPrice(product.giaBan)}</span>
                                              <span class="discounted-price">${formatPrice(product.giaSauGiam)}</span>` :
-                                            `<span class="current-price">${formatPrice(product.giaBan)}</span>`
-                                        }
+                                `<span class="current-price">${formatPrice(product.giaBan)}</span>`
+                            }
                                     </div>
                                 </div>
                             `;
-                            
-                            productsContainer.appendChild(productCard);
-                        });
-                    }, (error) => {
-                        console.error('Lỗi khi load sản phẩm:', error);
-                        productsContainer.innerHTML = `
+
+                        productsContainer.appendChild(productCard);
+                    });
+                }, (error) => {
+                    console.error('Lỗi khi load sản phẩm:', error);
+                    productsContainer.innerHTML = `
                             <div class="product-card">
                                 <div class="product-info">
                                     <p>Không thể tải sản phẩm. Vui lòng thử lại sau.</p>
                                 </div>
                             </div>
                         `;
+                });
+        }
+
+        // Hàm thêm vào giỏ hàng
+        function addToCart(productId) {
+            const user = auth.currentUser;
+            if (!user) {
+                showConfirm('Vui lòng đăng nhập', 'Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng')
+                    .then((result) => {
+                        if (result.isConfirmed) {
+                            showModal('loginModal');
+                        }
                     });
+                return;
             }
 
-            // Hàm thêm vào giỏ hàng
-            function addToCart(productId) {
-                const user = auth.currentUser;
-                if (!user) {
-                    showConfirm('Vui lòng đăng nhập', 'Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng')
-                        .then((result) => {
-                            if (result.isConfirmed) {
-                                showModal('loginModal');
-                            }
+            // Thêm vào giỏ hàng logic sẽ được implement sau
+            showSuccess('Thành công', 'Sản phẩm đã được thêm vào giỏ hàng');
+        }
+
+        // Hàm xem chi tiết sản phẩm
+        function viewProductDetail(productId) {
+            // Lưu ID sản phẩm vào localStorage để sử dụng ở trang chi tiết
+            localStorage.setItem('selectedProductId', productId);
+            // Chuyển hướng đến trang chi tiết
+            window.location.href = `product-detail.html?id=${productId}`;
+        }
+
+        // Hàm để load và hiển thị bộ sưu tập từ Firebase
+        function loadCollections() {
+            const collectionGrid = document.querySelector('.collection-grid');
+
+            // Lắng nghe thay đổi theo thời gian thực
+            database.ref('collections')
+                .limitToFirst(3) // Chỉ lấy 3 bộ sưu tập đầu tiên
+                .on('value', (snapshot) => {
+                    const collections = [];
+                    snapshot.forEach((childSnapshot) => {
+                        collections.push({
+                            id: childSnapshot.key,
+                            ...childSnapshot.val()
                         });
-                    return;
-                }
+                    });
 
-                // Thêm vào giỏ hàng logic sẽ được implement sau
-                showSuccess('Thành công', 'Sản phẩm đã được thêm vào giỏ hàng');
-            }
+                    // Xóa nội dung cũ
+                    collectionGrid.innerHTML = '';
 
-            // Hàm xem chi tiết sản phẩm
-            function viewProductDetail(productId) {
-                // Lưu ID sản phẩm vào localStorage để sử dụng ở trang chi tiết
-                localStorage.setItem('selectedProductId', productId);
-                // Chuyển hướng đến trang chi tiết
-                window.location.href = `product-detail.html?id=${productId}`;
-            }
+                    // Hiển thị từng bộ sưu tập
+                    collections.forEach(collection => {
+                        const collectionCard = document.createElement('div');
+                        collectionCard.className = 'collection-card';
 
-            // Hàm để load và hiển thị bộ sưu tập từ Firebase
-            function loadCollections() {
-                const collectionGrid = document.querySelector('.collection-grid');
-                
-                // Lắng nghe thay đổi theo thời gian thực
-                database.ref('collections')
-                    .limitToFirst(3) // Chỉ lấy 3 bộ sưu tập đầu tiên
-                    .on('value', (snapshot) => {
-                        const collections = [];
-                        snapshot.forEach((childSnapshot) => {
-                            collections.push({
-                                id: childSnapshot.key,
-                                ...childSnapshot.val()
-                            });
-                        });
-                        
-                        // Xóa nội dung cũ
-                        collectionGrid.innerHTML = '';
-                        
-                        // Hiển thị từng bộ sưu tập
-                        collections.forEach(collection => {
-                            const collectionCard = document.createElement('div');
-                            collectionCard.className = 'collection-card';
-                            
-                            collectionCard.innerHTML = `
+                        collectionCard.innerHTML = `
                                 <img src="${collection.image}" alt="${collection.title}" class="collection-image" 
                                     onerror="this.src='picture/logo.jpg'">
                                 <div class="collection-overlay">
@@ -2051,12 +2149,12 @@
                                     <a href="collection.html?style=${collection.id}" class="btn-outline">Khám phá</a>
                                 </div>
                             `;
-                            
-                            collectionGrid.appendChild(collectionCard);
-                        });
-                    }, (error) => {
-                        console.error('Lỗi khi load bộ sưu tập:', error);
-                        collectionGrid.innerHTML = `
+
+                        collectionGrid.appendChild(collectionCard);
+                    });
+                }, (error) => {
+                    console.error('Lỗi khi load bộ sưu tập:', error);
+                    collectionGrid.innerHTML = `
                             <div class="collection-card">
                                 <div class="collection-overlay">
                                     <h3>Lỗi</h3>
@@ -2064,20 +2162,21 @@
                                 </div>
                             </div>
                         `;
-                    });
-            }
+                });
+        }
 
-            // Load sản phẩm khi trang được tải
-            document.addEventListener('DOMContentLoaded', () => {
-                loadTestimonials();
-                loadFeaturedProducts();
-                loadCollections(); // Thêm dòng này
-            });
-        </script>
-        <script src="https://app.tudongchat.com/js/chatbox.js"></script>
-        <script>
-          const tudong_chatbox = new TuDongChat('fvnnpQFt5lp13VAR7GEiK')
-          tudong_chatbox.initial()
-        </script>
-    </body>
+        // Load sản phẩm khi trang được tải
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTestimonials();
+            loadFeaturedProducts();
+            loadCollections(); // Thêm dòng này
+        });
+    </script>
+    <script src="https://app.tudongchat.com/js/chatbox.js"></script>
+    <script>
+        const tudong_chatbox = new TuDongChat('fvnnpQFt5lp13VAR7GEiK')
+        tudong_chatbox.initial()
+    </script>
+</body>
+
 </html>
